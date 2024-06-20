@@ -1,0 +1,11 @@
+.sorting-layout-container {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  column-gap: 20px;
+  margin-top: 41px;
+
+  @include vp--1023 {
+    display: block;
+    margin: 0;
+  }
+}

@@ -1,0 +1,62 @@
+.workout-list {
+    border-radius: 8px;
+    border: 1px solid $color-silver;
+}
+
+.workout-list__container {
+    padding: 24px;
+
+}
+
+
+.workout-list__item {
+    display: flex;
+    cursor: pointer;
+
+    &:not(:first-child) {
+        margin-top: 16px;
+    }
+}
+
+.workout-list__thumb {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.workout-list__thumb-done {
+    position: absolute;
+    content: '';
+    background-color: rgba($color-default-white, .4);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        fill: none;
+    }
+}
+
+
+.workout-list__title {
+    font-size: 13px;
+    line-height: 1.5em;
+    font-weight: 500;
+}

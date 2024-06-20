@@ -1,0 +1,10 @@
+mixin filterList(classMod)
+  .filter-list.swiper-container(class=classMod)
+    ul.filter-list__list.swiper-wrapper
+      each item, index in filterItems
+        if (index === 0)
+          li.filter-list__item.swiper-slide
+            a.filter-list__link(class="filter-list__link--active", href="#")= item
+        else
+          li.filter-list__item.swiper-slide
+            a.filter-list__link(href="#")= item

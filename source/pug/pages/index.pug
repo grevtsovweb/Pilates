@@ -1,0 +1,269 @@
+extends ../base/layout
+
+block variables
+  - var title = "Список страниц"
+
+block main
+  style.
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      color: rgb(10, 10, 175);
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+    }
+
+  -
+    var pages = [
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Страница каталога (пользователь не залогинен, без промо-блока) — catalog-page.html",
+        src: "catalog-page.html"
+      },
+      {
+        name: "Страница каталога (пользователь залогинен, с промо-блоком) — catalog-page-promo.html",
+        src: "catalog-page-promo.html"
+      },
+      {
+        name: "Страница расписания — schedule.html",
+        src: "schedule.html"
+      },
+      {
+        name: "Страница My account — my-account.html",
+        src: "my-account.html"
+      },
+      {
+        name: "Страница My account catalog — my-account-catalog.html",
+        src: "my-account-catalog.html"
+      },
+      {
+        name: "Страница My account activity — my-account-activity.html",
+        src: "my-account-activity.html"
+      },
+      {
+        name: "Страница My account activity(пользователь не залогинен)  — my-account-activity-not-auth.html",
+        src: "my-account-activity-not-auth.html"
+      },
+      {
+        name: "Страница My account workouts — my-account-workouts.html",
+        src: "my-account-workouts.html"
+      },
+      {
+        name: "Страница My account profile — my-account-profile.html",
+        src: "my-account-profile.html"
+      },
+      {
+        name: "Страница Shop — shop-page.html",
+        src: "shop-page.html"
+      },
+      {
+        name: "Страница Shop — shop-page-log.html(для зарегистрированного пользователя)",
+        src: "shop-page-log.html"
+      },
+      {
+        name: "Страница Workouts video — workouts-video-with-rec.html(для зарегистрированного пользователя)",
+        src: "workouts-video-with-rec.html"
+      },
+       {
+        name: "Страница Workouts video — workouts-video-with-rec-loader.html(для зарегистрированного пользователя, с прогрузкой видео)",
+        src: "workouts-video-with-rec-loader.html"
+      },
+      {
+        name: "Страница Workouts video — workouts-video-not-active.html(для зарегистрированного пользователя)",
+        src: "workouts-video-not-active.html"
+      },
+      {
+        name: "Страница Workouts video — workouts-video-no-auth.html",
+        src: "workouts-video-no-auth.html"
+      },
+      {
+        name: "Страница Workouts-list — workouts-list.html",
+        src: "workouts-list.html"
+      },
+      {
+        name: "Страница Workouts-list — workout-list-log.html(для зарегистрированного пользователя)",
+        src: "workout-list-log.html"
+      },
+      {
+        name: "Страница Workouts-list — workout-list-no-favorites.html(страница без избранных зарядок)",
+        src: "workout-list-no-favorites.html"
+      },
+      {
+        name: "Страница Series — series.html(для зарегистрированного пользователя)",
+        src: "series.html"
+      },
+      {
+        name: "Страница Series next — series-next.html(для зарегистрированного пользователя)",
+        src: "series-next.html"
+      },
+      {
+        name: "Страница Favorites — favorites.html(для зарегистрированного пользователя)",
+        src: "favorites.html"
+      },
+      {
+        name: "Страница Favorites — favorites-nocards.html(без избранных зарядок)",
+        src: "favorites-nocards.html"
+      },
+      {
+        name: "Страница Product — product-log.html(для зарегистрированного пользователя)",
+        src: "product-log.html"
+      },
+      {
+        name: "Страница Activity — activity.html(для зарегистрированного пользователя)",
+        src: "activity.html"
+      },
+            {
+        name: "Страница Activity-2 — activity-2.html(для зарегистрированного пользователя)",
+        src: "activity-2.html"
+      },
+      {
+        name: "Страница Sign-in — sing-in.html",
+        src: "sign-in.html"
+      },
+      {
+        name: "Страница Sign-up — sing-up.html",
+        src: "sign-up.html"
+      },
+      {
+        name: "Страница Password-reset — password-reset.html",
+        src: "password-reset.html"
+      },
+      {
+        name: "Страница Course-page-with-playlist.html",
+        src: "course-page-with-playlist.html"
+      },
+      {
+        name: "Страница Marathon-video-page.html",
+        src: "marathon-video-page.html"
+      },
+      {
+        name: "Страница Course/marathon-page-without-playlist.html",
+        src: "marathon-page-without-playlist.html"
+      },
+      {
+        name: "Страница Content-restricted-theme-weeks.html",
+        src: "content-restricted-theme-weeks.html"
+      },
+      {
+        name: "Страница Course/marathon-page-without-playlist-list.html",
+        src: "marathon-page-without-playlist-list.html"
+      },
+      {
+        name: "Страница Thank-you-page-success.html - успешная оплата заказа",
+        src: "thank-you-page-success.html"
+      },
+      {
+        name: "Страница Thank-you-page-expect-pay.html - ожидает оплаты заказа",
+        src: "thank-you-page-expect-pay.html"
+      },
+      {
+        name: "Страница pilates-flow-assistant.html - ожидает оплаты заказа",
+        src: "pilates-flow-assistant.html"
+      },
+      {
+        name: "Страница personal-area-is-active-courses-tab.html - ожидает оплаты заказа",
+        src: "personal-area-is-active-courses-tab.html"
+      },
+      {
+        name: "Страница my-flow__flow-is-not-active.html - Мой поток (не активный)",
+        src: "my-flow__flow-is-not-active.html"
+      },
+      {
+        name: "Страница my-flow__flow-is-active.html - Мой поток (активный)",
+        src: "my-flow__flow-is-active.html"
+      },
+      {
+        name: "Страница personal-area-is-active_series-tab.html - Мои активности",
+        src: "personal-area-is-active_series-tab.html"
+      },
+      {
+        name: "Страница personal-area-is-active-schedule.html - Мои активности",
+        src: "personal-area-is-active-schedule.html"
+      },
+    ]
+  -
+    var pages2 = [
+      {
+        name: "Страница Workout - авторизован + рекомендации",
+        src: "workouts-video-with-rec-new.html"
+      },
+      {
+        name: "Страница Workout - неавторизован + рекомендации",
+        src: "workouts-video-no-auth-new.html"
+      },
+      {
+        name: "Страница Workout (Модальное окно 'Регистрация')",
+        src: "workouts-video-no-auth-modal-new.html"
+      },
+      {
+        name: "Страница Workout - авторизован, не оплачен",
+        src: "workouts-video-not-active-new.html"
+      },
+      {
+        name: "Страница Series - авторизован + оплачен",
+        src: "series-new.html"
+      },
+      {
+        name: "Страница Series - неавторизован + рекомендации",
+        src: "series-next-new.html"
+      },
+      {
+        name: "Страница Series (Не авторизован)",
+        src: "series-no-auth-new.html"
+      },
+      {
+        name: "Страница Series - авторизован, не оплачен",
+        src: "series-not-active-new.html"
+      },
+    ]
+
+  main.container.main-index
+    img(src="img/svg/logo.svg" width="300" alt="Логотип проекта")
+    h1 Список страниц
+    ol
+      each page in pages
+        li
+          a(href= page.src)= page.name
+    h2 Список страниц
+    ol
+      each page in pages2
+        li
+          a(href= page.src)= page.name

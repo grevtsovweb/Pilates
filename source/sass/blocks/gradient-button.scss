@@ -1,0 +1,15 @@
+.gradient-button {
+  background: linear-gradient(90deg, #F185D0 0%, #83B8FB 100%);
+  color: $color-default-white;
+  user-select: none;
+  text-align: center;
+}
+
+.gradient-button:hover,
+.gradient-button:focus-visible {
+  background: linear-gradient(90deg, #EE59C1 0%, #64A6F9 100%);
+}
+
+.gradient-button--disable {
+  background: linear-gradient(90deg, #FFBFEC 0%, #ABD0FF 100%);
+}

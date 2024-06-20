@@ -1,0 +1,62 @@
+extends ../base/layout
+
+include ../base/filter-list
+include ../base/promo
+include ../base/product-card
+include ../base/loader
+
+
+block variables
+  - const title = "Магазин - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--burger-menu", "header--is-authorised", "header--catalog-menu"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = true
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Каталог",
+          icon: "icon-catalog",
+          width: 18,
+          height: 18,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Корзина",
+          icon: "icon-shopping-cart",
+          width: 20,
+          height: 20,
+          items: 20,
+          current: false
+        },
+      ]
+
+block main
+  main.main
+    h1.visually-hidden Каталог курсов по пилатесу
+    .container.container--shop.container--shop-no-margin.container--promo
+      //- Промо блок
+      if (haspromo)
+        section.content-block.content-block--shop.content-block--promo
+          h2.title.title--promo Специальное предложение
+          +promoSection(productCardspromo)(class="layout layout--row")
+
+    .container.container--shop
+      //- Каталог
+      section.content-block.content-block--shop
+        h2.title Каталог товаров
+        //- Список фильтров
+        +filterList
+        //- Список карточек курсов
+        ul.layout.layout--grid
+          each item in productCards
+            //- Карточка курса
+            li
+              +productCard("", item)

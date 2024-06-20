@@ -1,0 +1,9 @@
+mixin user(userName, userAccount, avatar)
+  .main-nav__user.user-menu
+    a.user-menu__link(href="#", class=userAccount ? 'user-menu__link--active' : '')
+      if avatar
+        //- img(src="img/content/user-avatar-2.png", width="32", height="32", alt="аватар пользователя")
+        img(src=avatar, width="32", height="32", alt="аватар пользователя")
+      else
+        img(src="img/svg/icon-avatar.svg", width="32", height="32", alt="аватар")
+      | !{userName}

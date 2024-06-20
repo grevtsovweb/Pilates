@@ -1,0 +1,65 @@
+.days-in-the-stream {
+  background-color: $color-shades-snow;
+  border-radius: 10px;
+  padding: 22px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp--767 {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.days-in-the-stream__marketing {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 29px;
+  color: $color-night-rider;
+  margin: 0;
+  padding: 12px;
+  max-width: 50%;
+
+  @include vp--767 {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.days-in-the-stream__days-block {
+  display: flex;
+  gap: 14px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 70px;
+  max-width: 40%;
+
+  @include vp--767 {
+    margin: 0;
+    align-items: center;
+    max-width: unset;
+  }
+}
+
+.days-in-the-stream__number-of-days {
+  font-weight: 600;
+  font-size: 46px;
+  line-height: 46px;
+  color: $color-night-rider;
+}
+
+.days-in-the-stream__days-text {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  color: $color-night-rider;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

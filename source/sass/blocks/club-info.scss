@@ -1,0 +1,54 @@
+.club-info {
+  
+}
+
+.club-info__title {
+  @include header-25;
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+
+.club-info__list {
+  max-width: 994px;
+  list-style: none;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 80px;
+
+  @include vp--1023 {
+    grid-template-columns: 1fr;
+    row-gap: 80px;
+    max-width: 460px;
+  }
+
+  @include vp--767 {
+    grid-template-columns: 1fr;
+    row-gap: 80px;
+  }
+}
+
+.club-info__item {
+  display: flex;
+  column-gap: 24px;
+  padding: 0;
+  margin: 0;
+  color: $color-midnight-blue;
+}
+
+.club-info__item-text {
+  font-size: 18px;
+  line-height: 1.5em;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.club-info__item-title {
+  @include header-20;
+  margin-bottom: 16px;
+}

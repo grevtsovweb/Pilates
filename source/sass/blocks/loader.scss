@@ -1,0 +1,36 @@
+.loader {
+  display: flex;
+  padding: 70px 0 0;
+
+  @include vp--1023 {
+    padding: 50px 0;
+  }
+
+  @include vp--767 {
+    padding: 25px 0;
+  }
+
+  &--workout-list {
+    display: none;
+
+    @include vp--767 {
+      display: flex;
+    }
+  }
+}
+
+.loader__icon {
+  margin: 0 auto;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    animation: spin 1s ease infinite;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

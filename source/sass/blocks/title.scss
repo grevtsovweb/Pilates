@@ -1,0 +1,151 @@
+.title {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 1.15;
+  color: $color-baltic-sea;
+
+  @include vp--1023 {
+    font-size: 21px;
+  }
+
+  @include vp--767 {
+    font-size: 17px;
+  }
+
+  &--workout-list-favorites {
+    font-family: $font-family--manrope;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 115%;
+    padding-bottom: 10px;
+
+    @include vp--1023 {
+      display: none;
+    }
+  }
+}
+
+.title.title--course-page-with-playlist {
+  font-family: $font-family--montserrat;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 0;
+}
+
+.title--course-page-with-playlist.title--top-title {
+  padding: 24px 0 17px 0;
+  position: relative;
+
+  @include vp--1023 {
+    padding-top: 40px;
+  }
+
+  @include vp--767 {
+    margin-left: 6px;
+    padding-bottom: 25px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 66.5%;
+    height: 1px;
+    background-color: $color-silver;
+    bottom: 0;
+    left: 0;
+
+    @include vp--1023 {
+      width: 100%;
+    }
+
+    @include vp--767 {
+      width: 120px;
+    }
+  }
+}
+
+.title--course-page-with-playlist.title--weekly-schedule {
+  margin-bottom: 24px;
+
+  @include vp--1023 {
+    margin-bottom: 15px;
+  }
+
+  @include vp--767 {
+    margin-left: 6px;
+  }
+}
+
+.title.title--marathon-page-without-playlist-list {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 34px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 0;
+
+  @include vp--767 {
+    font-family: $font-family--montserrat;
+    margin-left: 15px;
+    margin-top: 23px;
+    }
+}
+
+.title.title--activity {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 120%;
+
+  @include vp--1023 {
+    padding-bottom: 24px;
+  }
+
+  @include vp--767 {
+    font-size: 21px;
+    padding-bottom: 22px;
+  }
+}
+
+.title.title--sub-title {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 34px;
+  padding-bottom: 0;
+  margin-bottom: 24px;
+
+  @include vp--1023 {
+    max-width: 368px;
+    padding-bottom: 0;
+    margin-bottom: 16px;
+  }
+
+  @include vp--767 {
+    max-width: none;
+  }
+}
+
+.title--my-flow {
+  margin-top: 42px;
+  padding-bottom: 24px;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.title--personal-area {
+  font-size: 28px;
+  line-height: 1.2;
+  color: #333333;
+
+  @include vp--1023 {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120%;
+    color: #343A40;
+    padding-bottom: 14px;
+  }
+}

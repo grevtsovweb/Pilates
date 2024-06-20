@@ -1,0 +1,34 @@
+.recommend-slider__slider {
+  position: relative;
+
+ 
+  .swiper-wrapper {
+    box-sizing: content-box;
+  }
+
+  .swiper-slide {
+    width: 296px;
+  }
+
+  .cards-slider__button--favorites-slider-back {
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .cards-slider__button--favorites-slider-next {
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+  }
+
+
+  .cards-slider__button {
+    @include vp--1023 {
+      display: none;
+    }
+  }
+
+}
+
+

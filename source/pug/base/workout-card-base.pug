@@ -1,0 +1,29 @@
+mixin workoutCardBase(workoutCardMod, data)
+
+  .workout-card-base(class=workoutCardMod)
+    a.workout-card-base__link(href=data.link, target="_blank", rel="nofollow noopener")
+    .workout-card-base__content-wrapper
+      .workout-card-base__content
+
+        //- Продолжительность
+        if data.time
+          span.workout-card-base__time-label #{data.time} мин
+
+        //- Иконка супер-серия
+        //- if data.superSeria
+        //-   span.workout-card-base__super-seria-label супер-серия
+
+        //- Изображение
+        .workout-card-base__img-container
+          +img(data.path, data.name, data.format, data.width, data.height, data.course)
+
+          //- кнопка добавить в избранное
+          //- if data.favorite === true
+          //-   button.workout-card-base__favorite-button.workout-card-base__favorite-button--is-active
+          //-     span.visually-hidden добавить в избранное
+          //- else
+          //-   button.workout-card-base__favorite-button
+          //-     span.visually-hidden добавить в избранное
+
+        //- Заголовок
+        h3.workout-card-base__title #{data.course}

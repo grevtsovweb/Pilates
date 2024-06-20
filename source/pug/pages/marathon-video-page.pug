@@ -1,0 +1,123 @@
+extends ../base/layout
+
+include ../base/additional-block
+include ../base/form
+include ../base/comment-block.pug
+
+block variables
+  - const title = "Марафон - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-catalog",
+          width: 18,
+          height: 18,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-shopping-cart",
+          width: 20,
+          height: 20,
+          items: 0,
+          current: false
+        },
+      ]
+  -
+    const formInputSettingsUser =
+      [
+        {
+          name: "name",
+          id: "name",
+          type: "text",
+          isRequired: true,
+          label: "Имя",
+        },
+        {
+          name: "surname",
+          id: "surname",
+          type: "text",
+          isRequired: true,
+          label: "Фамилия",
+        },
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: false,
+          label: "Электронный адрес",
+        },
+      ]
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "password",
+          id: "password",
+          type: "password",
+          isRequired: true,
+          label: "Новый пароль",
+        },
+        {
+          name: "password2",
+          id: "password2",
+          type: "password",
+          isRequired: true,
+          label: "Повторите пароль",
+        }
+      ]
+  -
+    const video =
+      {
+        link: "#",
+        path: "content/products",
+        name: "pilates-player",
+        format: "jpg",
+        width: 1280,
+        height: 720,
+        title: "Пилатес мат",
+      }
+
+block main
+  main.main
+    .container.main__header.main__header.main__header--marathon-video-page
+      a(href="#").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+      span.main__title.title Назад
+    .container.container--account
+      section.video
+        .video__video-box
+          a(href="#")
+            +img(video.path, video.name, video.format, video.width, video.height, video.name)
+        .video__description.video-header.video-header--with-comments 
+          .video-header__wrapper
+            h1.video-header__title День первый
+          .video-header__text.video-header__text--wide
+            h2.video-header__sub-title Задание
+            .video-header__desc
+              p Идеальное сочетание из пилатес зарядок  на эти выходные для всех нас.  Прекрасно подходит для тех, кто много сидел, много трудился физически или ленился и ничего не делал.
+            h2.video-header__sub-title Вложения
+            ul.attachment 
+              li.attachment__item 
+                a(href="#").attachment-card
+                  .attachment-card__img
+                    +icon("icon-books", 121, 115)
+                  h3.attachment-card__name Рабочая тетрадь
+              li.attachment__item 
+                a(href="#").attachment-card
+                  .attachment-card__img
+                    +icon("icon-note", 121, 115)
+                  h3.attachment-card__name Пищевой дневник
+      section.comment-block
+       +commentBlock(activityComments, "marathon-video-page", "without-button")

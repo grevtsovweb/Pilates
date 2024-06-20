@@ -1,0 +1,18 @@
+mixin accountHeader(user, lastActiveDate)
+  section.account-header
+    .account-header__col.account-header__col--user
+      .account-header__greeting
+        .account-header__img-wrapper.account-header__img-wrapper--special
+          +icon("icon-crown", 24, 24)
+          +img("content", "user-avatar-big", "jpg", 80, 80, "avatar")
+        .account-header__text
+          h2.title.account-header__title Здравствуйте, #{user}
+          p.account-header__date Карта активна до #{lastActiveDate}
+    a(href="#", target="_blank", rel="nofollow noopener").account-header__col.account-header__col--link
+      .account-header__lable
+        +icon("icon-profile", 24, 24)
+        span Мой профиль
+    a(href="#", target="_blank", rel="nofollow noopener").account-header__col.account-header__col--link
+      .account-header__lable
+        +icon("icon-cart", 24, 24)
+        span Корзина

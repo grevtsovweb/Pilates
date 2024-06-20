@@ -1,0 +1,58 @@
+.attachment-card {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  //border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.attachment-card:focus,
+.attachment-card:hover {
+  .attachment__img {
+    box-shadow: 0 0 0 1px $color-light-steel-blue,
+    0 0 0 4px $color-alice-blue;
+    outline: none;
+  }
+}
+
+.attachment-card__img {
+  margin-bottom: 16px;
+  width: 296px;
+  height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: $color-alice-blue2;
+
+  @include vp--767 {
+    margin-bottom: 19px;
+    width: auto;
+    height: 25.8vw;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 500px) {
+    svg {
+      width: 70px;
+      height: 64px;
+    }
+  }
+}
+
+.attachment-card__name {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  padding: 0;
+  margin: 0;
+
+  &--complete {
+    opacity: 0.4;
+  }
+
+  @include vp--767  {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

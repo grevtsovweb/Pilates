@@ -1,0 +1,48 @@
+.favorites-block-nocards {
+  display: block;
+  align-items: stretch;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.favorites-block-nocards__title {
+  font-family: $font-family--manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 115%;
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.favorites-block-nocards__wrapper {
+  padding: 30px 40px;
+  border-radius: 30px;
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 38px;
+  background-color: $color-white-smoke;
+
+  @include vp--1023 {
+    display: none;
+  }
+
+  p {
+    margin: 0;
+    font-family: $font-family--manrope;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.35;
+    color: $color-baltic-sea;
+    text-align: center;
+  }
+}

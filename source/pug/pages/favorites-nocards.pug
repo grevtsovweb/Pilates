@@ -1,0 +1,55 @@
+extends ../base/layout
+
+include ../base/workout-card
+
+
+block variables
+  - const title = "Избранное - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--burger-menu", "header--is-authorised", "header--catalog-menu", "header--workout-list"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const hasfavourites = false
+  - const userName = "Светлана"
+
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          current: false
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          current: true
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          current: false
+        },
+      ]
+
+block main
+  main.main.main--stretch-height
+    .favorites
+      h1.visually-hidden Избранное
+      .favorites-top-block
+        p.favorites-top-block__title Избранное
+        a.favorites-top-block__back-link(href="#")
+          span.visually-hidden Назад
+      .container.container--favorites
+        h2.favorites__title Избранное
+        //- Список карточек активностей
+        if(hasfavourites)
+          ul.layout.layout--grid.layout--grid-workout.layout--grid-favorites
+            each item in workoutFavoritesCardsList
+              //- Карточка курса
+              li
+                +workoutCard("", item)
+        else
+          p.favorites__no-cards-text У вас пока нет ни одной зарядки в <br> избранном
+

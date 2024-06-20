@@ -1,0 +1,14 @@
+include ../base/button
+
+mixin modalBlockReg()
+
+    section.modal-block.is-active(data-modal='modal-5')
+        //- .modal-block__wrapper
+        //- .modal-block__overlay(data-close-modal)
+        .modal-block__content
+            .modal-block__close 
+                button.modal-block__close-button
+            .modal-block__content-wrapper
+                .modal-block__container
+                    .modal-block__content-inner
+                        +formReg(formInputSettingsPass, "Регистрация")

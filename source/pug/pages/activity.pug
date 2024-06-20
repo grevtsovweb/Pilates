@@ -1,0 +1,55 @@
+extends ../base/layout
+
+include ../base/activity-item.pug
+
+block variables
+  - const title = "Activity - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+
+
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-catalog",
+          width: 18,
+          height: 18,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-shopping-cart",
+          width: 20,
+          height: 20,
+          items: 0,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+block main
+  main.main
+    .container.main__header.main__header--activity
+      h1.title.title--activity Активности
+    .container.container--activity
+      //+activityItem(activityList)
+      +activityItem(activityList1, activityWorkouts1, activityComments, formInputSettingsComment, "activityItem1")
+      +activityItem(activityList2, activityWorkouts2, activityComments, formInputSettingsComment, "activityItem2")

@@ -1,0 +1,186 @@
+.lessons-in-the-stream-active {
+  @include vp--1023 {
+    margin-top: 40px;
+  }
+}
+
+.lessons-in-the-stream-active__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lessons-in-the-stream-active__item {
+  display: flex;
+  gap: 38px;
+
+  @include vp--767 {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.lessons-in-the-stream-active__data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  // margin-left: 10px;
+  width: 90px;
+
+  @include vp--1023 {
+    width: 90px;
+  }
+
+  @include vp--767 {
+    gap: 8px;
+  }
+}
+
+.lessons-in-the-stream-active__month {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.lessons-in-the-stream-active__training-day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  margin-bottom: 24px;
+  // // margin-top: 24px;
+  padding: 0;
+
+  @include vp--767 {
+    gap: 10px;
+  }
+}
+
+.lessons-in-the-stream-active__training {
+  width: 400px;
+  padding: 24px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border: 1px solid $color-solitude;
+  border-radius: 16px;
+
+  @include vp--767 {
+    width: auto;
+    padding: 22px 23px;
+  }
+
+  .lessons-in-the-stream-active__button {
+    border-radius: 4px;
+    margin: 10px auto 0;
+    width: 100%;
+    }
+
+    .gradient-link-gradient-text__text-wrapper {
+      width: 100%;
+      border-radius: 3px;
+      padding: 6px 20px;
+    }
+
+    .gradient-link-gradient-text__text {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 18px;
+    }
+}
+
+.lessons-in-the-stream-active__training-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  padding: 0;
+}
+
+.lessons-in-the-stream-active__training-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lessons-in-the-stream-active__training-link {
+  display: flex;
+  gap: 16px;
+  border-radius: 8px 0 0 8px;
+  // margin-top: 24px;
+
+  img {
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}
+
+.lessons-in-the-stream-active__training-time {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.lessons-in-the-stream-active__training-title {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  margin: 0;
+}
+
+.lessons-in-the-stream-active__training-item-title {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0;
+}
+
+
+// .lessons-in-the-stream-active__training-button-wrapper {
+//   background: linear-gradient(90deg, #EE59C1 0%, #64A6F9 100%);
+//   border-radius: 4px;
+//   width: 100%;
+//   min-height: 32px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .lessons-in-the-stream-active__training-button-text-wrapper {
+//   width: calc(100% - 2px);
+//   height: calc(100% - 2px);
+//   background-color: $color-default-white;
+//   border-radius: 4px;
+//   padding: 6px 20px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .lessons-in-the-stream-active__training-button {
+//   display: block;
+//   cursor: pointer;
+//   font-weight: 500;
+//   font-size: 13px;
+//   line-height: 18px;
+//   background: linear-gradient(90deg, #EE59C1 0%, #64A6F9 100%);
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   background-clip: text;
+//   text-align: center;
+//   border-radius: 4px;
+// }

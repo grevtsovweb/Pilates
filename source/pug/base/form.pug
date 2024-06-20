@@ -1,0 +1,9 @@
+mixin form(inputSettings, title)
+  .form
+    h2.form__title.title= title
+    form
+      each item in inputSettings ? inputSettings : []
+        .form__input 
+          label(for=item.id)= item.label
+          input(name=item.name id=item.id type=item.type required=isRequired)
+      button(type="submit") Сохранить

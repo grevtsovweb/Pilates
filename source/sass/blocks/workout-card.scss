@@ -1,0 +1,141 @@
+.workout-card {
+  user-select: none;
+  box-sizing: border-box;
+  position: relative;
+  padding-bottom: 8px;
+
+  a {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
+
+.workout-card--personal-area {
+  .workout-card__title {
+    color: $color-night-rider;
+  }
+
+  .workout-card__favorite-button {
+    display: none;
+  }
+}
+
+
+.workout-card__content-wrapper {
+  border-radius: 11px;
+}
+
+.workout-card__content {
+  overflow: hidden;
+  border: 1px solid $color-default-white;
+  border-radius: 9px;
+}
+
+.workout-card__img-container {
+  position: relative;
+  padding-bottom: 60.2%;
+  overflow: hidden;
+  border-radius: 8px;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    // border-radius: 8px;
+  }
+}
+
+.workout-card__title {
+  font-family: $font-family--manrope;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.workout-card__time-label {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  width: fit-content;
+  padding: 3px 4px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: $color-default-white;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  border-radius: 4px;
+  right: 6px;
+  top: 8px;
+
+  @include vp--1023 {
+    right: 10px;
+  }
+}
+
+.workout-card__super-seria-label {
+  padding: 3px 4px 3px 20px;
+  background: linear-gradient(90deg, #f185d0 0%, #83b8fb 100%);
+  border-radius: 4px;
+  width: fit-content;
+  max-width: calc(100% - 11px);
+  position: absolute;
+  top: 31px;
+  right: 6px;
+  color: $color-default-white;
+  font-family: $font-family--manrope;
+  line-height: 14px;
+  font-size: 10px;
+  z-index: 100;
+
+  &::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-image: url("../img/svg/super-seria-icon.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    z-index: 10;
+    left: 4px;
+    top: 4px;
+  }
+}
+
+.workout-card__favorite-button {
+  z-index: 98;
+  display: block;
+  position: absolute;
+  left: -6px;
+  top: -10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: url("../img/svg/workout-card-like.svg");
+  background-repeat: no-repeat;
+  background-position: center 60%;
+  background-size: 15px 13px;
+  cursor: pointer;
+  background-color: $color-default-white;
+  border: none;
+
+  &--is-active {
+    background-image: url("../img/svg/workout-card-like-active.svg");
+  }
+}
+
+.workout-card:hover .workout-card__content-wrapper {
+  box-shadow: 0 0 0 4px $color-alice-blue;
+}
+
+.workout-card:hover .workout-card__content {
+  border-color: $color-light-steel-blue;
+}

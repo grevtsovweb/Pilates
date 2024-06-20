@@ -1,0 +1,142 @@
+.offer-list {
+  @include vp--767 {
+    margin-bottom: 22px;
+  }
+}
+
+.offer-list__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+
+  @include vp--1023 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include vp--767 {
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+.offer-list__link {
+  border: 1px solid $color-solitude;
+  border-radius: 9.60961px;
+  padding: 24px;
+  padding-right: 26px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  height: 100%;
+  column-gap: 24px;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  @include vp--1023 {
+    grid-template-columns: max-content;
+    justify-content: center;
+    row-gap: 8px;
+    padding-bottom: 16px;
+  }
+
+  @include vp--767 {
+    padding: 32px 10px 10px 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content;
+    text-align: center;
+    border: 1px solid $color-shades-snow;
+    background-color: $color-shades-snow;
+    row-gap: 0;
+    align-items: start;
+  }
+}
+
+.offer-list__link:focus,
+.offer-list__link:hover {
+  outline: none;
+  border: 1px solid $color-light-steel-blue;
+  //outline: 4px solid $color-alice-blue;
+  box-shadow: 0 0 0 4px $color-alice-blue;
+}
+
+.offer-list__link:active {
+  opacity: 0.8;
+}
+
+.offer-list__item--lable .offer-list__lable {
+  display: block;
+}
+
+.offer-list__lable {
+  position: absolute;
+  padding: 2px 8px;
+  top: -9px;
+  right: 5%;
+  //display: none;
+
+  @include vp--1023 {
+    top: -9px;
+    right: 5%;
+  }
+
+  @include vp--767 {
+    top: -8px;
+    right: calc(50% - 53px);
+  }
+}
+
+.offer-list__content {
+  align-self: start;
+}
+
+.offer-list__title {
+  margin: 0;
+  padding-bottom: 5px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 26px;
+
+  @include vp--767 {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+}
+
+.offer-list__text {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 18px;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.offer-list__img {
+  @include vp--1023 {
+    text-align: center;
+
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @include vp--767 {
+    margin-bottom: 7px;
+
+    svg {
+      width: 64px;
+      height: 64px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+mixin formComment(inputSettings, idTextarea)
+  .form-comment(class=inputSettings)
+    form(action="#")
+      .form-comment__wrapper
+        +img("content/avatars", "ava40", "png", 40, 40, "avatar")
+        .form-comment__textarea.auto-resize-textarea
+          label(for=(idTextarea ? idTextarea : "comment")).visually-hidden Текст комментария
+          textarea(name="comment" id=(idTextarea ? idTextarea : "comment") required placeholder="Оставьте комментарий" rows="1")
+      button(type="submit" disabled) Оставить комментарий

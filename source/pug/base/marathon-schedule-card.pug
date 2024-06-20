@@ -1,0 +1,11 @@
+mixin marathonSheduleCard(data, cardMods)
+
+  .marathon-shedule-card(class=cardMods)
+    a.marathon-shedule-card__link(href=data.link, target="_blank", rel="nofollow noopener")
+      .marathon-shedule-card__content-wrapper
+        .marathon-shedule-card__img-wrapper
+          img(src="img/" + data.path + "/" + data.name + "." + data.format, srcset= "img/" + data.path + "/" + data.name + "@2x." + data.format + " 2x", width= data.width, height= data.height, alt= data.altText)
+          .marathon-shedule-card__picture-shadow
+        if (data.done)
+          p.marathon-shedule-card__down-label Выполнено
+        p.marathon-shedule-card__title #{data.title}

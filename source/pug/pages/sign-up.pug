@@ -1,0 +1,52 @@
+extends ../base/layout
+include ../mixins/basic/sign-in-form
+
+block variables
+  - const title = "Регистрация - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: false,
+          label: "Электронная почта",
+          attribute: "email",
+          inputError: "Некорректный Email",
+        },
+        {
+          name: "name",
+          id: "name",
+          type: "text",
+          isRequired: true,
+          label: "Имя",
+          attribute: "text",
+          inputError: "Введите имя",
+        }
+      ]
+
+
+block main
+  main.main
+    h1.visually-hidden Регистрация
+    .sign-in
+      .sign-in__logo-container
+        picture
+          source(
+            media=("(max-width: 1023px)")
+            srcset="img/svg/sign-in-logo-mob.svg")
+          img(src="img/svg/sign-in-logo.svg",  width="110", height="20", alt="логотип Pilates Flow")
+      .container.container--sign-in
+        .sign-in__wrapper
+          +signInForm(formInputSettingsPass, "Регистрация", "", "Зарегистрироваться")
+          .sign-in__links
+            .sign-in__link-item
+              span Уже есть учетная запись?
+              a.sign-in__link(href="#") Авторизуйтесь

@@ -1,0 +1,113 @@
+.form-comment {
+  button {
+    display: block;
+    border: 1px solid $color-rich-blue;
+    background-color: $color-rich-blue;
+    color: $color-default-white;
+    font-size: 12px;
+    line-height: 14px;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-bottom: 22px;
+    display: none;
+    transition: background-color .3s ease;
+
+    @include vp--1023 {
+      padding: 11px 13px;
+    }
+
+    @include vp--767 {
+      margin-top: 25px;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: $color-dark-state-blue;
+      outline: none;
+      transition: background-color .3s ease;
+    }
+
+    &:active {
+      opacity: 0.8;
+      transition: background-color .3s ease;
+    }
+
+    &:disabled {
+      background-color: $color-perano;
+      color: $color-default-white;
+      border-color: $color-perano;
+      transition: background-color .3s ease;
+    }
+  }  
+}
+
+.form-comment.is-active {
+  button {
+    display: block;
+  }
+
+  .form-comment__wrapper {
+    margin-bottom: 16px;
+  }
+}
+
+.form-comment.form-comment--without-avatar {
+  img {
+    display: none;
+  }
+
+  .form-comment__wrapper {
+    display: block;
+  }
+}
+
+.form-comment__wrapper {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: 18px;
+  align-items: start;
+  margin-bottom: 25px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+}
+
+.form-comment__textarea {
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    border-radius: 4px;
+    border: 1px solid $color-very-light-grey;
+    min-height: 40px;
+    padding: 10px;
+    padding-left: 12px;
+    font-size: 15px;
+    line-height: 120%;
+
+    &::placeholder {
+      color: $color-very-light-grey;
+    }
+
+    &:hover {
+      border: 1px solid $color-noble;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-dark-slate-blue;
+      //outline: 4px solid $color-alice-blue;
+      outline: none;
+      transition: background-color .3s ease;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

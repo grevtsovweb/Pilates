@@ -1,0 +1,73 @@
+mixin sortingField(classMod)
+
+  section.modal-workout-list.modal-workout-list--preload(data-modal='modal-2')
+    .modal-workout-list__wrapper
+      .modal-workout-list__overlay(data-close-modal)
+      .modal-workout-list__content
+        fieldset.sorting-field
+          button.modal-workout-list__close-button(data-close-modal, data-focus)
+            span.visually-hidden Закрыть модальное окно
+          .sorting-field__wrapper
+            h2.modal-workout-list__title Фильтры
+            form(action="#")
+              .sorting-field__form-wrapper
+                .sorting-field__section
+                  h3 длительность
+                  ul.sorting-field__list
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="3-5min")
+                      label(for="3-5min") 3-5 минут
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="10-15min")
+                      label(for="10-15min") 10-15 минут
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="more-1min")
+                      label(for="more-1min") Более минут
+
+                .sorting-field__section
+                  h3 сложность
+                  ul.sorting-field__list
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="beginner")
+                      label(for="beginner") Начинающий
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="middle")
+                      label(for="middle") Средний
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="advanced")
+                      label(for="advanced") Продвинутый
+
+                .sorting-field__section
+                  h3 оборудование
+                  ul.sorting-field__list
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="all-equipment")
+                      label(for="all-equipment") Все оборудование
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="roll")
+                      label(for="roll") Массажный ролл
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="tape")
+                      label(for="tape") Пилатес лента
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="large-ball")
+                      label(for="large-ball") Большой мяч
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="small-ball")
+                      label(for="small-ball") Малый мяч
+
+                    li.sorting-field__item
+                      input.visually-hidden(type="checkbox" id="ring")
+                      label(for="ring") Пилатес кольцо
+
+        section.modal-workout-list__buttons-wrapper
+          input.modal-workout-list__button.modal-workout-list__button--reset(type="reset" value="Сбросить")
+          input.modal-workout-list__button.modal-workout-list__button--apply(type="button" value="Применить")

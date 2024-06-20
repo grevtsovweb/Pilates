@@ -1,0 +1,19 @@
+include ../base/workout-card-base
+include ../base/link-icon
+
+mixin recommendSlider(offers)
+  
+  .recommend-slider
+    .recommend-slider__slider.recommend-slider__slider--js.swiper
+      //- Список промо карточек
+      ul.recommend-slider__slider-inner.swiper-wrapper(class!=attributes.class)
+        each item in offers ? offers : []
+          //- Карточка курса
+          li.recommend-slider__slider-item.swiper-slide
+            +workoutCardBase("", item)
+
+      button.cards-slider__button.cards-slider__button--favorites-slider.cards-slider__button--favorites-slider-next
+        span.visually-hidden следующая карточка
+
+      button.cards-slider__button.cards-slider__button--favorites-slider.cards-slider__button--favorites-slider-back
+        span.visually-hidden следующая карточка

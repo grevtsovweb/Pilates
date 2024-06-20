@@ -1,0 +1,111 @@
+extends ../base/layout
+
+include ../base/marathon-schedule-card
+
+block variables
+  - const title = "Марафон “Здоровый сон” - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const hasFooter = false
+  - const footerMods = ""
+
+  -
+    const marathonDays =
+      [
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Первый день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Второй день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Третий день",
+          done: false,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Четвертый день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Пятый день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Шестой день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Седьмой день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+      ]
+
+block main
+  main.main.main--stretch-height
+    h1.visually-hidden Первая неделя курса
+
+    .container.main__header.main__header--marathon-page-without-playlist-list
+      a(href="#").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+        span.main__title.title Назад
+
+    .container.container--course-page-with-playlist
+      h2.title.title--marathon-page-without-playlist-list Первая неделя курса
+
+      .marathon-schedule
+        ul.layout.layout--grid.layout--grid-marathon-schedule
+            each item in marathonDays
+              //- Карточка марафона
+              li
+                +marathonSheduleCard(item, "")

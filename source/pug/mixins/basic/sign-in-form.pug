@@ -1,0 +1,15 @@
+mixin signInForm (inputSettings, title, annotation, buttonName)
+  .sign-in-form(data-validate)
+    h2.sign-in-form__title.title= title
+    if annotation
+      p.sign-in-form__annotation= annotation
+    form
+      each item in inputSettings ? inputSettings : []
+        .sign-in-form__input(data-validate-type=item.attribute ? item.attribute : "text")
+          label(for=item.id)= item.label
+          input.sign-in-form__input-element(name=item.name id=item.id type=item.type required)
+
+          if item.inputError
+            .sign-in-form__input-error= item.inputError
+
+      button.sign-in-form__button(type="submit" disabled)= buttonName

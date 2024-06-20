@@ -1,0 +1,15 @@
+mixin offerList(cards)
+  section.offer-list
+    h2.title.visually-hidden Предложения
+    ul.offer-list__list
+      each item in cards ? cards : []
+        //- Карточка
+        li.offer-list__item
+          a(href=item.link, target="_blank", rel="nofollow noopener").offer-list__link
+            if item.hasLable === true
+              .offer-list__lable.label Доступно по карте
+            .offer-list__img
+              +icon(item.name, item.width, item.height)
+            .offer-list__content
+              h3.offer-list__title #{item.title}
+              p.offer-list__text #{item.text}

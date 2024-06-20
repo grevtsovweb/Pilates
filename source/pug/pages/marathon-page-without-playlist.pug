@@ -1,0 +1,129 @@
+extends ../base/layout
+
+include ../base/marathon-schedule-card
+
+block variables
+  - const title = "Марафон “Здоровый сон” - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = ""
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+    const marathonDays =
+      [
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Первый день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Второй день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Третий день",
+          done: false,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Четвертый день",
+          done: true,
+          altText: "Заставка тренировки",
+        },
+        {
+          link: "#",
+          path: "content",
+          name: "marathon-schedule-item",
+          format: "jpg",
+          width: 352,
+          height: 199,
+          title: "Пятый день",
+          altText: "Заставка тренировки",
+          done: true,
+        },
+      ]
+
+block main
+  main.main.main--stretch-height
+    h1.visually-hidden Марафон “Здоровый сон”
+
+    .container.container--course-page-with-playlist
+      .course-page-with-playlist
+        h2.title.title--course-page-with-playlist.title--top-title Марафон “Здоровый сон”
+
+      .personal-assistant
+        +icon("icon-assistant-girl", 114, 104)
+        .personal-assistant__layout-wrapper
+          p.personal-assistant__description Активируйте персонального ассистента в&nbsp;Telegram. Он поможет не&nbsp;пропустить занятия.
+          a.personal-assistant__telegramm-link(href="#") Перейти в&nbsp;Telegram
+
+      .today-task
+        +marathonSheduleCard(marathonDays[2], "marathon-shedule-card--today-task")
+        .today-task__information-wrapper
+          h3.today-task__title Задание на&nbsp;сегодня
+          p.today-task__description Наслаждайтесь ежедневно<br> движением, восстановите контакт<br> со&nbsp;своим телом.
+          a.today-task__link(href="#") Перейти к&nbsp;заданию
+
+      .marathon-schedule
+        ul.layout.layout--grid.layout--grid-marathon-schedule
+            each item in marathonDays
+              //- Карточка марафона
+              li
+                +marathonSheduleCard(item, "")

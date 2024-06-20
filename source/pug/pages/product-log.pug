@@ -1,0 +1,112 @@
+extends ../base/layout
+
+block variables
+  - const title = "Продукт - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--burger-menu", "header--is-authorised", "header--catalog-menu", "header--workout-list"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Каталог",
+          icon: "icon-catalog",
+          width: 18,
+          height: 18,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Корзина",
+          icon: "icon-shopping-cart",
+          width: 20,
+          height: 20,
+          items: 20,
+          current: false
+        },
+      ]
+
+  -
+    const productImg =
+      [
+        {
+          link: "/",
+          path: "content/products",
+          name: "product-1",
+          format: "jpg",
+          width: 631,
+          height: 631,
+          altText: "Ролл массажный, розовый камуфляж"
+        },
+
+        {
+          link: "/",
+          path: "content/products",
+          name: "product-2",
+          format: "jpg",
+          width: 631,
+          height: 631,
+          altText: "Ролл массажный, розовый камуфляж"
+        },
+      ]
+
+block main
+  main.main.main--stretch-height
+    .container.main__header.main__header--workout
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+    h1.visually-hidden Страница продукта
+    .container.container--product
+        section.content-block.content-block--shop
+          section.product
+            .product__slider
+              .product__slider-container.swiper-container
+                //- Список промо карточек
+                ul.product__slider-list.swiper-wrapper()
+                  each item in productImg
+                    //- Карточка курса
+                    li.product__slider-item.swiper-slide
+                      .product__img-container
+                        +img(item.path, item.name, item.format, item.width, item.height, item.altText)
+                        p.product__discount-label.discount-label #[span.visually-hidden Скидка:] - 20%
+
+              button.product__slider-button.product__slider-button--next
+                span.visually-hidden следующая карточка
+
+              button.product__slider-button.product__slider-button--back
+                span.visually-hidden следующая карточка
+
+              .swiper-pagination
+
+            .product__information
+              h2.product__title Ролл массажный, розовый <br> камуфляж
+              p.product__price
+                span.product__old-price 1852&nbsp;
+                  span.rouble o
+                span.product__new-price 1482&nbsp;
+                  span.rouble o
+
+              p.product__annotation Массажный ролл — ваш персональный домашний массажист. Способствует снижению дискомфорта с спине, боли в мышцах всего тела.
+
+              button.product__cart-button Добавить в корзину
+
+              h3 Описание товара
+
+              p.product__annotation Массажный ролл незаменимый помощник для профессиональных спортсменов, а также людей, не имеющих отношения к спорту. Он способствует снижению повышенного мышечного тонуса (гипертонуса мышц), устранение болей в мышцах и суставах, восстановление после травм, безопасный массаж мышц всего тела.
+
+              h3 Характеристики
+
+              ul.product__specifications-list
+                li.product__specifications-item Материал: EVA (этиленвинилацетат)/PP (полипропилен)
+                li.product__specifications-item Цвет: розовый камуфляж
+                li.product__specifications-item Длина, см: 33. Диаметр, см: 14
+                li.product__specifications-item Максимальная нагрузка, кг: 200
+                li.product__specifications-item Тип упаковки: цветная коробка, стрейч-пленка
+                li.product__specifications-item Размер упаковки, см: 14х14х25
+                li.product__specifications-item Количество в упаковке, шт: 1
+                li.product__specifications-item Производство: КНР
+                li.product__specifications-item Вес брутто: 0.735 кг.

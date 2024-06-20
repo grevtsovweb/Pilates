@@ -1,0 +1,186 @@
+extends ../base/layout
+
+include ../base/additional-block
+include ../base/form
+include ../base/club-card
+include ../base/button
+
+block variables
+  - const title = "Мой профиль - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const isCardActive = false
+  - const isAuthorise = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+  -
+    const formInputSettingsUser =
+      [
+        {
+          name: "name",
+          id: "name",
+          type: "text",
+          isRequired: true,
+          label: "Имя",
+        },
+        {
+          name: "surname",
+          id: "surname",
+          type: "text",
+          isRequired: true,
+          label: "Фамилия",
+        },
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: false,
+          label: "Электронный адрес",
+        },
+      ]
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "password",
+          id: "password",
+          type: "password",
+          isRequired: true,
+          label: "Новый пароль",
+        },
+        {
+          name: "password2",
+          id: "password2",
+          type: "password",
+          isRequired: true,
+          label: "Повторите пароль",
+        }
+      ]
+  -
+    const clubCardInfo =
+      [
+        {
+          title: "200+ Зарядок для всего тела",
+          text: "Доступ к более чем 200 зарядкам по 5 направлениям для комплексной проработки всего тела.",
+        },
+        {
+          title: "Бота—ассистента",
+          text: "Ассистент пришлёт задание из марафона или персональной программы. Подключит куратора для корректировки плана тренировок. ",
+        },
+        {
+          title: "Тематические недели",
+          text: "Доступ к активностям, которые мы проводим каждые две недели на платформе Pilates Flow.",
+        },
+        {
+          title: "Поддержку экспертов",
+          text: "Поддержка тренеров-экспертов, которые ответят на вопросы по технике выполнения упражнений и помогут сохранить мотивацию.",
+        },
+      ]
+  -
+    const video =
+      {
+        link: "#",
+        path: "content/products",
+        name: "pilates-player",
+        format: "jpg",
+        width: 1280,
+        height: 720,
+        title: "Пилатес мат",
+      }
+
+block main
+  main.main
+    .container.main__header.main__header--workout
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+    .container
+      .container__content
+        section.video
+          .video__video-box
+            if !isCardActive || !isAuthorise
+              .video__lock
+                .video__lock-content
+                  .video__lock-icon 
+                    +icon("icon-lock", 72, 72)
+                  .video__lock-text Доступно по Клубной карте
+                  .video__lock-button 
+                    +button('button--rounded button--gradient', 'Выбрать карту')
+            a.video__preview(href="#")
+              +img(video.path, video.name, video.format, video.width, video.height, video.name)
+          .video__description
+            .video__description-header
+              .video__description-header-inner
+                h1.video__description-header-title Раскрытие тазобедренных суставов
+                a.video__description-header-like.like-btn(href="#", data-like-button)
+                  +icon("icon-like", 14, 13)
+                  span.video__description-header-like-text Избранное
+            .video__description-section-container
+              .video__description-section-main
+                .video__description-section
+                  .video__description-title-container.video__description-title-container--margin-s
+                    h2.video__description-title Описание 
+                  .video__description-section-content
+                    ul.video__description-chips-list
+                      li 
+                        .chips
+                          .chips__icon
+                            +icon("icon-clock", 28, 28)
+                          .chips__text ~35 минут
+                      li 
+                        .chips
+                          .chips__icon
+                            +icon("icon-chart", 28, 28)
+                          .chips__text Средний уровень 
+                    p.video__descritption-section-text Идеальное сочетание из пилатес зарядок  на эти выходные для всех нас. Прекрасно подходит для тех, кто много сидел.
+        section.club-cards-section
+          .club-cards-section__title-container
+            h2.club-cards-section__title Выберите Клубную карту
+          .club-cards-section__wrapper
+            ul.club-cards-section__list
+              each item in clubCardsList
+                li.club-cards-section__item
+                  +clubCard(item)
+            .club-cards-section__info
+              .club-info
+                h3.club-info__title Карта включает:
+                ul.club-info__list
+                  each item in clubCardInfo
+                    li.club-info__item
+                      span.club-info__item-icon 
+                        +icon('icon-box', 32, 32)
+                      .club-info__item-content
+                        h3.club-info__item-title= item.title 
+                        p.club-info__item-text= item.text

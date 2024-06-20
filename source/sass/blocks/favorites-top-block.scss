@@ -1,0 +1,43 @@
+.favorites-top-block {
+  display: none;
+
+  @include vp--1023 {
+    display: block;
+    padding: 20px 24px;
+    position: relative;
+  }
+
+  @include vp--767 {
+    padding: 20px 16px 20px 24px;
+  }
+
+  .favorites-top-block__title {
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 21px;
+    font-family: $font-family--manrope;
+    font-weight: 600;
+    line-height: 120%;
+    padding: 0 40px;
+
+    @include vp--767 {
+      font-size: 17px;
+    }
+  }
+
+  .favorites-top-block__back-link {
+    display: block;
+    position: absolute;
+    left: 24px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $color-gainsbor;
+    background-image: url('../img/svg/back-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 6px 12px;
+    cursor: pointer;
+  }
+}

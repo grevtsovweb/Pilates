@@ -1,0 +1,45 @@
+mixin header(headerMods, headerLinks, userAccount, userName, avatar)
+
+  //- - var userName = "Светлана"
+
+  header.header(class=headerMods)
+    .container.header__container
+      //- логотип
+      a.header__logo(href="index.html", aria-label="Переход на главную")
+        img(src="img/svg/logo-new.svg",  width="19", height="19", alt="")
+
+      nav.main-nav
+        //- кнопка для мобильного меню
+        button.main-nav__toggle.btn-reset(type="button", aria-label="Открыть меню", aria-pressed="false", data-open="открыть меню", data-close="закрыть меню")
+          +icon("icon-burger", 18, 12)
+        .main-nav__wrapper
+          //- для незалогиненного пользователя
+          if (headerMods[0] === "header--bottom-menu")
+            a.main-nav__link.main-nav__link--user-login(href="#")
+              //- +icon("icon-avatar1", 42, 42).main-nav__link-icon
+              img(src="img/svg/icon-avatar.svg", width="32", height="32", alt="аватар").main-nav__link-icon
+              | Личный кабинет
+          else
+            a.main-nav__link.main-nav__link--user-login(href="#") Войти
+
+          //- список ссылок
+          ul.main-nav__list
+            each link in headerLinks ? headerLinks : []
+              li.main-nav__item
+                if(link.current)
+                  a.main-nav__link.main-nav__link--active
+                    if(link.icon)
+                      +icon(link.icon, link.width, link.height).main-nav__link-icon
+                    if (link.items && link.items > 0)
+                      span.main-nav__cart-label= itemsInCart
+                    | !{link.text}
+                else
+                  a.main-nav__link(href=link.href)
+                    if(link.icon)
+                      +icon(link.icon, link.width, link.height).main-nav__link-icon
+                    if (link.items && link.items > 0)
+                      span.main-nav__cart-label= link.items
+                    | !{link.text}
+
+          //- для залогиненного пользователя
+          +user(userName, userAccount, avatar)

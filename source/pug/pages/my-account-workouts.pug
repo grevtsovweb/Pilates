@@ -1,0 +1,68 @@
+extends ../base/layout
+
+include ../base/additional-block
+
+block variables
+  - const title = "Пилатес зарядки - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+  -
+    const addBlock =
+      [
+        {
+          title: "Начните с зарядки",
+          text: "Начинайте свой день с любой несложной зарядки. Составляйте супер-серии, комбинируйте зарядки, используйте оборудование.",
+          link: "#",
+          linkText: "На страницу зарядок",
+        },
+        {
+          title: "Выберите подборку",
+          text: "Выберите подборку разработанную экспертами, исходя из ваших целей, уровня подготовки и\u00A0налаичия оборвадония для занятий.",
+          link: "#",
+          linkText: "На страницу подборок",
+        },
+      ]
+
+block main
+  main.main
+    .container.main__header
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+      h1.main__title.title Пилатес зарядки
+    .container.container--account
+      //- Каталог
+      +additionalBlock(addBlock)

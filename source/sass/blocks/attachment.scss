@@ -1,0 +1,19 @@
+.attachment {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 16px;
+
+  @include vp--1023 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include vp--767 {
+    column-gap: 10px;
+    padding-top: 0;
+  }
+}

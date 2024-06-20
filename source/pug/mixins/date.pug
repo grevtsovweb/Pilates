@@ -1,0 +1,8 @@
+mixin date(day, month, date, classMod)
+    time(datetime= date).content-block__date.date
+      if classMod === 'product-card--card'
+        span.date__number.date__number--gradient #{day}
+        | !{month}
+      else
+        span.date__number #{day}
+        | !{month}

@@ -1,0 +1,6 @@
+mixin linkIcon(className, path, text)
+
+  a.link-icon(class=className, href="#")
+    span.link-icon__icon
+      +icon(path, 16, 16)
+    span.link-icon__text= text

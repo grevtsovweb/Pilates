@@ -1,0 +1,11 @@
+.course-page-with-playlist__layout-wrapper {
+  display: grid;
+  grid-template-columns: 66.5% 1fr;
+  gap: 15px;
+
+  @include vp--1023 {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+}

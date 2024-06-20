@@ -1,0 +1,183 @@
+.club-card {
+  color: $color-midnight-blue;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 246px;
+  // border: 1px solid $color-snuff;
+  border-radius: 24px;
+  padding-top: 98px;
+  padding-bottom: 64px;
+  padding-left: 32px;
+  padding-right: 32px;
+  background-color: $color-light-blue;
+
+  @include vp--767 {
+   padding-left: 16px;
+   padding-right: 16px;
+  }
+
+}
+
+.club-card--dark {
+  min-height: 275px;
+  //max-width: 400px;
+  width: 100%;
+  height: 100%;
+  padding: 55px 38px;
+  padding-bottom: 30px;
+  border: 1px solid $color-perano;
+  box-sizing: border-box;
+
+  .club-card__discount {
+    background: linear-gradient(90deg, #F185D0 0%, #83B8FB 100%);
+  }
+
+  .club-card__name {
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+
+  .club-card__price-box {
+    font-size: 36px;
+    line-height: 54px;
+    margin-bottom: 29px;
+  }
+
+  span {
+    //display: flex;
+    white-space: nowrap;
+  }
+
+  .club-card__link {
+    display: block;
+    max-width: 100%;
+    word-break:  break-all;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 14px 32px;
+    //padding-top: 12px;
+    border-radius: 100px;
+    background-color: $color-rich-blue;
+    transition: background-color .3s ease;
+  }
+
+  .club-card__link:hover,
+  .club-card__link:focus-within {
+    background-color: $color-dark-slate-blue;
+  }
+}
+
+.club-card__discount {
+  position: absolute;
+  background: $button-gradient;;
+  padding: 8px 14px 8px 14px;
+  top: 0;
+  color: $color-default-white;
+  right: 32px;
+  word-break:  break-all;
+  border-radius: 0 0 4px 4px;
+  font-size: 13px;
+  line-height: 17px;
+  font-weight: 500;
+
+  @include vp--1023 {
+    right: 40px;
+  }
+
+  @include vp--767 {
+    right: 16px;
+  }
+}
+
+.club-card__name {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 125%;
+  margin: 0;
+  margin-bottom: 26px;
+  padding: 0;
+  text-align: center;
+}
+
+.club-card__price-box {
+  line-height: 48px;
+  margin-bottom: 64px;
+}
+
+.club-card__price {
+  display: flex;
+  align-items: baseline;
+  text-align: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 125%;
+
+  &--all-price {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 16px;
+
+    .club-card__period {
+      max-width: 300px;
+    }
+
+    &::before {
+      background-color: $color-silver;
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 57px;
+      top: 12%;
+      left: 0;
+
+      @include vp--767 {
+        top: 8%;
+      }
+    }
+
+    @media (max-width: 371px) {
+      padding-left: 10px;
+    }
+  }
+}
+
+
+.club-card__old-price {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 125%;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.club-card__period {
+  font-size: 16px;
+  line-height: 130%;
+
+  @include vp--1023 {
+    line-height: 16px;
+  }
+}
+
+// .club-card__link {
+//   // display: block;
+//   // padding: 10px 43px;
+//   // padding-top: 12px;
+//   // background-color: $color-neon-pink;
+//   // color: $color-default-white;
+//   // width: max-content;
+//   // border-radius: 8px;
+//   // cursor: pointer;
+
+//   // @include vp--767 {
+//   //   padding-left: 45px;
+//   //   padding-right: 45px;
+//   // }
+// }
+
+// .club-card__link:hover,
+// .club-card__link:focus-within {
+//   background-color: $color-hot-pink;
+// }

@@ -1,0 +1,12 @@
+include ../base/course-card
+
+mixin contentBlock2(title, cards, cardProgress)
+  section.content-block.content-block--account
+    h2.title= title
+    //- Список карточек
+    ul.layout
+      each item in cards ? cards : []
+        //- Карточка
+        li.content-block__item
+          //- Компонент даты
+          +courseCard(cardMod, item, cardProgress)

@@ -1,0 +1,101 @@
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 71px;
+  color: $color-baltic-sea;
+  border-bottom: 1px solid $color-solitude;
+  font-family: $font-family--manrope;
+
+  @include vp--1023 {
+    border: none;
+    background-color: $color-white-smoke;
+    min-height: 80px;
+    padding: 16px 0;
+  }
+}
+
+.header--workout-list {
+  display: block;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  user-select: none;
+  flex-shrink: 0;
+
+  @include vp--1023 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 93px;
+    height: 48px;
+
+    margin-left: -47px;
+
+    background-color: $color-white-smoke;
+    border-radius: 50px;
+  }
+
+  img {
+    width: 19px;
+    height: 18px;
+
+    @include vp--1023 {
+      margin-right: 14px;
+    }
+  }
+}
+
+.header--burger-menu {
+  position: relative;
+  min-height: 64px;
+  align-items: flex-end;
+}
+
+.header--bottom-menu {
+  @include vp--1023 {
+    position: fixed;
+    bottom: 16px;
+    z-index: 100;
+    width: 100%;
+    min-height: 0;
+    padding: 0 10px;
+    background-color: $color-default-white;
+    background-color: transparent;
+  }
+
+  .header__container {
+    @include vp--1023 {
+      position: relative;
+      //padding: 5px 19px;
+      padding: 2px;
+      border: 1px solid $color-solitude;
+      border-radius: 4px;
+      background-color: $color-default-white;
+    }
+
+    @include vp--767 {
+      // padding: 5px 9px;
+      padding: 2px;
+    }
+
+    @include vp--372 {
+      padding: 2px;
+    }
+  }
+
+  .header__logo {
+    @include vp--1023 {
+      display: none;
+    }
+  }
+}

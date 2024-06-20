@@ -1,0 +1,186 @@
+extends ../base/layout
+
+include ../base/gradient-link-gradient-text
+include ../base/content-block
+include ../base/content-block2
+include ../base/account-header
+include ../base/offer-list
+include ../base/workout-card
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+include ../base/filter-list
+
+block variables
+  - const title = "Личный аккаунт - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const userAccount = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+  -
+    const filterPersonalArea1 =
+      [
+        {
+          href: "#",
+          text: "Курсы и марафоны",
+          icon: "icon-courses-and-marathons",
+          width: 15,
+          height: 22,
+          current: false,
+        },
+        {
+          href: "#",
+          text: "Расписание ТН",
+          icon: "icon-schedule1",
+          width: 19,
+          height: 21,
+          current: true,
+        },
+        {
+          href: "#",
+          text: "Супер-серия",
+          icon: "icon-courses-and-marathons-2",
+          width: 22,
+          height: 22,
+          current: false,
+        },
+      ]
+  -
+    const activeSheduleList =
+      [
+        {
+          data: "1",
+          month: "Августа",
+          title: "Плоский живот",
+          text: "Создадим королевскую осанку, избавимся от дряблости в руках и складочек на спине с помощью пилатес кольца.",
+          content: "content/active-shedule",
+          img: "img1",
+          format: "jpg",
+          alt: "аватарка курса",
+        },
+        {
+          data: "21",
+          month: "Августа",
+          title: "Плоский живот",
+          text: "Создадим королевскую осанку, избавимся от дряблости в руках и складочек на спине с помощью пилатес кольца.",
+          content: "content/active-shedule",
+          img: "img2",
+          format: "jpg",
+          alt: "аватарка курса",
+        },
+        {
+          data: "7",
+          month: "Сентября",
+          title: "Плоский живот",
+          text: "Создадим королевскую осанку, избавимся от дряблости в руках и складочек на спине с помощью пилатес кольца.",
+          content: "content/active-shedule",
+          img: "img3",
+          format: "jpg",
+          alt: "аватарка курса",
+        },
+        {
+          data: "31",
+          month: "Сентября",
+          title: "Плоский живот",
+          text: "Создадим королевскую осанку, избавимся от дряблости в руках и складочек на спине с помощью пилатес кольца.",
+          content: "content/active-shedule",
+          img: "img4",
+          format: "jpg",
+          alt: "аватарка курса",
+        },
+      ]
+
+block main
+  main.main.main--stretch-height
+    h1.visually-hidden Личный кабинет
+    .container.container--personal-area
+      section.personal-account
+        .personal-account__greeting
+          .personal-account__img-wrapper.personal-account__img-wrapper--special
+            a.personal-account_avatar-link(href="#")
+              +icon("icon-crown", 24, 24)
+              +img("content", "user-avatar-2", "png", 95, 95, "avatar")
+          .personal-account__text
+            h2.title.personal-account__title Здравствуйте, #{userName}
+            p.personal-account__date Карта активна до #{lastActiveDate}
+        a.personal-account__basket-link(href="#", target="_blank", rel="nofollow noopener")
+          +icon("icon-cart", 64, 64)
+
+
+    .container.container--personal-area-content
+      h2.title.title--personal-area Мои активности
+
+        //- Список фильтров
+      .filter-list.filter-list--personal-area.swiper-container
+        ul.filter-list__list.swiper-wrapper
+          each item, index in filterPersonalArea1
+            if item.current
+              li.filter-list__item.swiper-slide
+                a.filter-list__link(class="filter-list__link--active", href=item.href)
+                  +icon(item.icon, item.width, item.height)
+                  p.filter-list__link-text=item.text
+            else
+              li.filter-list__item.swiper-slide
+                a.filter-list__link.filter-list__link--with-icon(href=item.href)
+                  +icon(item.icon, item.width, item.height)
+                  p.filter-list__link-text=item.text
+
+        //-  Список карточек активностей
+
+      section.active-shedule
+        ul.active-shedule__list
+          each item, index in activeSheduleList
+            li.active-shedule__item
+              .active-shedule__data-wrapper
+                p.active-shedule__data=item.data
+                p.active-shedule__month=item.month
+
+
+              .active-shedule__active
+                a.active-shedule__card-link(href="#", target="_blank", rel="nofollow noopener")
+                  .active-shedule__img-wrapper
+                    +img(item.content, item.img, item.format, item.width, item.height, item.alt)
+                  .active-shedule__description
+                    h3.active-shedule__title=item.title
+                    p.active-shedule__text=item.text
+
+                    //- +gradientLinkGradientText("active-shedule__button ","#","Прислать напоминание")
+                    button.gradient-link-gradient-text.active-shedule__button
+                      .gradient-link-gradient-text__text-wrapper
+                        p.gradient-link-gradient-text__text Прислать напоминание
+
+

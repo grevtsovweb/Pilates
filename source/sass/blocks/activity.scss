@@ -1,0 +1,176 @@
+.activity {
+  max-width: 688px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border: 1px solid $color-whisper-2;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 22px;
+  padding-top: 24px;
+
+  @include vp--767 {
+    border: none;
+    padding: 14px;
+    padding-top: 22px;
+  }
+}
+
+.activity__title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  margin: 0;
+  margin-bottom: 27px;
+  padding: 0;
+
+  @include vp--767 {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 17px;
+  }
+}
+
+.activity__text {
+  font-size: 17px;
+  line-height: 150%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+
+  &--time {
+    font-weight: 700;
+  }
+
+  @include vp--767 {
+    margin-bottom: 21px;
+  }
+}
+
+.activity__text--link {
+  display: block;
+  width: fit-content;
+  color: transparent;
+  position: relative;
+  transition: all .6s ease;
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    content: attr(aria-label);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #EE59C1 0%, #64A6F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all .6s ease;
+  }
+
+  @include vp--767 {
+    margin-bottom: 18px;
+  }
+}
+
+.activity__text--link:hover,
+.activity__text--link:focus {
+  color: $color-hot-pink;
+  transition: all .6s ease;
+  outline: none;
+
+  &::after {
+    transition: all .6s ease;
+    opacity: 0;
+  }
+}
+
+.activity__text--link:active {
+  background: linear-gradient(90deg, $color-snuff 0%, $color-snuff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all .3s ease;
+}
+
+.activity__img-wrapper {
+  margin-bottom: 24px;
+
+  img {
+    width: 640px;
+    height: 360px;
+    object-fit: cover;
+
+    @include vp--767 {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.activity__video-wrapper {
+  margin-bottom: 24px;
+  position: relative;
+
+  img {
+    width: 640px;
+    height: 360px;
+    object-fit: cover;
+
+    @include vp--767 {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.activity__video-button {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: calc(50% - 40px);
+  left: calc(50% - 40px);
+  transition: all .3s ease;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+    outline: none;
+    border: none;
+  }
+}
+
+.activity__workout-title {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 120%;
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0;
+  padding-bottom: 11px;
+  border-bottom: 1px solid $color-whisper-2;
+
+  @include vp--767 {
+    font-size: 19px;
+    padding-bottom: 14px;
+    margin-bottom: 17px;
+  }
+}
+
+.activity__workout-list {
+  list-style: none;
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0;
+
+  @include vp--1023 {
+    padding: 0 16px;
+  }
+
+  @include vp--767 {
+    padding: 0;
+  }
+}
+
+.activity__workout-item {
+  margin-bottom: 16px;
+}

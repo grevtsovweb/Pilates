@@ -1,0 +1,23 @@
+.discount-label {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.15;
+
+  color: $color-default-white;
+
+  margin: 0;
+  padding: 10px;
+
+  border-radius: 70px;
+
+  // background-color: $color-free-speech-magenta;
+  background: $discount-label-gradient;
+
+  @include vp--767 {
+    font-size: 12px;
+    padding: 4px;
+
+    top: 8px;
+    left: 9px;
+  }
+}

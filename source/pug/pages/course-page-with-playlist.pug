@@ -1,0 +1,128 @@
+extends ../base/layout
+
+block variables
+  - const title = "Расписание по неделям - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          items: 0,
+          current: false
+        },
+      ]
+  -
+    const scheduleList =
+      [
+        {
+          link: "#",
+          path: "content",
+          name: "course_avatar",
+          format: "jpg",
+          width: 134,
+          height: 134,
+          altText: "avatar",
+          title: "Первая неделя курса",
+          courseLength: "8 видео уроков",
+          progress: "100%"
+        },
+
+        {
+          link: "#",
+          path: "content",
+          name: "course_avatar",
+          format: "jpg",
+          width: 134,
+          height: 134,
+          altText: "avatar",
+          title: "Вторая неделя курса",
+          courseLength: "8 видео уроков",
+          progress: "80%"
+        },
+
+         {
+          link: "#",
+          path: "content",
+          name: "course_avatar",
+          format: "jpg",
+          width: 134,
+          height: 134,
+          altText: "avatar",
+          title: "Третья неделя курса",
+          courseLength: "8 видео уроков",
+          progress: "0%"
+        },
+
+         {
+          link: "#",
+          path: "content",
+          name: "course_avatar",
+          format: "jpg",
+          width: 134,
+          height: 134,
+          altText: "avatar",
+          title: "Четвертая неделя курса",
+          courseLength: "8 видео уроков",
+          progress: "0%"
+        },
+      ]
+
+block main
+  main.main.main--stretch-height
+    h1.visually-hidden Курс “Базовый пилатес”. Расписание по неделям
+
+    .container.container--course-page-with-playlist
+      .course-page-with-playlist
+        h2.title.title--course-page-with-playlist.title--top-title Курс “Базовый пилатес”
+
+        .course-page-with-playlist__layout-wrapper
+          .weekly-schedule
+            h2.title.title--course-page-with-playlist.title--weekly-schedule Расписание по неделям
+
+            ul.weekly-schedule__list
+              each item in scheduleList
+                  li.weekly-schedule__item
+                    a.weekly-schedule__item-link(href=item.link)
+                      +img(item.path, item.name, item.format, item.width, item.height, item.altText)
+                      .weekly-schedule__item-information
+                        p.weekly-schedule__item-title #{item.title}
+                        p.weekly-schedule__item-course-length #{item.courseLength}
+                        span.weekly-schedule__item-progress(style={'width': item.progress})
+
+          .course-schedule
+            ul.course-schedule__list
+              li.course-schedule__item
+                .course-schedule-today
+                  p.course-schedule__item-title На сегодня
+                  ul.course-schedule__today-list
+                    li.course-schedule__today-item
+                      a(href="#").course-schedule__today-link
+                        .course-schedule__content-wrapper
+                          +img("content", "course_avatar", "jpg", 56, 56, "avatar")
+                          p.course-schedule__item-information Вступительные мастер-класс
+                    //- li.course-schedule__today-item
+                    //-   a(href="#").course-schedule__today-link
+                    //-     .course-schedule__content-wrapper
+                    //-       +img("content", "course_avatar", "jpg", 56, 56, "avatar")
+                    //-       p.course-schedule__item-information Шестой день, вторая неделя
+
+              li.course-schedule__item.course-schedule__item--progress
+                span.course-schedule__percent-progress 15%
+                p.course-schedule__item-information Общий прогресс  курса

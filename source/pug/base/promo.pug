@@ -1,0 +1,17 @@
+include ../base/product-card
+
+mixin promoSection(offers)
+  .cards-slider
+    .cards-slider__swiper-container.swiper-container
+      //- Список промо карточек
+      ul.swiper-wrapper(class!=attributes.class)
+        each item in offers ? offers : []
+          //- Карточка курса
+          li.cards-slider__item.swiper-slide
+            +productCard("product-card--promo", item)
+
+    button.cards-slider__button.cards-slider__button--next
+      span.visually-hidden следующая карточка
+
+    button.cards-slider__button.cards-slider__button--back
+      span.visually-hidden следующая карточка

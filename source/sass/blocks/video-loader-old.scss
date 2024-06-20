@@ -1,0 +1,23 @@
+.video-loader {
+  position: absolute;
+  display: flex;
+  top: calc(50% - 32px);
+  left: calc(50% - 32px);
+  transform: translateZ(0);
+}
+
+.video-loader__icon {
+  margin: 0 auto;
+
+  svg {
+    width: 65px;
+    height: 65px;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

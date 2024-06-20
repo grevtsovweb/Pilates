@@ -1,0 +1,18 @@
+mixin additionalBlock(addBlocks, isLong)
+  section.additional
+    h2.visually-hidden Предложения
+    each item in addBlocks ? addBlocks : []
+      if isLong
+        .additional__element.additional__element--long
+          .additional__wrapper
+            h3.additional__title= item.title
+            p.additional__text= item.text
+            if item.link
+              a(href=item.link, target="_blank", rel="nofollow noopener").additional__link.btn #{item.linkText}
+      else
+        .additional__element
+          .additional__wrapper
+            h3.additional__title= item.title
+            p.additional__text= item.text
+            if item.link
+              a(href=item.link, target="_blank", rel="nofollow noopener").additional__link.btn #{item.linkText}

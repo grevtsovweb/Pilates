@@ -1,0 +1,26 @@
+mixin clubCard(data, modName)
+
+  .club-card(class=modName)
+    if data.discount 
+      .club-card__discount #{data.discount}%
+    p.club-card__name #{data.month}
+    .club-card__price-box 
+      .club-card__price 
+        span #{data.price}&nbsp;
+          if (modName="club-card--dark" && data.month !== "1 месяц")
+            span.club-card__rub
+              span.rouble o
+              span /мес
+          else 
+            span.rouble o
+        if data.priceAll
+          span.club-card__period в месяц
+      if data.priceAll
+        .club-card__price.club-card__price--all-price
+          span #{data.priceAll}
+            span.rouble o
+          span.club-card__period Общая стоимость
+    if (modName="club-card--dark")
+      a.club-card__link(href=data.link) Выбрать
+    else 
+      a.club-card__link(href=data.link) Оформить

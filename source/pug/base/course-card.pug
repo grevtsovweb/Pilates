@@ -1,0 +1,17 @@
+include ../base/special-offer
+
+mixin courseCard(productCardMod, data, cardHasProgress)
+
+  .course-card(class=productCardMod)
+    a(href=data.link, target="_blank", rel="nofollow noopener")
+      .course-card__text-wrapper.course-card__text-wrapper--header
+        p.course-card__text #{data.date}
+      .course-card__img-wrapper
+        +img(data.path, data.name, data.format, data.width, data.height, data.course)
+        if cardHasProgress === true
+          .course-card__progress
+            .course-card__progress-done(style={'width': data.progress})
+            span.course-card__progress-text #{data.progress}
+      .course-card__text-wrapper
+        h3.course-card__title #{data.course}
+        p.course-card__text #{data.text}

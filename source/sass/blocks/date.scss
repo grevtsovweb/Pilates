@@ -1,0 +1,38 @@
+.date {
+  display: flex;
+  align-items: center;
+  width: min-content;
+  padding: 4px;
+  padding-right: 16px;
+  font-size: 13px;
+  line-height: 1.15;
+  background-color: $color-white-smoke;
+  border-radius: 90px;
+
+  @include vp--767 {
+    padding: 4px 16px 4px 4px;
+    font-size: 10px;
+  }
+}
+
+.date__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  color: $color-default-white;
+  background-color: $color-light-slate-blue;
+  border-radius: 50%;
+
+  @include vp--767 {
+    width: 19px;
+    height: 19px;
+    margin-right: 4px;
+  }
+}
+
+.date__number--gradient {
+  background: linear-gradient(90deg, #EE59C1 0%, #64A6F9 100%);
+}

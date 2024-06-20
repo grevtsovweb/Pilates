@@ -1,0 +1,19 @@
+mixin clubCard(data, modName)
+
+  .club-card(class=modName)
+    if data.discount 
+      .club-card__discount #{data.discount}%
+    p.club-card__name #{data.month}
+    .club-card__price-box 
+      .club-card__price 
+        if data.discount
+          span.club-card__old-price 2370₽
+        span #{data.price}&nbsp;
+          if (modName="club-card--dark" && data.month !== "1 месяц")
+            span.club-card__rub
+              span.rouble ₽
+          else 
+            span.rouble o
+
+    .club-card__link
+      a.button.button--rounded.button--gradient(href=data.link)  Приобрести карту

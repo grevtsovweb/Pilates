@@ -1,0 +1,10 @@
+include ../base/form-comment.pug
+
+mixin comment(data, id)
+    cite.comment__author
+      +img(data.path, data.name, data.format, data.width, data.height, data.author)
+      span.comment__author-name #{data.author}
+    p.comment__text #{data.text}
+    .comment__reply
+      a(href="#").comment__link-reply Ответить
+      +formComment("form-comment--without-avatar", (id + "#" +data.id))

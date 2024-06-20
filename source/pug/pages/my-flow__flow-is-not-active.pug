@@ -1,0 +1,83 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/content-block2
+include ../base/account-header
+include ../base/offer-list
+include ../base/days-in-the-stream
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+include ../base/filter-list
+
+block variables
+  - const title = "Мой поток - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const userAccount = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  - daysInStream = "0"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: true
+        }
+      ]
+
+block main
+  main.main.main--stretch-height
+    .container.main__header.main__header--activity
+      h1.title.title--activity Мой поток
+    .container.container--my-flow
+      +daysInTheStream("","0", "Дней")
+
+      section.lessons-in-the-stream-promo
+        .lessons-in-the-stream-promo__promo
+          //- +icon("icon-stream", 373, 344)
+          img(src="img/svg/icon-stream.svg", width= 373, height= 344, alt= "картинка потока")
+          p.lessons-in-the-stream-promo__title Что такое занятия в потоке?
+          p.lessons-in-the-stream-promo__text Вливайтесь в сообщество участвуя в тематических неделях, общайтесь и выполняйте задания кураторов.
+
+        .lessons-in-the-stream-promo__plan-block
+          p.lessons-in-the-stream-promo__title С чего можно начать?
+          ul.lessons-in-the-stream-promo__list
+            li.lessons-in-the-stream-promo__item
+              .lessons-in-the-stream-promo__item-number-wrapper
+                p.lessons-in-the-stream-promo__item-number 1
+              p.lessons-in-the-stream-promo__item-text Начните с одной из предложенных зарядок. Уделяйте себе хотя бы 5 минут ежедневно.
+
+            li.lessons-in-the-stream-promo__item
+              .lessons-in-the-stream-promo__item-number-wrapper
+                p.lessons-in-the-stream-promo__item-number 2
+              p.lessons-in-the-stream-promo__item-text Вливайтесь в сообщество участвуя в тематических неделях, общайтесь и выполняйте задания кураторов
+
+            li.lessons-in-the-stream-promo__item
+              .lessons-in-the-stream-promo__item-number-wrapper
+                p.lessons-in-the-stream-promo__item-number 3
+              p.lessons-in-the-stream-promo__item-text Увеличивайте время тренировок объединяя несколько зарядок в супер-серию.

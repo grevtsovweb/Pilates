@@ -1,0 +1,120 @@
+.sorting-field {
+  padding: 0;
+  border: none;
+  margin: 0;
+
+  @include vp--1023 {
+    width: 100%;
+    background-color: $color-default-white;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    max-height: 100%;
+  }
+
+  @include vp--767 {
+    padding-bottom: 110px;
+    max-height: calc(100vh - 72px);
+    max-height: calc((100 * var(--vh, 1vh)) - 72px);
+    overflow: auto;
+    height: 100%;
+  }
+}
+
+.sorting-field__wrapper {
+  @include vp--1023 {
+    padding: 40px 73px 40px 73px;
+  }
+
+  @include vp--767 {
+    padding: 42px;
+    padding-top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.sorting-field__form-wrapper {
+  @include vp--1023 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: flex-start;
+    gap: 52px;
+    margin-top: 42px;
+  }
+
+  @include vp--767 {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
+.sorting-field__section {
+  margin-top: 17px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  @include vp--1023 {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: $font-family--manrope;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    color: $color-default-black;
+    text-transform: capitalize;
+  }
+
+  label {
+    font-family: $font-family--manrope;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: $color-baltic-sea;
+    text-transform: capitalize;
+    margin-left: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  input + label::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-black-russian;
+    border-radius: 2px;
+    box-sizing: border-box;
+  }
+
+  input:checked + label::before {
+    background-image: url("../img/svg/checkbox-checked.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+  }
+
+  input + label:hover {
+    color: $color-default-black;
+  }
+}
+
+.sorting-field__list {
+  margin: 0;
+  margin-top: 8px;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-top: 6px;
+  }
+}

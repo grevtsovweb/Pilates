@@ -1,0 +1,22 @@
+.favorites-slider {
+  position: relative;
+  height: auto;
+  margin-top: 8px;
+
+  @include vp--1023 {
+    display: none;
+  }
+}
+
+.favorites-slider__swiper-container {
+  overflow: hidden;
+  padding: 4px;
+}
+
+.favorites-slider__item {
+  flex-shrink: 0;
+  width: 25%;
+  height: auto;
+
+  margin-right: 20px;
+}

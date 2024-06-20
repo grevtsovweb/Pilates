@@ -1,0 +1,91 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+
+block variables
+  - const title = "Расписание - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = true
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+
+
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-catalog",
+          width: 18,
+          height: 18,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          items: 0,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+  //- -
+  //-   const headerLinks =
+  //-     [
+  //-       {
+  //-         href: "#",
+  //-         text: "Активности",
+  //-         icon: "icon-activity",
+  //-         width: 22,
+  //-         height: 30,
+  //-         current: false
+  //-       },
+  //-       {
+  //-         href: "#",
+  //-         text: "Зарядки",
+  //-         icon: "icon-charging",
+  //-         width: 28,
+  //-         height: 32,
+  //-         current: true
+  //-       }
+  //-     ]
+
+block main
+  main
+    h1.visually-hidden Расписание курсов по пилатесу
+    .container
+
+      +contentBlock("Тематические недели", tematicCards, "product-card--card")
+
+      +contentBlock("Курсы", coursesCards, "product-card--promo")
+
+    .container.container--promo
+      section.content-block.content-block--promo
+        h2.title Специальное предложение
+        +promoSection(specialOffers)(class="layout layout--row")
+
+    .container
+      section.directory-section.content-block
+        h2.title Каталог
+        //- Список разделов каталога
+        ul.directory-section__list.layout.layout--grid
+          each item in sectionCards
+            //- Карточка раздела каталога
+            li.directory-section__item
+              +sectionCard(item)

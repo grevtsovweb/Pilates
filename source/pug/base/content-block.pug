@@ -1,0 +1,25 @@
+include ../base/product-card
+
+mixin contentBlock(title, cards, cardMod, gridMod)
+  section.content-block
+    if title === ""
+      h2.title.visually-hidden= title
+    else
+      h2.title= title
+    //- Список карточек
+    if gridMod
+      ul.layout.layout--grid.layout--grid-mod
+        each item in cards ? cards : []
+          //- Карточка
+          li.content-block__item
+            //- Компонент даты
+            +date(item.day, item.month, item.date, cardMod)
+            +productCard(cardMod, item)
+    else 
+      ul.layout.layout--grid
+        each item in cards ? cards : []
+          //- Карточка
+          li.content-block__item
+            //- Компонент даты
+            +date(item.day, item.month, item.date, cardMod)
+            +productCard(cardMod, item)

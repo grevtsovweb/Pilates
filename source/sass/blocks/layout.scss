@@ -1,0 +1,87 @@
+.layout {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.layout .product-card {
+  height: 100%;
+}
+
+.layout--grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 20px;
+
+  @include vp--1023 {
+    grid-gap: 15px;
+  }
+
+  @include vp--767 {
+    gap: 10px;
+  }
+}
+
+.layout--grid-workout {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @include vp--1023 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp--767 {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
+
+.layout--grid-favorites {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @include vp--1023 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp--767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.layout--grid-personal-area {
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 16px;
+  row-gap: 5px;
+  margin-top: 24px;
+
+  @include vp--1023 {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 22px;
+  }
+
+  @include vp--767 {
+    grid-template-columns: 1fr;
+    margin-top: 16px;
+    row-gap: 15px;
+  }
+}
+
+.layout--grid-marathon-schedule {
+  gap: 17px;
+
+  @include vp--767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.layout--grid-mod {
+  @include vp--767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.layout--row {
+  display: flex;
+}

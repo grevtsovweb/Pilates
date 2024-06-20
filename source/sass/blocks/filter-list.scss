@@ -1,0 +1,256 @@
+.filter-list {
+  margin-bottom: 24px;
+  margin-top: 40px;
+  overflow: hidden;
+
+  @include vp--1023 {
+    margin-top: 24px;
+  }
+
+  @include vp--767 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.filter-list--workout {
+  min-height: 64px;
+  background-color: $color-white-smoke;
+  padding: 0 25px;
+  margin-top: 30px;
+  border-radius: 150px;
+
+  @include vp--1023 {
+    margin: 0;
+    width: 100%;
+    background-color: $color-default-white;
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 0;
+  }
+
+  @include vp--767 {
+    margin: 0;
+    padding-bottom: 110px;
+    max-height: calc(100vh - 72px);
+    max-height: calc((100 * var(--vh, 1vh)) - 72px);
+    overflow: auto;
+    height: 100%;
+  }
+
+  .filter-list__wrapper {
+    @include vp--1023 {
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+
+    @include vp--767 {
+      padding: 0;
+    }
+  }
+
+  .filter-list__list {
+    justify-content: flex-start;
+    margin-left: 300px;
+    flex-wrap: wrap;
+
+    @include vp--1023 {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 74px;
+      margin-top: 32px;
+      padding: 0 30px;
+    }
+
+    @include vp--767 {
+      margin-top: 30px;
+      margin-left: 10px;
+    }
+  }
+
+  .filter-list__link {
+    padding: 24px;
+    font-family: $font-family--montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $color-noble;
+    border-radius: 0;
+    position: relative;
+
+
+
+    @include vp--1023 {
+      font-family: $font-family--manrope;
+      line-height: 19px;
+      padding: 9px;
+      padding-left: 24px;
+    }
+
+    &--active {
+      color: $color-default-black;
+      position: relative;
+      background-color: transparent;
+      z-index: 1;
+    }
+
+    &--active::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 9px;
+      background-image: url("../img/svg/check-black.svg");
+      left: 0;
+      top: 42%;
+      z-index: 100;
+    }
+
+    &:hover {
+      color: $color-default-black;
+      background-color: inherit;
+    }
+
+    &:hover::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 14px;
+      height: 9px;
+      background-image: url("../img/svg/check-black.svg");
+      left: 0;
+      top: 42%;
+      z-index: 100;
+    }
+  }
+}
+
+.filter-list--catalog {
+  margin-bottom: 34px;
+  margin-top: 4px;
+  padding-left: 15px;
+
+  @include vp--1023 {
+    padding-left: 0;
+  }
+
+  .filter-list__link {
+    padding: 16px;
+  }
+}
+
+.filter-list__list {
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.filter-list__item {
+  display: flex;
+  width: auto;
+}
+
+.filter-list__link {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  user-select: none;
+
+  padding: 10px 24px;
+
+  font-family: $font-family--manrope;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.15;
+
+  border-radius: 90px;
+
+  transition: background-color $trans--300;
+
+  &:hover,
+  &:focus {
+    background-color: $color-ghost-white;
+  }
+
+  &--active {
+    pointer-events: none;
+
+    color: $color-default-white;
+    background-color: $color-light-slate-blue;
+  }
+
+  @include vp--767 {
+    font-size: 10px;
+    padding: 12px 15px;
+  }
+}
+
+.filter-list--personal-area {
+  margin-top: 22px;
+  margin-bottom: 23px;
+
+  @include vp--767 {
+    margin-top: 17px;
+    margin-top: 15px;
+  }
+
+  .filter-list__link {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+    padding: 24px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+    @include vp--767 {
+      padding: 10px 16px;
+    }
+
+    svg {
+      fill: none;
+      stroke: $color-baltic-sea;
+
+      @include vp--767 {
+        display: none;
+      }
+    }
+
+    .filter-list__link-text {
+      margin: 0;
+      max-width: 200px;
+      white-space: normal;
+
+      @include vp--767 {
+        // font-weight: 500;
+        // font-size: 10px;
+        // line-height: 115%;
+      }
+    }
+  }
+
+  .filter-list__link--active {
+    svg {
+      fill: none;
+      stroke: $color-default-white;
+    }
+  }
+
+  .filter-list__link-text {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 120%;
+
+    @include vp--767 {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 115%;
+    }
+  }
+}

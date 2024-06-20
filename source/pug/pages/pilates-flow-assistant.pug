@@ -1,0 +1,104 @@
+extends ../base/layout
+
+include ../base/additional-block
+
+block variables
+  - const title = "Пилатес ассистент - Pilates Flow Assistant"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const avatar = ""
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+  -
+    const addCards =
+      [
+        {
+          image: "icon-super-series",
+          path: "svg",
+          format: "svg",
+          width: 377,
+          height: 289,
+          altText: "Иконка раздела",
+          title: "Супер-серии",
+          text: "Невероятные комбинации из\u00A0зарядок от\u00A0экспертов Pilates Flow, которые помогут разнообразить ваши тренировки. <br/><br/> Доступно в\u00A0Pilates Flow Assistant  из\u00A0основного меню или с\u00A0помощью ключевой фразы “Супер-серии”",
+          link: "#",
+          linkText: "Перейти в Telegram",
+        },
+        {
+          image: "icon-weekly-programs",
+          path: "svg",
+          format: "svg",
+          width: 377,
+          height: 245,
+          altText: "Иконка раздела",
+          title: "Недельный программы",
+          text: "Невероятные комбинации из\u00A0зарядок отэкспертов Pilates Flow помогут разнообразить ваши тренировки и\u00A0углубленно проработать самые проблемные зоны. <br/><br/> Доступно в\u00A0Pilates Flow Assistant из\u00A0основного меню или с\u00A0помощью ключевой фразы “Супер-серии”.",
+          link: "#",
+          linkText: "Перейти в Telegram",
+        },
+        {
+          image: "icon-curators",
+          path: "svg",
+          format: "svg",
+          width: 377,
+          height: 262,
+          altText: "Иконка раздела",
+          title: "Поддержка кураторов",
+          text: "Готовые программы с\u00A0ежедневными заданиями на\u00A0неделю. Задания будет присылать ассистент прямо в\u00A0Telegram. <br/><br/> Доступно в\u00A0Pilates Flow Assistant из\u00A0основного меню или с\u00A0помощью ключевой фразы “Недельные программы”.",
+          link: "#",
+          linkText: "Перейти в Telegram",
+        },
+      ]
+
+block main
+  main.main
+    .container.main__header
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+      h1.main__title.title Pilates Flow Assistant
+
+    .container.container--assistant-page
+      //- Каталог
+      section.assistant-page
+        h2.visually-hidden Странница Ассистента
+        ul.assistant-page__list
+          each item in addCards ? addCards : []
+            li.assistant-page__item
+              img(src="img/" + item.path + "/" + item.image + "." + item.format, width= item.width, height= item.height, alt= item.altText)
+              .assistant-page__information-wrapper
+                h3.assistant-page__item-title= item.title
+                p.assistant-page__item-text !{item.text}
+                a(href=item.link, target="_blank", rel="nofollow noopener").assistant-page__item-link.btn #{item.linkText}

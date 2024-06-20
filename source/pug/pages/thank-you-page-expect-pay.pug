@@ -1,0 +1,20 @@
+extends ../base/layout
+
+block variables
+  - const title = "Заказ успешно оплачен - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const hasFooter = false
+  - const footerMods = ""
+
+block main
+  main.main.main--stretch-height
+    h1.visually-hidden Сообщение об ожидании оплаты заказа
+
+    .container.container--page-success
+      .page-success
+        .page-success__img-wrapper
+          +icon("expect-pay-icon", 190, 190)
+        h2.page-success__title Ждём оплату
+        p.page-success__information Дальнейшие инструкции мы отправим на&nbsp;#[span.page-success__your-mail email@email.com] в&nbsp;течение нескольких минут.
+        a(href="#").page-success__button Перейти в&nbsp;личный кабинет

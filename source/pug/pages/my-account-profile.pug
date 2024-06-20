@@ -1,0 +1,105 @@
+extends ../base/layout
+
+include ../base/additional-block
+include ../base/form
+
+block variables
+  - const title = "Мой профиль - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+    const formInputSettingsUser =
+      [
+        {
+          name: "name",
+          id: "name",
+          type: "text",
+          isRequired: true,
+          label: "Имя",
+        },
+        {
+          name: "surname",
+          id: "surname",
+          type: "text",
+          isRequired: true,
+          label: "Фамилия",
+        },
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: false,
+          label: "Электронный адрес",
+        },
+      ]
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "password",
+          id: "password",
+          type: "password",
+          isRequired: true,
+          label: "Новый пароль",
+        },
+        {
+          name: "password2",
+          id: "password2",
+          type: "password",
+          isRequired: true,
+          label: "Повторите пароль",
+        }
+      ]
+
+block main
+  main.main
+    .container.main__header
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+      h1.main__title.title Мой профиль
+    .container.container--account
+      section.subscribe-info
+        +icon("icon-crown", 40, 40)
+        h2.visually-hidden Информация о подписке
+        p.subscribe-info__text Клубная карта активна до: #{subDate}
+        .subscribe-info__control
+          a(href="#", target="_blank", rel="nofollow noopener").subscribe-info__button.btn Продлить доступ
+          a(href="#", target="_blank", rel="nofollow noopener").subscribe-info__link-out Выйти из профиля
+      +form(formInputSettingsUser, "Настройки профиля")
+      +form(formInputSettingsPass, "Смена пароля")
+

@@ -1,0 +1,43 @@
+include ../base/comment-block.pug
+
+mixin activityItem(data, workouts, comments, formSettings, activityItemId)
+  section.activity 
+    .activity__wrapper
+      h2.activity__title #{data.title}
+      p.activity__text.activity__text--time #{data.time}
+      p.activity__text #{data.text}
+      a.activity__text.activity__text--link(href="#" aria-label="Читать далее") Читать далее
+      if (data.img)
+        .activity__img-wrapper
+          +img(data.img.path, data.img.name, data.img.format, data.img.width, data.img.height, data.img.name)
+      if (data.video)
+        .activity__video-wrapper
+          a(href="#")
+            +img(data.video.path, data.video.name, data.video.format, data.video.width, data.video.height, data.video.name)
+          a(href="#").activity__video-button
+            +icon("icon-play-btn", 80, 80)
+      if (workouts != "without")
+        .activity__workout
+          if (data.workoutName)
+            h3.activity__workout-title #{data.workoutName}
+            ul.activity__workout-list
+              each item in workouts
+                li.activity__workout-item
+                  a(href="#").activity-workout
+                    .activity-workout__img
+                      +img(item.path, item.name, item.format, item.width, item.height, item.name)
+                    .activity-workout__info
+                      h4.activity-workout__title #{item.course}
+                      span.activity-workout__time #{item.time}
+          else
+            ul.activity__workout-list
+              each item in workouts
+                li.activity__workout-item
+                  a(href="#").activity-workout
+                    .activity-workout__img
+                      +img(item.path, item.name, item.format, item.width, item.height, item.name)
+                    .activity-workout__info
+                      h3.activity-workout__title #{item.course}
+                      span.activity-workout__time #{item.time}
+      .activity__comment-block
+        +commentBlock(comments, activityItemId)

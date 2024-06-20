@@ -1,0 +1,5 @@
+mixin sectionCard(item)
+  .section-card
+    a.section-card__link(href=item.link)
+      +img(item.path, item.name, item.format, item.width, item.height, item.title)
+      p.section-card__title= item.title

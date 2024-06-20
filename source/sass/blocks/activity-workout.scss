@@ -1,0 +1,43 @@
+.activity-workout {
+  max-width: 336px;
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  column-gap: 15px;
+}
+
+.activity-workout:focus,
+.activity-workout:hover {
+  outline: none;
+
+  img {
+    box-shadow: 0 0 0 1px $color-light-steel-blue,
+    0 0 0 4px $color-alice-blue;
+  }
+}
+
+.activity-workout__img {
+  img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+.activity-workout__title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.activity-workout__time {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+}

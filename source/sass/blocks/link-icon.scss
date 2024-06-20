@@ -1,0 +1,35 @@
+.link-icon {
+    display: flex;
+    column-gap: 8px;
+
+   
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: $color-solitude;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: $color-solitude;
+        }
+    }
+
+    &__text {
+        font-size: 15px;
+        color: $color-night-rider;
+
+        &:hover {
+            color: $color-default-black;
+        }
+
+        @include vp--1023 {
+            display: none;
+        }
+    }
+}

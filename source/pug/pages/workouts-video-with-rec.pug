@@ -1,0 +1,105 @@
+extends ../base/layout
+
+include ../base/additional-block
+include ../base/form
+include ../base/video-loader
+
+block variables
+  - const title = "Мой профиль - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const isCardActive = true
+  - const isAuthorise = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+  -
+    const video =
+      {
+        link: "#",
+        path: "content/products",
+        name: "pilates-player",
+        format: "jpg",
+        width: 1280,
+        height: 720,
+        title: "Пилатес мат",
+      }
+
+
+block main
+  main.main
+    .container.main__header.main__header--workout
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+    .container.container--account
+      section.video
+        //- .video__video-loader
+        //-       +videoLoader()
+
+        .video__video-box
+          if !isCardActive || !isAuthorise
+            .video__lock
+              .video__lock-text
+                +icon("icon-lock", 146, 146)
+                span Войдите в свою учётную<br/>запись.
+          a(href="#")
+          +img(video.path, video.name, video.format, video.width, video.height, video.name)
+        .video__description.video-header
+          .video-header__wrapper
+            h1.video-header__title Раскрытие тазобедренных суставов
+            a.video-header__like.like-btn(href="#", data-like-button)
+              +icon("icon-like", 14, 13)
+              span.video-header__like-text Избранное
+          .video-header__text Идеальное сочетание из пилатес зарядок  на эти выходные для всех нас.  Прекрасно подходит для тех, кто много сидел, много трудился физически или ленился и ничего не делал.
+      section.workouts-video
+        h2.workouts-video__title Рекомендуем добавить
+        ul.workouts-video__list
+          each item in workoutsVideo
+            //- Карточка курса
+            li.workouts-video__item
+              a.workouts-video__link(href=item.link)
+                .workouts-video__img
+                  .workouts-video__time #{item.time} мин
+                  +img(item.path, item.name, item.format, item.width, item.height, item.name)
+                h3.workouts-video__name #{item.title}
+      section.equipment
+        h2.equipment__title Оборудование
+        ul.equipment__list
+          each item in equipmentList
+            li.equipment__item
+              a.equipment__link(href=item.link)
+                .equipment__img
+                  +img(item.path, item.name, item.format, item.width, item.height, item.name)
+                h3.equipment__name #{item.title}

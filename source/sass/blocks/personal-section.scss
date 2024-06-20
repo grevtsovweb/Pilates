@@ -1,0 +1,67 @@
+.personal-section {
+    @include section;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    &__container {
+        display: flex;
+        column-gap: 88px;
+        align-items: center;
+        max-width: 1000px;
+        padding-left: 56px;
+
+        @include vp--1023 {
+            flex-direction: column;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+        }
+    }
+}
+
+.personal-section__image {
+    max-width: 490px;
+
+    @include vp--1023 {
+        margin-bottom: 40px;
+    }
+}
+
+.personal-section__content {
+    max-width: 420px;
+}
+
+.personal-section__title {
+    @include header-25;
+    margin-bottom: 16px;
+}
+
+.personal-section__text {
+
+    p {
+        @include paragraph;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    p + p {
+        margin-top: 24px;
+    }
+}
+
+
+.personal-section__price {
+    margin-top: 40px;
+    font-size: 32px;
+    line-height: 1.25em;
+    font-weight: 600;
+    color: $color-midnight-blue;
+}
+
+.personal-section__buttons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    margin-top: 24px;
+}

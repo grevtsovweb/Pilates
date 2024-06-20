@@ -1,0 +1,21 @@
+include ../base/button
+
+mixin modalBlock()
+
+    section.modal-block.is-active(data-modal='modal-5')
+        //- .modal-block__wrapper
+        //- .modal-block__overlay(data-close-modal)
+        .modal-block__content
+            .modal-block__close 
+                button.modal-block__close-button
+            .modal-block__content-wrapper
+                .modal-block__container
+                    .modal-block__content-inner
+                        .modal-block__image
+                            img(src="img/content/sun-moon-dali.svg", alt="", width="460", height="330")
+                        .modal-block__title Рекомендованные зарядки для мягкого старта
+                        .modal-block__text 
+                            p В зависимости от времени суток в данном блоке отображаются разные типы зарядок. Такие зарядки будут отличным стартом для супер-серии или короткой тренировки.
+                            p Ваш часовой пояс система определяет автоматически, но вы всегда можете изменить его в настройках на странице личного кабинета.
+                        .modal-block__button
+                            +button('button--gradient button--rounded button--full-width', 'Понятно, спасибо!')

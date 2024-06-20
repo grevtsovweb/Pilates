@@ -1,0 +1,66 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/content-block2
+include ../base/account-header
+include ../base/offer-list
+include ../base/assistant
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+
+block variables
+  - const title = "Личный аккаунт - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const userAccount = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+  - const user = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+
+block main
+  main.main
+    h1.visually-hidden Личный аккаунт
+    .container.container--account-profile
+      +accountHeader(user, lastActiveDate)
+
+      +offerList(offerCards)
+
+      .colums
+        +contentBlock2("Курсы", productCardsCourses, true)
+        +contentBlock2("Марафоны", productCardsMarathones, false)
+
+      +assistant

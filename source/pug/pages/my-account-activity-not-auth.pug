@@ -1,0 +1,73 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/filter-list
+include ../base/promo
+include ../base/product-card
+
+block variables
+  - const title = "Тематические недели - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+  //- -
+  //-   const headerLinks =
+  //-     [
+  //-       {
+  //-         href: "#",
+  //-         text: "Активности",
+  //-         icon: "icon-activity",
+  //-         width: 18,
+  //-         height: 18,
+  //-         current: true
+  //-       },
+  //-       {
+  //-         href: "#",
+  //-         text: "Зарядки",
+  //-         icon: "icon-charging",
+  //-         width: 20,
+  //-         height: 20,
+  //-         items: 0,
+  //-         current: false
+  //-       },
+  //-     ]
+
+block main
+  main.main
+    .container.main__header
+      a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+      h1.main__title.title Тематические недели
+    .container.container--account
+      +contentBlock("", tematicCards2, "product-card--card", "gridMod")

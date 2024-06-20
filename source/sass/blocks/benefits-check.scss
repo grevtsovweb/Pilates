@@ -1,0 +1,33 @@
+.benefits-check {
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 26px;
+  display: grid;
+  box-sizing: border-box;
+  position: relative;
+  min-height: 32px;
+  //max-width: 263px;
+  //max-width: 318px;
+  grid-template-columns: min-content 1fr;
+  column-gap: 23px;
+  //align-items: center;
+
+  @include vp--1023 {
+    padding-right: 50px;
+  }
+
+  @include vp--767 {
+    grid-template-columns: min-content 1fr;
+    padding-right: 0;
+
+    span {
+      max-width: 550px;
+    }
+  }
+}
+
+.benefits-check__icon {
+  //align-self: center;
+  position: relative;
+  top: calc(50% - 16px);
+}

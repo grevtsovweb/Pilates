@@ -1,0 +1,21 @@
+include ../base/comment.pug
+include ../base/form-comment.pug
+
+mixin commentBlock(data, id, hasButton)
+  .comment-block
+    h2.visually-hidden Комментарии
+    if (hasButton !== "without-button")
+      p.comment-block__counts Комментариев • 198
+    else 
+      p.comment-block__counts.comment-block__counts--small-amaunt 3 комментария
+    .comment-block__form 
+      +formComment(formSettings, id)
+    .comment-block__list 
+      each item in data
+        blockquote.comment
+          +comment(item, id)
+          if item.reply
+            blockquote.comment
+              +comment(item.reply, id)
+    if (hasButton !== "without-button")
+      a(href="#").comment-block__button Другие комментарии

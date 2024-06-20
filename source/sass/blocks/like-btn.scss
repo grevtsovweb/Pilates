@@ -1,0 +1,32 @@
+.like-btn {
+    font-size: 12px;
+    line-height: 120%;
+    display: flex;
+    column-gap: 8px;
+  
+    svg {
+      stroke: $color-night-rider;
+      fill: none;
+    }
+  
+    &--done {
+      svg {
+        stroke: $color-hot-pink;
+        fill: $color-hot-pink;
+      }
+    }
+  
+    @include vp--1023 {
+      align-self: end;
+    }
+  
+  }
+  
+.like-btn:hover,
+.like-btn:focus {
+  outline: none;
+  
+  svg {
+    stroke: $color-hot-pink;
+  }
+}

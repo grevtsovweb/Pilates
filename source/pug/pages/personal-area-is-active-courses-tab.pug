@@ -1,0 +1,135 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/content-block3
+include ../base/content-block4
+include ../base/account-header
+include ../base/offer-list
+//- include ../base/assistant
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+include ../base/filter-list
+
+block variables
+  - const title = "Личный аккаунт - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const userAccount = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  //- -const avatar = ""
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+  -
+    const filterPersonalArea1 =
+      [
+        {
+          href: "#",
+          text: "Курсы и марафоны",
+          icon: "icon-courses-and-marathons",
+          width: 14,
+          height: 20,
+          current: true,
+        },
+        {
+          href: "#",
+          text: "Расписание активностей",
+          icon: "icon-schedule1",
+          width: 18,
+          height: 20,
+          current: false,
+        },
+        {
+          href: "#",
+          text: "Курсы и марафоны",
+          icon: "icon-courses-and-marathons-2",
+          width: 20,
+          height: 20,
+          current: false,
+        },
+      ]
+  - var filterPersonalArea = ["Курсы и марафоны", "Расписание активностей",]
+
+block main
+  main.main.main--stretch-height
+    h1.visually-hidden Личный кабинет
+    .container.container--personal-area
+      section.personal-account
+        .personal-account__greeting
+          .personal-account__img-wrapper.personal-account__img-wrapper--special
+            a.personal-account_avatar-link(href="#")
+              +icon("icon-crown", 24, 24)
+              +img("content", "user-avatar-2", "png", 95, 95, "avatar")
+          .personal-account__text
+            h2.title.personal-account__title Здравствуйте, #{userName}
+            p.personal-account__date Карта активна до #{lastActiveDate}
+        a.personal-account__basket-link(href="#", target="_blank", rel="nofollow noopener")
+          +icon("icon-cart", 64, 64)
+
+
+    .container.container--personal-area-content
+      h2.title.title--personal-area Мои активности
+
+        //- Список фильтров
+      .filter-list.filter-list--personal-area.swiper-container
+        ul.filter-list__list.swiper-wrapper
+          each item, index in filterPersonalArea1
+            if item.current
+              li.filter-list__item.swiper-slide
+                a.filter-list__link(class="filter-list__link--active", href=item.href)
+                  +icon(item.icon, item.width, item.height)
+                  p.filter-list__link-text=item.text
+            else
+              li.filter-list__item.swiper-slide
+                a.filter-list__link.filter-list__link--with-icon(href=item.href)
+                  +icon(item.icon, item.width, item.height)
+                  p.filter-list__link-text=item.text
+
+
+
+      .colums
+        +contentBlock3("", activitiesCardsCourses, true)
+        +contentBlock4("", recomCardsCourses)
+
+      section.assistant.assistant--personal-area
+        .assistant__wrapper.assistant__wrapper
+          .assistant__icon-wrapper
+            +icon("icon-assistant-girl", 377, 345)
+          .assistant__content.assistant__content
+            h2.title.assistant__title Персональный Ассистент <br/> Pilates Flow
+            p.assistant__text Ассистент поможет выбрать подборку зарядок на неделю и ответит на вопросы по технике упражнений.
+            .assistant__links
+              a(href="#", target="_blank", rel="nofollow noopener").assistant__link.assistant__link--personal-area.gradient-button Перейти в Telegram
+              a(href="#", target="_blank", rel="nofollow noopener").assistant__link.assistant__link--personal-area Подробнее

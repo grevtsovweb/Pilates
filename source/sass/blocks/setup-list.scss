@@ -1,0 +1,58 @@
+.setup-list {
+  display: none;
+
+  @include vp--1023 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 23px;
+  }
+}
+
+.setup-list__button {
+  background-color: transparent;
+  padding: 14px 20px;
+  border: 1px solid $color-rich-blue;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: $font-family--manrope;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: $color-rich-blue;
+
+  &:hover {
+    border-color: $color-dark-state-blue;
+    color: $color-dark-state-blue;
+
+    svg {
+      fill: $color-dark-state-blue;
+    }
+  }
+
+  &:disabled {
+    border-color: $color-perano;
+    color: $color-perano;
+
+    svg {
+      fill: $color-perano;
+    }
+  }
+
+  &--sorting {
+    font-family: $font-family--montserrat;
+    padding-left: 16px;
+    padding-right: 53px;
+    position: relative;
+  }
+
+  svg {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    width: 18px;
+    height: 18px;
+    fill: $color-rich-blue;
+  }
+}

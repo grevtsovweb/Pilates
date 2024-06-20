@@ -1,0 +1,110 @@
+.main {
+  background-color: $color-alice-blue3;
+  font-family: $font-family--manrope;
+  padding-top: 24px;
+  padding-bottom: 124px !important; 
+
+  @include vp--1023 {
+    // background: linear-gradient(180deg, $color-white-smoke 0%, $color-default-white 100%);
+    background-color: $color-white-smoke;
+    padding-top: 0;
+  }
+}
+
+.main__header {
+  display: flex;
+  column-gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 18px;
+  align-items: center;
+  padding-left: 24px;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    display: block;
+  }
+
+  @include vp--1023 {
+    padding: 24px;
+  }
+}
+
+.main__header--marathon-page-without-playlist-list {
+  padding-top: 30px;
+  padding-bottom: 8px;
+
+  @include vp--1023 {
+    padding: 20px 10px 20px 24px;
+  }
+}
+
+// .main__header--back-button {
+//   padding-top: 30px;
+//   padding-bottom: 8px;
+
+//   @include vp--1023 {
+//     padding: 20px 10px 20px 24px;
+//   }
+// }
+
+.main__header--content-restricted-theme-weeks {
+  padding-top: 30px;
+  padding-bottom: 8px;
+
+  @include vp--1023 {
+    padding: 20px 10px 0 24px;
+  }
+}
+
+.main__header--marathon-video-page {
+  padding-top: 30px;
+  padding-bottom: 8px;
+
+  @include vp--1023 {
+    padding: 20px 10px 0 24px;
+  }
+}
+
+.main__header--workout,
+.main__header--activity {
+  display: none;
+
+  @include vp--1023 {
+    display: flex;
+  }
+}
+
+.main__title {
+  padding-bottom: 0;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 600;
+
+  @include vp--1023 {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+  }
+}
+
+.main__link-back {
+  display: block;
+  display: flex;
+  column-gap: 20px;
+}
+
+.main__link-back:focus,
+.main__link-back:hover {
+  outline: none;
+  opacity: 0.8;
+}
+
+.main__link-back:active {
+  opacity: 0.6;
+}

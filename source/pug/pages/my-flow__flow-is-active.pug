@@ -1,0 +1,139 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/content-block2
+include ../base/account-header
+include ../base/offer-list
+include ../base/days-in-the-stream
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+include ../base/filter-list
+include ../base/gradient-link-gradient-text
+
+block variables
+  - const title = "Мой поток - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const userAccount = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  - daysInStream = "0"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: true
+        }
+      ]
+
+
+block main
+  main.main.main--stretch-height
+    .container.main__header.main__header--activity
+      h1.title.title--activity Мой поток
+    .container.container--my-flow
+      +daysInTheStream("","3", "Дня")
+
+      .section.lessons-in-the-stream-active
+        h1.title.title--my-flow Мой поток
+
+
+        ul.lessons-in-the-stream-active__list
+          li.lessons-in-the-stream-active__item
+            p.lessons-in-the-stream-active__data
+              span 29
+              span.lessons-in-the-stream-active__month августа
+            ul.lessons-in-the-stream-active__training-day-list
+
+              li.lessons-in-the-stream-active__training-day-item
+                .lessons-in-the-stream-active__training
+                  p.lessons-in-the-stream-active__training-time 20 мин
+                  p.lessons-in-the-stream-active__training-title Супер-серия
+
+                  ul.lessons-in-the-stream-active__training-list
+                    li.lessons-in-the-stream-active__training-item
+                      a.lessons-in-the-stream-active__training-link(href="#")
+                        +img("content", "BG1", "jpg", 88, 88, "аватарка курса")
+                        p.lessons-in-the-stream-active__training-item-title Улучшаем подвижность позвоночника
+                    li.lessons-in-the-stream-active__training-item
+                      a.lessons-in-the-stream-active__training-link(href="#")
+                        +img("content", "BG", "jpg", 88, 88, "аватарка курса")
+                        p.lessons-in-the-stream-active__training-item-title Гибкость и баланс
+
+                  +gradientLinkGradientText("lessons-in-the-stream-active__button", "#", "Выполнить повторно")
+
+              li.lessons-in-the-stream-active__training-item
+                .lessons-in-the-stream-active__training
+                  p.lessons-in-the-stream-active__training-time 20 минут
+                  p.lessons-in-the-stream-active__training-title Базовый пилатес курс
+
+                  ul.lessons-in-the-stream-active__training-list
+                    li.lessons-in-the-stream-active__training-item
+                      a.lessons-in-the-stream-active__training-link(href="#")
+                        +img("content", "BG3", "jpg", 88, 88, "аватарка курса")
+                        p.lessons-in-the-stream-active__training-item-title Первый день, первая неделя курса
+
+                  +gradientLinkGradientText("lessons-in-the-stream-active__button", "#", "Выполнить повторно")
+
+          li.lessons-in-the-stream-active__item
+            p.lessons-in-the-stream-active__data
+              span 28
+              span.lessons-in-the-stream-active__month августа
+            ul.lessons-in-the-stream-active__training-day-list
+
+              li.lessons-in-the-stream-active__training-day-item
+                .lessons-in-the-stream-active__training
+                  p.lessons-in-the-stream-active__training-time 20 минут
+                  p.lessons-in-the-stream-active__training-title Зарядка
+
+                  ul.lessons-in-the-stream-active__training-list
+                    li.lessons-in-the-stream-active__training-item
+                      a.lessons-in-the-stream-active__training-link(href="#")
+                        +img("content", "BG4", "jpg", 88, 88, "аватарка курса")
+                        p.lessons-in-the-stream-active__training-item-title Пилатес тренировка для всего тела
+
+                  +gradientLinkGradientText("lessons-in-the-stream-active__button", "#", "Выполнить повторно")
+
+          li.lessons-in-the-stream-active__item
+            p.lessons-in-the-stream-active__data
+              span 27
+              span.lessons-in-the-stream-active__month августа
+            ul.lessons-in-the-stream-active__training-day-list
+
+              li.lessons-in-the-stream-active__training-day-item
+                .lessons-in-the-stream-active__training
+                  p.lessons-in-the-stream-active__training-time 20 минут
+                  p.lessons-in-the-stream-active__training-title Зарядка
+
+                  ul.lessons-in-the-stream-active__training-list
+                    li.lessons-in-the-stream-active__training-item
+                      a.lessons-in-the-stream-active__training-link(href="#")
+                        +img("content", "BG4", "jpg", 88, 88, "аватарка курса")
+                        p.lessons-in-the-stream-active__training-item-title Пилатес тренировка для всего тела
+
+                  +gradientLinkGradientText("lessons-in-the-stream-active__button", "#", "Выполнить повторно")

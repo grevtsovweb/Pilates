@@ -1,0 +1,26 @@
+include ../base/special-offer
+include ../base/card-offer
+
+mixin productCard(productCardMod, data)
+
+  .product-card(class= productCardMod === 'product-card--card' ? 'product-card--card' : '')
+    a(href=data.link, target="_blank", rel="nofollow noopener")
+      .product-card__img-wrapper
+        //if productCardMod === 'product-card--promo'
+          p.product-card__discount-label.discount-label #[span.visually-hidden Скидка:] #{data.discount}
+        if (data.discount)
+          p.product-card__discount-label.discount-label #[span.visually-hidden Скидка:] #{data.discount}
+        +img(data.path, data.name, data.format, data.width, data.height, data.course)
+      .product-card__text-wrapper
+        .product-card__price-wrapper
+          //if productCardMod === 'product-card--club'
+            +specialOffer(offersList)
+          //if productCardMod === 'product-card--card'
+            +cardOffer
+          //- if productCardMod === 'product-card--promo'
+          if data.price
+            .product-card__price-container
+              if data.discount
+                p.product-card__price.product-card__price--old #[span.visually-hidden Старая цена:] #{data.oldPrice} #[span.rouble o]
+              p.product-card__price #[span.visually-hidden Цена:] #{data.price} #[span.rouble o]
+        h3.product-card__title #{data.course}

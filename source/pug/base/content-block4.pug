@@ -1,0 +1,25 @@
+include ../base/course-card
+
+mixin contentBlock4(title, cards)
+  section.content-block.content-block--personal-area
+    ul.layout
+      each item in cards ? cards : []
+        //- Карточка
+        li.content-block__item
+          //- Компонент даты
+          .course-card.course-card--personal-area.course-card--recomendation
+            .course-card__text-wrapper.course-card__text-wrapper--header
+              p.course-card__sale-text #{item.sale}
+            .course-card__img-wrapper
+              +img(item.path, item.name, item.format, item.width, item.height, item.course)
+              .course-card__personal-rec
+                span Персональная рекомендация
+            .course-card__text-wrapper
+              h3.course-card__title #{item.course}
+              .course-card__buttons-wrapper
+                a.course-card__buy-button.gradient-button(href="#") Приобрести сейчас
+                a.course-card__info-button(href="#") Подробнее
+
+
+
+//- a(href=item.link, target="_blank", rel="nofollow noopener")

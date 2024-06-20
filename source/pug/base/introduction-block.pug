@@ -1,0 +1,26 @@
+include ../base/workout-card-base
+include ../base/link-icon
+
+mixin introductionBlock(offers)
+  
+  .introduction-block
+    .introduction-block__header
+      h2.title Начните с простых зарядок
+      .introduction-block__header-handler
+        //- icon-moon и icon-sun
+        +linkIcon("", "icon-sun", 'Классы для активного начала дня')
+    .introduction-block__body
+      .introduction-block__slider-container
+        .introduction-block__slider.introduction-block__slider--js.swiper
+          //- Список промо карточек
+          ul.introduction-block__slider-inner.swiper-wrapper(class!=attributes.class)
+            each item in offers ? offers : []
+              //- Карточка курса
+              li.introduction-block__slider-item.swiper-slide
+                +workoutCardBase("", item)
+
+          button.cards-slider__button.cards-slider__button--favorites-slider.cards-slider__button--favorites-slider-next
+            span.visually-hidden следующая карточка
+
+          button.cards-slider__button.cards-slider__button--favorites-slider.cards-slider__button--favorites-slider-back
+            span.visually-hidden следующая карточка

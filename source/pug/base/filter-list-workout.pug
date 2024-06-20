@@ -1,0 +1,24 @@
+mixin filterWorkoutList(classMod)
+
+  section.modal-workout-list.modal-workout-list--preload(data-modal='modal-1')
+    .modal-workout-list__wrapper
+      .modal-workout-list__overlay(data-close-modal)
+      .modal-workout-list__content
+        .filter-list(class=classMod)
+          button.modal-workout-list__close-button(data-close-modal, data-focus)
+              span.visually-hidden Закрыть модальное окно
+
+          .filter-list__wrapper
+            h2.modal-workout-list__title Категории
+            ul.filter-list__list
+              each item, index in filterWorkoutsListItems
+                if (index === 0)
+                  li.filter-list__item
+                    a.filter-list__link(class="filter-list__link--active", href="#")= item
+                else
+                  li.filter-list__item
+                    a.filter-list__link(href="#")= item
+        section.modal-workout-list__buttons-wrapper
+          input.modal-workout-list__button.modal-workout-list__button--reset(type="reset" value="Сбросить")
+          input.modal-workout-list__button.modal-workout-list__button--apply(type="button" value="Применить")
+

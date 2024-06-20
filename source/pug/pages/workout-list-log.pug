@@ -1,0 +1,91 @@
+extends ../base/layout
+
+include ../base/filter-list
+include ../base/filter-list-workout
+include ../base/workout-card
+include ../base/sorting-field
+include ../base/favorites-block
+include ../base/loader
+include ../mixins/basic/icon
+
+
+block variables
+  - const title = "Мои зарядки - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const hasfavourites = true
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+block main
+  main.main
+    .workout-list-top-block
+      h1 Зарядки
+      a(href="#")
+        span.visually-hidden Избранное
+    .container.container--workout-list
+      section.content-block.content-block--workout-list
+        if(hasfavourites)
+          +favoritesSection(workoutFavoritesCardsList)(class="layout layout--row")
+        else
+          .favorites-block-nocards
+            h2.favorites-block-nocards__title Избранное
+            .favorites-block-nocards__wrapper
+              p Добавляйте в избранное любимые <br> зарядки.
+
+        //- Зарядки
+        h2.visually-hidden Список зарядок
+
+        .setup-list
+          button.setup-list__button.setup-list__button--sorting(data-open-modal='modal-1') Категории
+            +icon("wrkt-cat__icon", 18, 18)
+          button.setup-list__button.setup-list__button--filter(data-open-modal='modal-2') Фильтры
+
+        //- Фильтры
+        +filterWorkoutList("filter-list--workout")
+
+        //- обертка сортировок и карточек
+        .sorting-layout-container
+
+          //- Список сортировок
+          +sortingField
+
+          //- Список карточек активностей
+          ul.layout.layout--grid.layout--grid-workout
+            each item in workoutCardsList
+              //- Карточка курса
+              li
+                +workoutCard("", item)
+
+      +loader("loader--workout-list")

@@ -1,0 +1,11 @@
+include ../base/course-card
+
+mixin contentBlock3(title, cards, cardProgress)
+  section.content-block.content-block--personal-area
+    //-
+    ul.layout
+      each item in cards ? cards : []
+        //- Карточка
+        li.content-block__item
+          //- Компонент даты
+          +courseCard("course-card--personal-area", item, cardProgress)

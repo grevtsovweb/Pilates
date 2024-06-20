@@ -1,0 +1,20 @@
+mixin formReg(inputSettings, title)
+  .form.form--reg
+    h2.form__title.form__title--large= title
+    form
+      each item in inputSettings ? inputSettings : []
+        .form__input
+          label(for=item.id)= item.label
+          input(name=item.name id=item.id type=item.type required)
+      .form__footer
+        .form__button
+            +button('button--full-width', 'Зарегистрироваться')
+            //- button(type="submit") Войти
+        .form__links-vertical
+          .form__links-item
+            span.form__link-text Не помните пароль?
+            a.form__link(href="#") Восстановите пароль
+          .form__links-item
+            span.form__link-text Есть учетная запись?
+            a.form__link(href="#")  Войдите
+        

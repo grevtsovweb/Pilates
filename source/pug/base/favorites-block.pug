@@ -1,0 +1,18 @@
+include ../base/workout-card
+
+mixin favoritesSection(offers)
+  h2.title.title--workout-list-favorites Избранное
+  .favorites-slider
+    .favorites-slider__swiper-container.swiper-container
+      //- Список промо карточек
+      ul.swiper-wrapper(class!=attributes.class)
+        each item in offers ? offers : []
+          //- Карточка курса
+          li.favorites-slider__item.swiper-slide
+            +workoutCard("", item)
+
+    button.cards-slider__button.cards-slider__button--favorites-slider.cards-slider__button--favorites-slider-next
+      span.visually-hidden следующая карточка
+
+    button.cards-slider__button.cards-slider__button--favorites-slider.cards-slider__button--favorites-slider-back
+      span.visually-hidden следующая карточка

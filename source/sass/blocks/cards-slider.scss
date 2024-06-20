@@ -1,0 +1,109 @@
+.cards-slider {
+  position: relative;
+  margin-top: 36px;
+
+  @include vp--767 {
+    margin-top: 16px;
+  }
+}
+
+.cards-slider__swiper-container {
+  overflow: hidden;
+  padding: 4px;
+
+  @include vp--767 {
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.cards-slider__item {
+  flex-shrink: 0;
+  width: 33%;
+  max-width: 592px;
+  height: auto;
+
+  margin-right: 20px;
+
+
+  .product-card {
+    height: 100%;
+    width: 100%;
+  }
+
+  @include vp--1023 {
+    width: 48%;
+    margin-right: 10px;
+  }
+
+  @include vp--372 {
+    width: 47%;
+  }
+}
+
+.cards-slider__button {
+  background-color: $color-default-white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-image: url("../img/svg/chevron-right.svg");
+  background-repeat: no-repeat;
+  background-size: 28px 28px;
+  background-position: center;
+  z-index: 10;
+  position: absolute;
+  top: 45%;
+  right: -30px;
+
+  @include vp--767 {
+    display: none;
+  }
+
+  &--next {
+    right: -30px;
+
+    @media (max-width: $vp--1290) {
+      right: 0;
+      top: 41%;
+    }
+  }
+
+  &--back {
+    transform: rotate(180deg);
+    left: -30px;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: $vp--1290) {
+      left: 0;
+      top: 41%;
+    }
+  }
+
+  &--favorites-slider-next {
+    right: -22px;
+    top: 20%;
+  }
+
+  &--favorites-slider-back {
+    transform: rotate(180deg);
+    left: -22px;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
+    top: 20%;
+  }
+
+  &--product-slider-next {
+    right: -24px;
+    top: 45%;
+  }
+
+  &--product-slider-back {
+    transform: rotate(180deg);
+    left: -24px;
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.1);
+    top: 45%;
+  }
+}

@@ -1,0 +1,205 @@
+extends ../base/layout
+
+include ../base/product-card
+include ../base/filter-list
+include ../base/loader
+include ../base/video-loader
+include ../base/content-block
+include ../base/section-card
+include ../base/gradient-link-gradient-text
+
+
+block variables
+  - const title = "UI-kit"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = ""
+  - const cardMod = "product-card--club"
+  - const list = ["По клубной карте", "Новый курс", "Только для новых подписчиков", "Новый курс", "Только для новых подписчиков"]
+  -
+    const data = {
+      link: "/",
+      path: "content/products",
+      name: "product-card-bc",
+      format: "jpg",
+      width: 592,
+      height: 592,
+      course: "Базовый пилатес курс",
+      price: "1990",
+    }
+
+    const data1 = {
+      link: "/",
+      path: "content/products",
+      name: "product-card-bc",
+      format: "jpg",
+      width: 592,
+      height: 592,
+      course: "Базовый пилатес курс",
+      price: "1990",
+      oldPrice: "4000",
+      discount: "- 50%"
+    }
+
+  -
+    const cardsList = [
+      {
+        day: 1,
+        month: "октября",
+        date: "2021-10-01",
+        link: "#",
+        path: "content/products",
+        name: "product-card-1",
+        format: "jpg",
+        width: 592,
+        height: 592,
+        course: "Плоский живот"
+      },
+      {
+        day: 21,
+        month: "октября",
+        date: "2021-10-21",
+        link: "#",
+        path: "content/products",
+        name: "product-card-2",
+        format: "jpg",
+        width: 592,
+        height: 592,
+        course: "Красивые бедра и ягодицы"
+      }
+    ]
+
+  -
+    const item = {
+      link: "#",
+      path: "content/directory-section",
+      name: "directory-section-1",
+      format: "svg",
+      width: 335,
+      height: 256,
+      title: "Оборудование"
+    }
+
+  -
+    const date = {
+      day: "1",
+      month: "октября",
+      date: "2021-10-01"
+    }
+
+
+block main
+  style.
+    main > .container {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .components-backwards {
+      display: inline-block;
+      margin-bottom: 10px;
+      margin-left: 7px;
+    }
+
+    .components-backwards span:first-child {
+      position: relative;
+      top: -3px;
+
+      display: inline-block;
+      margin-right: 15px;
+
+      font-size: 16px;
+      line-height: 24px;
+      vertical-align: top;
+
+      transform: scale(2);
+    }
+
+    .components-backwards span:last-child {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .components-backwards + h1 {
+      margin-bottom: 0;
+    }
+
+    .container > section {
+      padding: 20px 0;
+    }
+
+    .element-container {
+      max-width: 592px
+    }
+
+  main
+    .container
+      a.components-backwards(href="index.html")
+        span &larr;
+        span вернуться на разводящую
+      h1 Компоненты, используемые в вёрстке
+
+      //- все модалки проекта добавляем сюда, для удобства тестирования
+      section
+        h2 Список фильтров
+
+        p Класс компонента filter-list
+        div
+          +filterList()
+
+      section
+        h2 Карточка товара
+
+        p Класс компонента product-card
+        div.element-container
+          +productCard("", data)
+
+        p Модификатор product-card--promo
+        div.element-container
+          +productCard("product-card--promo", data1)
+
+        p Модификатор product-card--club
+        div.element-container
+          +productCard("product-card--club", data)
+
+      section
+        h2 Лоадер
+
+        p Класс компонента loader
+        div
+          +loader()
+
+      section
+        h2 Блок контента
+
+        p Класс компонента content-block
+        div
+          +contentBlock("Тематические недели", cardsList, "product-card--club")
+
+      section
+        h2 Карточка раздела каталога
+
+        p Класс компонента section-card
+        div.element-container
+          +sectionCard(item)
+
+      section.content-block
+        h2 Компонент даты
+
+        p Класс компонента date
+        +date(date.day, date.month, date.date)
+
+      section.content-block
+
+        h2 Кнопка с прогрузкой
+        h3 default
+        button.product__cart-button Добавить в корзину
+        h3 + '.button-loader'
+        button.product__cart-button.button-loader Добавить в корзину
+
+      section.content-block
+      h2 Кнопка c градиентной рамкой, градиентным текстом и скруглениями
+      +gradientLinkGradientText("", "#", "Выполнить повторно")
