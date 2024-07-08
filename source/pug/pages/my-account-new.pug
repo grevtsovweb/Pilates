@@ -1,0 +1,140 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/content-block2
+include ../base/my-account-header
+include ../base/personal-program
+include ../base/offer-list
+include ../base/bot-assistant
+include ../base/promo
+include ../base/product-card
+include ../base/section-card
+include ../base/club-card
+include ../base/button
+include ../base/daily-list
+include ../base/course-card
+
+block variables
+  - const title = "Личный аккаунт - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const userAccount = true
+  - const hasFooter = false
+  - const footerMods = ""
+  - const avatar = "img/content/user-avatar-2.png"
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+  - const user = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+
+  -
+    const clubCardInfo =
+      [
+        {
+          title: "200+ Зарядок для всего тела",
+          text: "Доступ к более чем 200 зарядкам по 5 направлениям для комплексной проработки всего тела.",
+        },
+        {
+          title: "Бота—ассистента",
+          text: "Ассистент пришлёт задание из марафона или персональной программы. Подключит куратора для корректировки плана тренировок. ",
+        },
+        {
+          title: "Тематические недели",
+          text: "Доступ к активностям, которые мы проводим каждые две недели на платформе Pilates Flow.",
+        },
+        {
+          title: "Поддержку экспертов",
+          text: "Поддержка тренеров-экспертов, которые ответят на вопросы по технике выполнения упражнений и помогут сохранить мотивацию.",
+        },
+      ]
+
+block main
+  main.main
+    h1.visually-hidden Личный аккаунт
+    .container
+      .container__content
+        +myAccountHeader(user, lastActiveDate)
+        +personalProgram()
+
+        //- +offerList(offerCards)
+
+        +dailyList
+
+        .my-activities
+          .my-activities__header 
+            h2.my-activities__title Мои активности
+          .my-activities__content
+            .my-activities__tabs
+              ul.my-activities__tabs-buttons
+                li 
+                  button.my-activities__tabs-button.active 
+                    span.my-activities__tabs-button-icon
+                      +icon('icon-medal', '22', '22')
+                    | Курсы и марафоны
+                li 
+                  button.my-activities__tabs-button
+                    span.my-activities__tabs-button-icon
+                      +icon('icon-calendar', '22', '22')
+                    | Тематические недели
+                li 
+                  button.my-activities__tabs-button 
+                    span.my-activities__tabs-button-icon
+                      +icon('icon-layer', '22', '22')
+                    | Супер-серии
+              .my-activities__tabs-list
+                .my-activities__tabs-item
+                  each itemData in productCardsCourses
+
+                    +courseCard(itemData)
+
+
+        +botAssistant
+
+        section.club-cards-section
+            .club-cards-section__title-container
+              h2.club-cards-section__title Выберите Клубную карту
+            .club-cards-section__wrapper
+              ul.club-cards-section__list
+                each item in clubCardsList
+                  li.club-cards-section__item
+                    +clubCard(item)
+              .club-cards-section__info
+                .club-info
+                  h3.club-info__title Карта включает:
+                  ul.club-info__list
+                    each item in clubCardInfo
+                      li.club-info__item
+                        span.club-info__item-icon 
+                          +icon('icon-box', 32, 32)
+                        .club-info__item-content
+                          h3.club-info__item-title= item.title 
+                          p.club-info__item-text= item.text

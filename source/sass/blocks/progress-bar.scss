@@ -1,0 +1,36 @@
+.progress-bar {
+    
+
+    &__container {
+        height: 32px;
+        width: 100%;
+        border-radius: 40px;
+        border: 1px solid $color-raven;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__indicator {
+        width: 100%;
+        height: 100%;
+        background-color: $color-blue-light;
+        position: absolute;
+        content: '';
+        left: -100%;
+        top: 0;
+        z-index: 1;
+    }
+
+    &__data {
+        position: absolute;
+        content: '';
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        color: $color-deep-blue;
+        font-size: 15px;
+        line-height: normal;
+        font-weight: 500;
+        z-index: 2;
+    }
+}

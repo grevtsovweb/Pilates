@@ -1,7 +1,7 @@
 // Vendor
 //---------------------------------
 
-@import "vendor/normalize";
+// @import "vendor/normalize";
 @import "vendor/swiper";
 
 // Global
@@ -35,6 +35,7 @@
 @import "blocks/title";
 @import "blocks/offers";
 @import "blocks/account-header";
+@import "blocks/my-account-header";
 @import "blocks/offer-list";
 @import "blocks/assistant";
 @import "blocks/course-card";
@@ -105,4 +106,19 @@
 @import "blocks/chips.scss";
 @import "blocks/login-section.scss";
 @import "blocks/workout-list.scss";
-@import "blocks/personal-section.scss";
+@import "blocks/personal-section.scss"; 
+@import "blocks/personal-program.scss";
+@import "blocks/bot-assistant.scss"; 
+@import "blocks/daily-list.scss";
+@import "blocks/progress-bar.scss"; 
+@import "blocks/my-activities.scss";
+@import "blocks/price-block.scss";
+@import "blocks/my-account-personal.scss"; 
+@import "blocks/feature.scss"; 
+@import "blocks/club-card-block.scss"; 
+@import "blocks/checkout-block.scss"; 
+@import "blocks/checkbox.scss"; 
+@import "blocks/field-promo.scss"; 
+@import "blocks/info-block.scss"; 
+@import "blocks/exercise-day.scss";  
+@import "blocks/exercise.scss";

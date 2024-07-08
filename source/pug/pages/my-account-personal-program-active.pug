@@ -1,0 +1,101 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/filter-list
+include ../base/promo
+include ../base/product-card
+include ../base/price-block
+include ../base/club-card-block
+include ../base/info-block
+include ../base/exercise-day
+
+
+block variables
+  - const title = "Тематические недели - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+block main
+  main.main
+    .container
+      .main__header
+        a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+          +icon("icon-back-arrow", 32, 32)
+        h1.main__title.title Персональная программа
+      .my-account-personal
+        .my-account-personal__activities
+          .my-account-personal__activities-calendar
+            .my-account-personal__activities-tab
+              ul.my-account-personal__activities-tab-buttons
+                li
+                  a.my-account-personal__activities-tab-button.active
+                    span 1
+                    span.my-account-personal__activities-tab-button-text неделя
+                li
+                  a.my-account-personal__activities-tab-button
+                    span 2
+                    span.my-account-personal__activities-tab-button-text неделя
+                li
+                  a.my-account-personal__activities-tab-button
+                    span 3
+                    span.my-account-personal__activities-tab-button-text неделя
+                li
+                  a.my-account-personal__activities-tab-button
+                    span 4
+                    span.my-account-personal__activities-tab-button-text неделя
+              ul.my-account-personal__activities-tab-list
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay("false")
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay('true')
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay('false')
+              ul.my-account-personal__activities-tab-list(style="display: none;")
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay("true")
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay('true')
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay('false')
+              ul.my-account-personal__activities-tab-list(style="display: none;")
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay("false")
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay('false')
+                li.my-account-personal__activities-tab-item
+                  +exerciseDay('false')
+          .my-account-personal__activities-help
+            +infoBlock

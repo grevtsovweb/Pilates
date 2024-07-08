@@ -1,0 +1,73 @@
+.bot-assistant {
+    background: url('../img/content/background/sport-items.svg') no-repeat center;
+    background-size: cover;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    
+    @include section;
+
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        column-gap: 80px;
+        align-items: center;
+        padding-left: 56px;
+
+        @include vp--1023 {
+            flex-direction: column;
+            padding-left: 0;
+            max-width: 554px;
+            margin-left: auto;
+            margin-right: auto;
+            row-gap: 80px;
+        }
+
+        @include vp--767 {
+            row-gap: 40px;
+        }
+    } 
+
+    &__image {
+        max-width: 554px;
+
+        @include vp--767 {
+            max-width: 282px;
+        }
+    }
+
+    &__content {
+        max-width: 420px;
+    }
+
+    &__title {
+        margin-top: 0;
+        font-size: 28px;
+        line-height: 1.2em;
+        font-weight: 600;
+        color: $color-night-rider;
+        margin-bottom: 24px;
+
+        @include vp--767 {
+            font-size: 17px;
+        }
+    }
+
+    &__text {
+        p {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.4em;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    
+        p + p {
+            margin-top: 20px;
+        }
+    }
+
+    &__buttons {
+        margin-top: 24px;
+    }
+}

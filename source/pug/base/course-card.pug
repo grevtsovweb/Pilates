@@ -1,17 +1,27 @@
 include ../base/special-offer
+include ../base/button
 
-mixin courseCard(productCardMod, data, cardHasProgress)
+mixin courseCard(itemData)
 
-  .course-card(class=productCardMod)
-    a(href=data.link, target="_blank", rel="nofollow noopener")
-      .course-card__text-wrapper.course-card__text-wrapper--header
-        p.course-card__text #{data.date}
-      .course-card__img-wrapper
-        +img(data.path, data.name, data.format, data.width, data.height, data.course)
-        if cardHasProgress === true
-          .course-card__progress
-            .course-card__progress-done(style={'width': data.progress})
-            span.course-card__progress-text #{data.progress}
-      .course-card__text-wrapper
-        h3.course-card__title #{data.course}
-        p.course-card__text #{data.text}
+  .course-card(class= itemData.promo ? 'course-card--promo' : '')
+    if !itemData.promo
+      a(href="/", target="_blank", rel="nofollow noopener").course-card__link
+    .course-card__header
+      p.course-card__header-text #{itemData.date}
+    .course-card__image
+      if itemData.promo
+        .course-card__ticket Персональная рекомендация
+      +img(itemData.path, itemData.name, itemData.format, itemData.width, itemData.height, itemData.course)
+      if itemData.progress
+        .course-card__progress
+          .course-card__progress-done(style={'width': itemData.progress})
+          span.course-card__progress-text #{itemData.progress}
+    .course-card__description
+      h3.course-card__description-title #{itemData.course}
+
+      if itemData.promo
+        .course-card__description-buttons
+          +button('button--gradient button--rounded', 'Приобрести сейчас')
+          +button('button--shadow', 'Подробнее ')
+      else
+        p.course-card__description-text #{itemData.text}

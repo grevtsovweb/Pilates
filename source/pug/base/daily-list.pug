@@ -1,0 +1,27 @@
+mixin dailyList
+    
+    .daily-list
+        .daily-list__item
+            .daily-list__item-header
+                h3.daily-list__item-title Задание на сегодня
+            .daily-list__item-content
+                .daily-list__task
+                    a.daily-list__task-link(href="#") 
+                    .daily-list__task-image 
+                        img(src="img/content/BG.jpg", alt="Пилатес тренировка для всего тела")
+                    .daily-list__task-data
+                        .daily-list__task-time 20 мин
+                        .daily-list__task-title Пилатес тренировка для всего тела
+
+
+        .daily-list__item
+            .daily-list__item-header
+                h3.daily-list__item-title Персональная программа
+                .daily-list__item-subtitle Прогресс по запланированным заданиям : 
+                    span 1 из 14
+            .daily-list__item-content
+                .daily-list__progress-bar
+                    .progress-bar
+                        .progress-bar__container
+                            .progress-bar__indicator(style='transform: translateX(14%);')
+                            .progress-bar__data 14%

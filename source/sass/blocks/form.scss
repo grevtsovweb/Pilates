@@ -113,6 +113,10 @@
     border: 1px solid $color-very-light-grey;
     height: 40px;
     padding: 10px;
+    font-size: 14px;
+    padding-left: 13px;
+    color: $color-blue-charcoal;
+    font-weight: medium;
 
     &:hover {
       border: 1px solid $color-noble;
@@ -130,6 +134,10 @@
       opacity: 0.8;
     }
   }
+}
+
+.form__checkbox {
+  max-width: 290px;
 }
 
 .form__wrapper {
@@ -190,4 +198,32 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 18px;
+}
+
+.form__subtitle {
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-default-black;
+  margin-bottom: 16px;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.form__input-message {
+  display: none;
+  font-size: 13px;
+  line-height: normal;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form__input--error {
+  .form__input-message {
+    display: block;
+    color: $color-radical-red;
+  }
+
+  input {
+    border-color: $color-radical-red;
+  }
 }

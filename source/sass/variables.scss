@@ -13,6 +13,8 @@ $color-transparent:               rgba(255, 255, 255, 0);
 $color-night-rider:               #333333;
 $color-dark-state-blue:           #38318b;
 $color-midnight-blue:             #060048;
+$color-deep-blue:                 #160E65;
+$color-purple:                    #7C70FF;
 $color-light-slate-blue:          #747cff;
 $color-perano:                    #ada7f5;
 $color-cornflower-blue:           #bcdcfb;
@@ -59,6 +61,9 @@ $color-light-sky-blue:            #97C5FF;
 $color-light-blue:                #F6FBFF;
 $color-blue:                      #56AAFD;
 $color-dark-blue:                 #408BD5;  
+$color-blue-light:                #BCDCFD;
+$color-blue-blinde:               #D9ECFF;
+$color-gray:                      #ADB5BD;
 
 // background-color: $color-white-smoke
 
@@ -66,6 +71,7 @@ $color-dark-blue:                 #408BD5;
 
 $image-gradient:                      linear-gradient(182.76deg, rgba(254, 134, 112, 0.35) 20.19%, rgba(115, 99, 255, 0.35) 97.71%);
 $discount-label-gradient:             linear-gradient(90deg, #ee59c1 0%, #64a6f9 100%);
+$discount-label-gradient-pale:        linear-gradient(90deg, #FFBFEC 0%, #ABD0FF 100%);
 $button-gradient:                     linear-gradient(90deg, #81bbff 0%, #ff8fdc 100%);
 $button-gradient-hover:               linear-gradient(90deg, #ee59c1 0%, #64a6f9 100%);
 $button-gradient-disable:             linear-gradient(90deg, #ffbfec 0%, #abd0ff 100%);

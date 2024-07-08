@@ -1,0 +1,67 @@
+.field-promo {
+    width: 100%;
+    position: relative;
+
+    input {
+        border-radius: 4px;
+        border: 1px solid $color-very-light-grey;
+        height: 40px;
+        padding: 10px;
+        padding-right: 120px;
+        font-size: 14px;
+        padding-left: 13px;
+        width: 100%;
+        color: $color-blue-charcoal;
+        font-weight: 700;
+    
+        &:hover {
+          border: 1px solid $color-noble;
+        }
+    
+        &:focus {
+          outline: none;
+          border: 1px solid $color-dark-slate-blue;
+          //outline: 4px solid $color-alice-blue;
+          outline: none;
+          transition: background-color .3s ease;
+        }
+    
+        &:active {
+          opacity: 0.8;
+        }
+
+        &::placeholder {
+          font-weight: 400;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        content: "";
+        right: 0;
+        top: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-night-rider;
+        font-size: 13px;
+        line-height: 1.2em;
+        background-color: transparent;
+        border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+            color: $color-dark-slate-blue;
+        }
+    }
+
+    &__button-inner {
+        margin-top: 2px;
+    }
+}

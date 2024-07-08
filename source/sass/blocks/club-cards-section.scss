@@ -14,7 +14,7 @@
 
 .club-cards-section__title {
   @include header-25;
-
+  color: $color-night-rider;
   text-align: center;
 }
 
@@ -27,7 +27,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  column-gap: 16px;
+  column-gap: 16px; 
 
   @include vp--1023 {
     row-gap: 14px;

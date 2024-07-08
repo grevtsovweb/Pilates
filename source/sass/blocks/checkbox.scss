@@ -1,0 +1,76 @@
+.checkbox {
+    display: flex;
+    align-items: top;
+    cursor: pointer;
+
+    &__input-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        -webkit-clip-path: inset(100%);
+        clip-path: inset(100%);
+
+        &:checked {
+            + .checkbox__input {
+                position: relative;
+                background-color: $color-night-rider;
+
+                
+                
+                &::before {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+
+    &__input {
+        width: 16px;
+        height: 16px;
+        border-radius: 3px;
+        border: 1px solid $color-night-rider;
+        box-sizing: border-box;
+        display: flex;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+        margin-top: 2px;
+                
+        &::before {
+            position: absolute;
+            content: '';
+            width: 14px;
+            height: 14px;
+            display: block;
+            left: 0;
+            top: 0;
+            border-radius: 3px;
+            background-image: url('../img/svg/checkbox-checked.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: $color-default-white;
+            transition: transform .1s;
+            transform-origin: center;
+            transform: scale(0);
+        }
+    }
+
+    &__content {
+        margin-left: 9px;
+        font-size: 11px;
+        line-height: normal;
+        display: flex;
+        align-items: center;
+        color: $color-baltic-sea;
+        font-weight: 500;
+    }
+}
+    
+
+

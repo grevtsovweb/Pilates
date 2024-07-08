@@ -1,0 +1,33 @@
+mixin exerciseDay(isDone)
+    .exercise-day
+        .exercise-day__date
+            span 1 
+            span.exercise-day__date-text день
+        .exercise-day__block
+            .exercise-day__data
+                .exercise-day__data-time 20 мин
+                .exercise-day__data-title Супер-серия
+            .exercise-day__list
+                .exercise 
+                    span.exercise__thumb 
+                        span.exercise__thumb-done
+                            +icon("icon-completed", 32, 32)
+                        img(src="img/content/BG.jpg", alt="Улучшаем подвижность позвоночника")
+                    span.exercise__title Улучшаем подвижность позвоночника 
+                .exercise 
+                    span.exercise__thumb 
+                        span.exercise__thumb-done
+                            +icon("icon-completed", 32, 32)
+                        img(src="img/content/BG.jpg", alt="Улучшаем подвижность позвоночника")
+                    span.exercise__title Гибкость и баланс
+            .exercise-day__button
+
+                if isDone === "false"
+                    button.button.button--outline-gradient.button--done
+                        span.button__outline-gradient-inner 
+                            span.button__outline-gradient-text Выполнено    
+                else
+                    button.button.button--outline-gradient
+                        span.button__outline-gradient-inner 
+                            span.button__outline-gradient-text Выполнить
+                    

@@ -1,0 +1,53 @@
+.price-block {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 16px;
+    background-color: $color-alice-blue;
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+
+    &__price-ticket {
+        font-size: 13px;
+        line-height: 16px;
+        color: $color-default-white;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-weight: 500;
+        background: $discount-label-gradient-pale;
+        border-radius: 50px;
+    }
+
+    &__price-data {
+        display: flex;
+        align-items: baseline;
+    }
+
+    &__price-old {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 17px;
+        color: $color-raven;
+        text-decoration: line-through;
+        margin-right: 8px;
+    }
+
+    &__price-new {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 28px;
+        color: $color-baltic-sea;
+    }
+
+    &__buttons {
+        margin-top: 24px;
+    }
+}

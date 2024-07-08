@@ -1,0 +1,32 @@
+.info-block {
+    padding: 24px;
+    border-radius: 16px;
+    background-color: $color-alice-blue;
+
+    &__title {
+        font-size: 19px;
+        line-height: 1.2em;
+        font-weight: 600;
+        color: $color-night-rider;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        p {
+            font-size: 15px;
+            line-height: 1.2em;
+            color: $color-night-rider;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        p + p {
+            margin-top: 22px;
+        }
+    }
+
+
+    &__button {
+        margin-top: 24px;
+    }
+}

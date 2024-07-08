@@ -14,8 +14,8 @@
 .main__header {
   display: flex;
   column-gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 18px;
+  padding-top: 16px;
+  padding-bottom: 40px;
   align-items: center;
   padding-left: 24px;
 
@@ -107,4 +107,13 @@
 
 .main__link-back:active {
   opacity: 0.6;
+}
+
+.main--checkout {
+  padding-top: 0;
+  padding-bottom: 0 !important;
+
+  @include vp--1023 {
+    background-color: $color-default-white;
+  }
 }

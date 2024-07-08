@@ -1,0 +1,87 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/filter-list
+include ../base/promo
+include ../base/product-card
+include ../base/price-block
+include ../base/club-card-block
+include ../base/button
+include ../base/checkbox
+
+block variables
+  - const title = "Тематические недели - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+block main
+  main.main.main--checkout
+    .container
+      .checkout-block
+        .checkout-block__container
+          .checkout-block__header
+            .checkout-block__logo
+              img(src="img/content/logo.svg", alt="Логотип", width="25", height="24")
+            h1.checkout-block__title Персональная программа 
+          .checkout-block__content
+            .checkout-block__price-block
+              .checkout-block__price-info
+                .checkout-block__price-ticket -15% для вас
+                .checkout-block__price-data
+                  .checkout-block__price-old 2790₽
+                  .checkout-block__price-new 1953₽
+              .checkout-block__price-gift 🎁 Клубная карта Pilates Flow на 1 месяц в подарок
+            form.checkout-block__form
+              .checkout-block__form-promo
+                p.form__subtitle Промокод
+                .form__input
+                  .field-promo
+                    input(placeholder="Есть промокод?" name="promo" id="promo" type="text" required)
+                    button.field-promo__button 
+                      span.field-promo__button-inner Применить
+              p.form__subtitle Контактные данные
+              .form__input
+                input(placeholder="Введите имя *" name="name" id="name" type="text" required)
+              .form__input
+                input(placeholder="Email *" name="email" id="Email" type="email" required)
+              .form__checkbox 
+                +checkbox
+              .checkout-block__form-button 
+                .checkout-block__form-button-container
+                  +button("button--s button--gradient button--rounded button--full-width", "Перейти к оплате")
+
+
+      

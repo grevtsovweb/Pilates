@@ -99,4 +99,23 @@
   font-size: 18px;
   line-height: 1.5em;
   font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include vp--767 {
+    font-size: 15px;
+    line-height: 1.5em;
+  }
+}
+
+@mixin header-28 {
+  font-size: 28px;
+  line-height: 1.5em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include vp--767 {
+    font-size: 17px;
+  }
 }

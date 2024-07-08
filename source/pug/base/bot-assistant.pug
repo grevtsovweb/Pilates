@@ -1,0 +1,13 @@
+mixin botAssistant
+
+    .bot-assistant
+        .bot-assistant__container
+            .bot-assistant__image
+                img(src="img/content/bot-assistant.svg", alt="Изображение чата ассистента")
+            .bot-assistant__content
+                h2.bot-assistant__title Бот-ассистент
+                .bot-assistant__text 
+                    p Если у вас не получается достичь желаемых результатов или вы не знаете с чего начать вам поможет персональный ассистент.
+                    p Подбор курса, марафона или разработка персональной с учетом вашего графика и индивидуальный особенностей.
+                .bot-assistant__buttons
+                    +button('button--rounded button--gradient button--full-width', 'Перейти в Telegram')

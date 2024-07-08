@@ -1,0 +1,78 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/filter-list
+include ../base/promo
+include ../base/product-card
+include ../base/price-block
+include ../base/club-card-block
+include ../base/button
+include ../base/checkbox
+
+block variables
+  - const title = "Тематические недели - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+block main
+  main.main.main--checkout
+    .container
+      .checkout-block
+        .checkout-block__container
+          .checkout-block__header
+            .checkout-block__logo
+              img(src="img/content/logo.svg", alt="Логотип", width="25", height="24")
+        .checkout-block__notice
+          .checkout-block__notice-container
+            .checkout-block__notice-icon !
+            .checkout-block__notice-text Вы уже были у нас на сайте или совершали покупки. Пожалуйста, авторизируйтесь.
+        .checkout-block__container
+          .checkout-block__content
+            form.checkout-block__form
+              p.form__subtitle Авторизация
+              .form__input
+                input(placeholder="Введите имя *" name="name" id="name" type="text" required)
+              .form__input.form__input--error
+                .form__input-message Обязательное поле
+                input(placeholder="Пароль *" name="password" id="password" type="password" required)
+              a.form__link(href="#") Я забыл(а) пароль, хочу восстановить!
+              
+              .checkout-block__form-button 
+                .checkout-block__form-button-container
+                  +button("button--s button--gradient button--rounded button--full-width", "Авторизироваться")
+
+
+      

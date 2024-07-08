@@ -1,0 +1,75 @@
+extends ../base/layout
+
+include ../base/content-block
+include ../base/filter-list
+include ../base/promo
+include ../base/product-card
+include ../base/price-block
+include ../base/club-card-block
+
+block variables
+  - const title = "Тематические недели - Pilates Flow"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const userName = "Светлана"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+
+block main
+  main.main
+    .container
+      .main__header
+        a(href="#", target="_blank", rel="nofollow noopener").main__link-back
+          +icon("icon-back-arrow", 32, 32)
+        h1.main__title.title Персональная программа
+      .my-account-personal
+        .my-account-personal__header
+          .my-account-personal__image 
+            img(src="img/content/personal-program/personal-program.jpg", alt="Пилатес")
+          .my-account-personal__content 
+            h1.my-account-personal__content-header Персональная программа разработанная кураторами с учетом ваших целей
+            .my-account-personal__content-text 
+              p При разработке программы мы учитываем ваши цели, уровень подготовки, вес и другие параметры необходимые для  достижения желаемых результатов
+            .my-account-personal__content-price
+              +priceBlock()
+        .my-account-personal__features
+          h2.my-account-personal__features-title Как это работает?
+          .my-account-personal__features-list
+            each item in featuresData
+              .my-account-personal__features-list-item
+                .feature
+                  .feature__icon 
+                    +icon(item.icon, 114, 114)
+                  .feature__text= item.title
+        .my-account-personal__card
+          +clubCardBlock()

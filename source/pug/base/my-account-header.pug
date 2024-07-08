@@ -1,0 +1,16 @@
+mixin myAccountHeader(user, lastActiveDate)
+  section.my-account-header
+    .my-account-header__user
+      .my-account-header__greeting
+        .my-account-header__img-wrapper.my-account-header__img-wrapper--special
+          +icon("icon-crown", 24, 24)
+          +img("content", "user-avatar-big", "jpg", 80, 80, "avatar")
+        .my-account-header__text
+          h2.my-account-header__title Здравствуйте, #{user}
+          p.my-account-header__date В потоке 1 день
+    //- a(href="#", target="_blank", rel="nofollow noopener").my-account-header__col.my-account-header__col--link
+    //-   .my-account-header__lable
+    //-     +icon("icon-profile", 24, 24)
+    //-     span Мой профиль
+    a(href="#", target="_blank", rel="nofollow noopener").my-account-header__cart
+      +icon("icon-cart", 64, 64)
