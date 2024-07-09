@@ -36,6 +36,7 @@
         margin: 0;
         padding: 0;
         margin-bottom: 24px;
+        overflow-y: auto;
 
         @include vp--1023 {
             margin-bottom: 32px;
@@ -43,6 +44,10 @@
 
         @include vp--767 {
             margin-bottom: 16px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: -10px;
+            margin-right: -10px;
         }
     }
 
@@ -62,6 +67,7 @@
         border: none;
         display: flex;
         align-items: center;
+        white-space: nowrap;
 
         @include vp--767 {
             font-size: 10px;
@@ -77,13 +83,50 @@
             color: $color-default-white;
         }
 
+        &--courses {
+            .my-activities__tabs-button-icon {
+                background-image: url('../img/icon/icon-medal.svg');
+            }
+            
+
+            &:hover, &.active {
+                .my-activities__tabs-button-icon {
+                    background-image: url('../img/icon/icon-medal-white.svg');
+                }
+                
+            }
+        }
+
+        &--weeks {
+            .my-activities__tabs-button-icon {
+                background-image: url('../img/icon/icon-calendar.svg');
+            }
+            
+
+            &:hover, &.active {
+                .my-activities__tabs-button-icon {
+                    background-image: url('../img/icon/icon-calendar-white.svg');
+                }
+                
+            }
+        }
+
+        &--series {
+            .my-activities__tabs-button-icon {
+                background-image: url('../img/icon/icon-layer.svg');
+            }
+
+            &:hover, &.active {
+                .my-activities__tabs-button-icon {
+                    background-image: url('../img/icon/icon-layer-white.svg');
+                }
+                
+            }
+        }
+
         &.active {
             background-color: $color-purple;
             color: $color-default-white;
-
-            svg {
-                fill: $color-default-white;
-            }
         }
     }
 
@@ -91,13 +134,17 @@
         width: 22px;
         height: 22px;
         display: flex;
+        flex-shrink: 0;
         justify-content: center;
         align-items: center;
         margin-right: 16px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: .3s;
 
-        svg {
-            width: 100%;
-            height: 100%;
+        @include vp--767 {
+            display: none;
         }
     }
 
