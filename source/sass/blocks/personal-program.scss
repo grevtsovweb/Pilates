@@ -1,5 +1,6 @@
 .personal-program {
     background-color: $color-default-white;
+    position: relative;
     border-radius: 16px;
     padding: 32px;
     display: grid;
@@ -158,5 +159,19 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+.personal-program__link-mobile {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+
+    @include vp--1023 {
+        display: block;
     }
 }

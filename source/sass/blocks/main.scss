@@ -27,7 +27,10 @@
   }
 
   @include vp--1023 {
-    padding: 24px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 

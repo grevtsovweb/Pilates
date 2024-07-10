@@ -1,6 +1,7 @@
 mixin personalProgram
 
     .personal-program
+        a(href="#").personal-program__link-mobile
         .personal-program__header
             .personal-program__subtitle 
                 span Разработают эксперты
@@ -16,6 +17,6 @@ mixin personalProgram
                 +icon("icon-arrow", 48, 16) 
 
         .personal-program__image-container 
-            .personal-program__image
+            a(href="#").personal-program__image
                 img(src="img/content/personal-program/personal-program.jpg", alt="")
 

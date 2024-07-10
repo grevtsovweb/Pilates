@@ -6,7 +6,9 @@ mixin priceBlock()
         .price-block__price
             .price-block__price-ticket -15% для вас
             .price-block__price-data
-                .price-block__price-old 2790₽
-                .price-block__price-new 1953₽
+                .price-block__price-old 2790
+                    span.rouble ₽
+                .price-block__price-new 1953
+                    span.rouble ₽
         .price-block__buttons
             +button('button--s button--rounded button--gradient button--full-width', 'Приобрести сейчас')

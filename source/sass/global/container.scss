@@ -62,7 +62,6 @@
     border-radius: 24px;
     background-color: $color-default-white;
     padding: 82px 201px;
-    margin-top: 20px;
 
     @media (max-width: 1290px) {
       padding: 80px 134px;
@@ -74,14 +73,12 @@
 
     @include vp--767 {
       padding: 24px 10px;
-      margin-top: 35px;
     }
   }
 
   &--activity {
     background-color: $color-default-white;
     //margin-top: 116px;
-    margin-top: 22px;
     border-radius: 24px;
     padding: 0 26px;
     padding-bottom: 44px;
@@ -122,7 +119,6 @@
 
   &--course-page-with-playlist {
     background-color: $color-default-white;
-    margin-top: 24px;
     padding: 0 26px;
     padding-bottom: 50px;
     border-radius: 24px;
@@ -215,7 +211,6 @@
 
   &--favorites {
     background-color: $color-default-white;
-    margin-top: 36px;
     padding: 26px 26px 26px 26px;
     border-radius: 24px;
     flex-grow: 1;
@@ -238,7 +233,6 @@
 
   &--product {
     background-color: $color-default-white;
-    margin-top: 24px;
     padding: 0 130px 0 40px;
     padding-bottom: 50px;
     border-radius: 24px;
@@ -246,7 +240,6 @@
     height: 100%;
 
     @include vp--1023 {
-      margin-top: 20px;
       padding: 0 40px;
     }
 
@@ -300,7 +293,6 @@
 
   &--my-flow {
     background-color: $color-default-white;
-    margin-top: 23px;
     border-radius: 16px;
     padding: 24px 24px;
     border-top: 1px solid transparent;
@@ -316,7 +308,6 @@
 
     @include vp--767 {
       padding: 10px;
-      margin-top: 3px;
     }
   }
 

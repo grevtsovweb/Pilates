@@ -31,6 +31,7 @@
        column-gap: 24px;
     }
 
+
     &__price-info {
         display: flex;
         align-items: flex-end;
@@ -85,7 +86,7 @@
     &__title {
         font-size: 25px;
         line-height: 1.15em;
-        margin-top: 0;
+        margin-top: 24px;
         margin-bottom: 0;
         font-weight: 600;
 
@@ -189,6 +190,12 @@
         font-size: 13px;
         line-height: 1.3em;
         font-weight: 500;
+        display: none;
+
+        @include vp--1023 {
+            display: block;
+        }
+
     }
 
     &__message-container {
