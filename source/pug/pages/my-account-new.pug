@@ -82,7 +82,8 @@ block main
     h1.visually-hidden Личный аккаунт
     .container
       .container__content
-        +myAccountHeader(user, lastActiveDate)
+        .container__my-account-header
+          +myAccountHeader(user, lastActiveDate)
         +personalProgram()
 
         //- +offerList(offerCards)
