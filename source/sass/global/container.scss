@@ -326,5 +326,17 @@
     flex-direction: column;
     row-gap: 16px;
   }
+
+  &__my-account-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+
+    @include vp--1023 {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
 }
 

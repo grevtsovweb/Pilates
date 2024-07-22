@@ -1,11 +1,12 @@
 .my-activities {
     @include section;
+    padding-bottom: 0;
 
     @include vp--767 {
         padding-left: 10px;
         padding-right: 10px;
         padding-top: 24px;
-        padding-bottom: 24px;
+        padding-bottom: 0;
     }
 
 
@@ -159,6 +160,20 @@
             display: flex;
             flex-direction: column;
             row-gap: 16px;
+        }
+    }
+
+    &__content {
+        padding-bottom: 20px;
+    }
+
+    &__bot-section {
+        margin-left: -24px;
+        margin-right: -24px;
+        
+        @include vp--767 {
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 }

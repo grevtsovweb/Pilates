@@ -84,12 +84,11 @@ block main
       .container__content
         .container__my-account-header
           +myAccountHeader(user, lastActiveDate)
-        +personalProgram()
 
-        //- +offerList(offerCards)
-
-        +dailyList
-
+        .container__my-account-info
+          +personalProgram()
+          +dailyList
+    
         .my-activities
           .my-activities__header 
             h2.my-activities__title Мои активности
@@ -113,9 +112,10 @@ block main
                   each itemData in productCardsCourses
 
                     +courseCard(itemData)
+          .my-activities__bot-section
+            +botAssistant
 
-
-        +botAssistant
+        
 
         section.club-cards-section
             .club-cards-section__title-container
