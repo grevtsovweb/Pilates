@@ -68,9 +68,12 @@
   line-height: 1.4em;
 }
 
+.course-card__image-wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .course-card__image {
-  margin-left: 10px;
-  margin-right: 10px;
   aspect-ratio: 16/9;
   border-radius: 16px;
   overflow: hidden;

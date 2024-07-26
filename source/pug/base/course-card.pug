@@ -8,14 +8,15 @@ mixin courseCard(itemData)
       a(href="/", target="_blank", rel="nofollow noopener").course-card__link
     .course-card__header
       p.course-card__header-text #{itemData.date}
-    .course-card__image
-      if itemData.promo
-        .course-card__ticket Персональная рекомендация
-      +img(itemData.path, itemData.name, itemData.format, itemData.width, itemData.height, itemData.course)
-      if itemData.progress
-        .course-card__progress
-          .course-card__progress-done(style={'width': itemData.progress})
-          span.course-card__progress-text #{itemData.progress}
+    .course-card__image-wrapper
+      .course-card__image
+        if itemData.promo
+          .course-card__ticket Персональная рекомендация
+        +img(itemData.path, itemData.name, itemData.format, itemData.width, itemData.height, itemData.course)
+        if itemData.progress
+          .course-card__progress
+            .course-card__progress-done(style={'width': itemData.progress})
+            span.course-card__progress-text #{itemData.progress}
     .course-card__description
       h3.course-card__description-title #{itemData.course}
 
