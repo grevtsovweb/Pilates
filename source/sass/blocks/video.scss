@@ -281,6 +281,20 @@
 
 }
 
+.video__description-header-points {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.video__description-header-points-title {
+  margin-right: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  color: $color-raven;
+}
+
 
 .video__description-header {
   margin-bottom: 40px;
@@ -340,6 +354,7 @@
   }
 }
 
+
 .video__description-header-title {
   @include title-main;
 
@@ -353,6 +368,7 @@
     margin-bottom: 24px;
     line-height: 1.15em;
   }
+
 }
 
 .video__description-header-sub-title {

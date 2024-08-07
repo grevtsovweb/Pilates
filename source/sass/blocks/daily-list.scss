@@ -39,14 +39,14 @@
         }
     }
 
-    &__item-header-link {
-        position: absolute;
-        content: '';
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-    }
+    // &__item-header-link {
+    //     position: absolute;
+    //     content: '';
+    //     top: 0;
+    //     bottom: 0;
+    //     right: 0;
+    //     left: 0;
+    // }
 
     &__item-content {
         margin-top: auto;
@@ -108,13 +108,14 @@
         max-width: 248px;
     }
 
-    &__task-link {
+    &__item-link {
         position: absolute;
         content: '';
         top: 0;
         left: 0;
         bottom: 0;
         right: 0;
+        z-index: 1;
     }
 
     &__task-time {

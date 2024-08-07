@@ -2,11 +2,11 @@ mixin dailyList
     
     .daily-list
         .daily-list__item
+            a.daily-list__item-link(href="#") 
             .daily-list__item-header
                 h3.daily-list__item-title Задание на сегодня
             .daily-list__item-content
                 .daily-list__task
-                    a.daily-list__task-link(href="#") 
                     .daily-list__task-image 
                         img(src="img/content/BG.jpg", alt="Пилатес тренировка для всего тела")
                     .daily-list__task-data
@@ -15,8 +15,8 @@ mixin dailyList
 
 
         .daily-list__item
+            a.daily-list__item-link(href="#") 
             .daily-list__item-header
-                a.daily-list__item-header-link(href="#")
                 h3.daily-list__item-title Персональная программа
                 .daily-list__item-subtitle Прогресс по запланированным заданиям : 
                     span 1 из 14

@@ -21,6 +21,6 @@ mixin productCard(productCardMod, data)
           if data.price
             .product-card__price-container
               if data.discount
-                p.product-card__price.product-card__price--old #[span.visually-hidden Старая цена:] #{data.oldPrice} #[span.rouble o]
-              p.product-card__price #[span.visually-hidden Цена:] #{data.price} #[span.rouble o]
+                p.product-card__price.product-card__price--old #[span.visually-hidden Старая цена:] #{data.oldPrice} #[span.rouble ₽]
+              p.product-card__price #[span.visually-hidden Цена:] #{data.price} #[span.rouble ₽]
         h3.product-card__title #{data.course}
