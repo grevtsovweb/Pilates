@@ -1,0 +1,72 @@
+.header-new
+    height: 80px
+    padding-top: 20px
+    padding-bottom: 20px
+    background-color: $background-surface
+    display: flex
+    align-items: center
+
+    &__container
+        max-width: 1344px
+        width: 100%
+        margin-left: auto
+        margin-right: auto
+        padding-left: $padding-32
+        padding-right: $padding-32
+
+    &__content
+        display: flex
+        align-items: center
+
+    &__logo
+        display: flex
+        width: 32px
+        height: 32px
+
+
+    &__nav
+        display: flex
+        column-gap: $space-8
+        align-items: center
+        margin-left: $space-64
+
+    &__nav-link
+        display: flex
+        justify-content: center
+        padding-top: 10px
+        padding-bottom: 10px
+        padding-left: $padding-16
+        padding-right: $padding-16
+        color: $text-primary
+        border-radius: $radius-32
+        font-size: 16px
+        line-height: 20px
+        text-decoration: none
+        font-weight: 600
+        transition: all 0.2s ease
+
+        &:hover
+            background-color: $background-secondary-hover
+            color: $text-accent
+
+        &.active
+            background-color: $background-secondary
+            color: $text-accent
+
+            &:hover
+                background-color: $background-secondary-hover
+                color: $text-accent
+
+
+    &__user-block
+        margin-left: auto
+        display: flex
+        align-items: center
+        column-gap: $space-16
+
+    
+    &--sign
+        .header-new__content
+            justify-content: center
+        
+        

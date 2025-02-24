@@ -1,0 +1,51 @@
+.price-card
+    padding: $padding-8
+    border-radius: $radius-20
+    border: 1px solid $border-default
+
+    &__container
+        padding-top: $padding-24
+        padding-left: $padding-16
+        padding-right: $padding-16
+        padding-bottom: $padding-16
+        border-radius: 12px
+        display: flex
+        align-items: center
+        flex-direction: column
+
+    &__label
+        margin-bottom: $space-8
+        display: flex
+        justify-content: center
+
+    &__title
+        @include text-l-semibold
+        text-align: center
+        margin-bottom: $space-8
+
+    &__price
+        display: flex
+        justify-content: center
+        align-items: baseline
+        column-gap: $space-8
+
+    &__current-price
+        font-size: 32px
+        line-height: 40px
+        color: $text-primary
+        font-weight: 600
+
+    &__old-price
+        font-size: 18px
+        line-height: 26px
+        color: $text-tertiary
+        text-decoration: line-through
+
+    &__button
+        width: 100%
+        margin-top: $space-64
+
+
+    &--accent
+        .price-card__container
+            background-color: $background-surface-pale

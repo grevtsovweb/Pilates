@@ -1,0 +1,19 @@
+include pill
+
+mixin price-card(className, title, price, priceOld)
+
+    .price-card(class=className)
+        .price-card__container
+            .price-card__header
+                .price-card__label
+                    +pill('pill--s pill--pink', '', '-50 %')
+                .price-card__title 
+                    .text.text--l= title
+                .price-card__price
+                    .price-card__current-price= price
+                    .price-card__old-price= priceOld
+            .price-card__button
+                if className
+                    +button-new('Приобрести карту', 'button-new--accent button-new--full-width')
+                else 
+                    +button-new('Приобрести карту', 'button-new--secondary button-new--full-width')

@@ -1,0 +1,222 @@
+.field-new
+    display: flex
+    flex-direction: column
+    
+    
+    &__label
+        @include text-m-medium
+        color: $text-primary
+        margin-bottom: 6px
+        cursor: pointer
+
+    &__input-container
+        position: relative
+        width: 100%
+
+
+    &__input
+        height: 56px
+        width: 100%
+        border: 1px solid $border-default
+        border-radius: $radius-12
+        @include text-m-medium
+        font-family: $font-family--manrope
+        color: $text-primary
+        padding-left: $padding-16
+        transition: outline 0.1s, border-color 0.15s
+
+        &:hover
+            border-color: $border-accent
+
+        &:focus
+            border-color: $border-accent
+            outline: 4px solid rgba($border-accent, .2)
+
+        &::placeholder
+            @include text-m-medium
+            color: $text-tertiary
+            font-family: $font-family--manrope
+
+   
+
+    &__supporting-text
+        display: block
+        @include text-s-medium
+        color: $text-secondary
+        margin-top: $space-8
+        display: none
+
+
+    &--negative
+        .field-new__input
+            border-color: $border-negative
+            animation: shake 150ms .3s 2 ease
+
+            &:hover
+                border-color: $border-negative
+
+            &:focus
+                border-color: $border-negative
+                outline: 4px solid rgba($border-negative, .2)
+
+        .field-new__supporting-text
+            color: $text-negative
+            display: block
+
+    &--positive
+        .field-new__input
+            border-color: $border-positive
+
+            &:hover
+                border-color: $border-positive
+
+            &:focus
+                border-color: $border-positive
+                outline: 4px solid rgba($border-positive, .2)
+
+        .field-new__supporting-text
+            color: $text-positive
+            display: block
+
+
+    &--supporting-text-active
+        display: block
+
+
+
+    // --- Cтилизация поля с кнопкой ---
+
+    
+
+
+    &__input:not(:placeholder-shown)
+
+        + .field-new__apply-button
+            color: $text-primary
+            
+
+            &:hover
+                color: $text-accent
+                background-color: $background-secondary-hover
+                cursor: pointer
+
+            &:focus-visible
+                color: $text-accent
+                background-color: $background-secondary-hover
+                outline: 1px solid $border-accent
+                outline-offset: -1px
+                box-shadow: 0 0 0 4px rgba($border-accent, .2)
+
+
+            &:active
+                background-color: $background-secondary-active
+
+    &__apply-button
+        position: absolute
+        content: ''
+        right: 4px
+        top: 4px
+        bottom: 4px
+        box-sizing: border-box
+        @include text-m-semibold
+        color: $text-secondary
+        background-color: transparent
+        border: none
+        border-radius: $radius-8
+        padding-right: $padding-12
+        padding-left: $padding-12
+        font-family: $font-family--manrope
+        transition: all .15s
+
+        &:focus-visible
+            outline: none
+
+    &__has-button--value-applied
+
+        .field-new__input:not(:placeholder-shown)
+
+            + .field-new__apply-button
+                color: $text-negative
+                
+
+                &:hover
+                    background-color: $background-negative-secondary-hover
+                    cursor: pointer
+
+                &:focus-visible
+                    background-color: $background-secondary-hover
+                    outline: 1px solid $border-negative
+                    outline-offset: -1px
+                    box-shadow: 0 0 0 4px rgba($border-negative, .2)
+
+                &:focus-visible
+                    background-color: $background-negative-secondary-hover
+                    outline: 1px solid $border-negative
+                    outline-offset: -1px
+                    box-shadow: 0 0 0 4px rgba($border-negative, .2)
+
+                &:active
+                    background-color: $background-negative-secondary-active
+
+    &__button
+        position: absolute
+        content: ''
+        right: 4px
+        top: 4px
+        bottom: 4px
+        @include text-m-semibold
+        color: $text-primary
+        background-color: transparent
+        border: none
+        border-radius: $radius-8
+        padding-right: $padding-12
+        padding-left: $padding-12
+        font-family: $font-family--manrope
+        transition: all .15s
+        display: flex
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        box-sizing: border-box
+
+        &:hover
+            color: $text-accent
+            background-color: $background-secondary-hover
+            
+
+        &:focus-visible
+            color: $text-accent
+            background-color: $background-secondary-hover
+            outline: 1px solid $border-accent
+            outline-offset: -1px
+            box-shadow: 0 0 0 4px rgba($border-accent, .2)
+
+        &:active
+            background-color: $background-secondary-active
+
+    &__button:hover .field-new__button svg 
+        fill: $icon-accent-outline
+
+    &__button:focus-visible .field-new__button svg 
+        fill: $icon-accent-outline
+
+    &__button-icon
+        width: 24px
+        height: 24px
+        display: flex
+        justify-content: center
+        align-items: center
+
+
+
+
+@keyframes shake 
+    0% 
+        transform: translate(4px, 0)
+    
+    50% 
+        transform: translate(-4px, 0)
+    
+    100% 
+        transform: translate(0, 0)
+    

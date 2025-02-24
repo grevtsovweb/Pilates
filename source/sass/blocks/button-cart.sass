@@ -1,0 +1,51 @@
+.button-cart
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    border: 1px solid $border-default
+    background-color: $background-surface
+    width: 40px
+    height: 40px
+    transition: all 0.2s ease
+    position: relative
+
+    &__icon
+        width: 20px
+        height: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        svg
+            fill: $icon-primary-outline
+            transition: all 0.2s ease
+            width: 100%
+            height: 100%
+
+
+    &:hover
+        background-color: $background-secondary-hover
+        color: $text-accent
+        border-color: $border-accent-secondary
+
+        svg
+            fill: $icon-accent-outline
+
+
+
+    &__count
+        font-size: 12px
+        line-height: 11px
+        font-weight: 600
+        color: $text-on-accent
+        background-color: $background-surface-negative
+        border-radius: 50%
+        width: 20px
+        height: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        position: absolute
+        top: -4px   
+        right: -4px

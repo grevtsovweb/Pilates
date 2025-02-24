@@ -1,0 +1,11 @@
+include button-new
+
+mixin cta-block(title, description, buttonText)
+    .cta-block.cta-block--curve-pink 
+        .cta-block__container 
+            .cta-block__content
+                .cta-block__text-block
+                    h3.cta-block__title!= title
+                    .cta-block__description!= description
+                .cta-block__button
+                    +button-new(buttonText, 'button-new--full-width')

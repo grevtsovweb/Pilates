@@ -1,0 +1,16 @@
+include avatar
+
+.header-new
+    .header-new__container
+        .header-new__content
+            .header-new__logo
+                a.header-new__logo(href="index.html", aria-label="Переход на главную")
+                    img(src="img/svg/logo-new.svg",  width="32", height="32", alt="")
+            .header-new__nav
+                a(href="#").header-new__nav-link.active Курсы
+                a(href="#").header-new__nav-link Клубные карты
+            .header-new__user-block
+                .header-new__user-block-item
+                    +avatar()
+                .header-new__user-block-item
+                    include ../base/button-cart

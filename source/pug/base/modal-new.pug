@@ -1,0 +1,34 @@
+include field-new
+include button-new
+include field-new-has-button
+
+
+.modal-new
+    .modal-new__header 
+        h3.modal-new__title Оформление покупки
+    .modal-new__body 
+        .modal-new__product-list 
+            include cart-summary
+        .modal-new__promo-field
+            +field-new-has-button('field-new_has-button', '', 'Промокод', 'Что-то пошло не так', 'name', 'text', 'Применить')
+            +field-new-has-button('field-new__has-button--value-applied', '', 'Промокод', 'Что-то пошло не так', 'name', 'text', 'Удалить')
+            +field-new-has-button('field-new__has-button--value-applied field-new--positive', '', 'Промокод', 'Промокод успешно применен', 'name', 'text', 'Удалить')
+        .modal-new__form-contacts
+            form.form-new 
+                .form-new__header 
+                    .form-new__title Контактные данные
+                .form-new__body
+                    .form-new__fieldset
+                        .form-new__field
+                            +field-new('', 'Имя', 'Например, Евгения', 'Что-то пошло не так', 'name', 'text')
+                        .form-new__field
+                            +field-new('field-new--negative', 'E-mail', 'Например, pilates@flow.ru', 'Что-то пошло не так', 'mail', 'mail')
+                        .form-new__field
+                            +field-new('field-new--positive', 'E-mail', 'Например, pilates@flow.ru', 'Сообщение успешно отправлено', 'mail', 'mail')
+                        .form-new__field
+                            include checkbox-new
+                    .form-new__alert 
+                        include alert
+                .form-new__footer 
+                    +button-new('Перейти к оплате', 'button-new--full-width button-new--l button-new--promo')
+

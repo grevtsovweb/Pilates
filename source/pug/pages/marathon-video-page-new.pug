@@ -1,0 +1,129 @@
+extends ../base/layout
+
+include ../base/additional-block
+include ../base/form
+include ../base/comment-block.pug
+
+block variables
+  - const title = "Марафон - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = false
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const isCardActive = true
+  - const isAuthorise = true
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-catalog",
+          width: 18,
+          height: 18,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-shopping-cart",
+          width: 20,
+          height: 20,
+          items: 0,
+          current: false
+        },
+      ]
+  -
+    const formInputSettingsUser =
+      [
+        {
+          name: "name",
+          id: "name",
+          type: "text",
+          isRequired: true,
+          label: "Имя",
+        },
+        {
+          name: "surname",
+          id: "surname",
+          type: "text",
+          isRequired: true,
+          label: "Фамилия",
+        },
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: false,
+          label: "Электронный адрес",
+        },
+      ]
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "password",
+          id: "password",
+          type: "password",
+          isRequired: true,
+          label: "Новый пароль",
+        },
+        {
+          name: "password2",
+          id: "password2",
+          type: "password",
+          isRequired: true,
+          label: "Повторите пароль",
+        }
+      ]
+  -
+    const video =
+      {
+        link: "#",
+        path: "content/products",
+        name: "pilates-player",
+        format: "jpg",
+        width: 1280,
+        height: 720,
+        title: "Пилатес мат",
+      }
+
+block main
+  main.main
+    .container.main__header.main__header
+      a(href="#").main__link-back
+        +icon("icon-back-arrow", 32, 32)
+      span.main__title.title Назад
+    .container
+      .container__content
+        section.video
+          .video__video-box
+            if !isCardActive || !isAuthorise
+              .video__lock
+                .video__lock-content
+                  .video__lock-icon 
+                    +icon("icon-lock", 72, 72)
+                  .video__lock-text Зарегистрируйтесь и начните заниматься бесплатно 🎁
+                  .video__lock-button 
+                    +button('button--rounded button--gradient', 'Зарегистрироваться')
+            a.video__preview(href="#")
+              +img(video.path, video.name, video.format, video.width, video.height, video.name)
+          .video__description
+            .video__description-header
+              .video__description-header-inner
+                h1.video__description-header-title Введение
+            .video__description-section-container
+              .video__description-section-main
+                .video__description-section
+                  .video__description-title-container.video__description-title-container--margin-s
+                    h2.video__description-title Задание 
+                  .video__description-section-content
+                    p.video__descritption-section-text Идеальное сочетание из пилатес зарядок  на эти выходные для всех нас. Прекрасно подходит для тех, кто много сидел.
+                .video__description-section
+                  .video__description-section-content
+                    +commentBlock(activityComments, "marathon-video-page", "without-button")
+
+    

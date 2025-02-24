@@ -1,6 +1,6 @@
 include ../base/button
 
-mixin modalBlockReg()
+mixin modalBlockReg(title, description, showLinks, buttonText)
 
     section.modal-block.is-active(data-modal='modal-5')
         //- .modal-block__wrapper
@@ -11,4 +11,4 @@ mixin modalBlockReg()
             .modal-block__content-wrapper
                 .modal-block__container
                     .modal-block__content-inner
-                        +formReg(formInputSettingsPass, "Регистрация")
+                        +formReg(formInputSettingsPass, title, description, showLinks, buttonText)

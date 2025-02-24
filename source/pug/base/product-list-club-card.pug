@@ -1,0 +1,13 @@
+.product-list
+    .product-list__header-row 
+
+        .product-list__header
+            h1.product-list__title Клубные карты
+
+        .product-list__header-features-list
+            +pill('pill--m pill--pink', 'check-circle', 'Мягкий старт')
+            +pill('pill--m pill--pink', 'check-circle', 'Поддержка тренеров')
+            +pill('pill--m pill--pink', 'check-circle', 'Мотивация сообщества')
+
+    .product-list__block-container
+        include price-section

@@ -13,6 +13,7 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/tokens";
 
 // Blocks
 //---------------------------------
@@ -123,3 +124,35 @@
 @import "blocks/exercise-day.scss";  
 @import "blocks/exercise.scss";
 @import "blocks/ticket.scss";
+@import "blocks/cta-block.scss";
+
+
+// Новый UI
+//---------------------------------
+
+@import "global/typography";
+
+
+@import "global/container-new";
+
+@import "blocks/main-new";
+@import "blocks/button-new";
+@import "blocks/header-new";
+@import "blocks/courses-section";
+@import "blocks/product-list";
+@import "blocks/product-item";
+@import "blocks/pill";
+@import "blocks/tabs";
+@import "blocks/button-cart";
+@import "blocks/avatar";
+@import "blocks/price-section";
+@import "blocks/price-card";
+@import "blocks/feature-item-new";
+@import "blocks/modal-new";
+@import "blocks/cart-summary";
+@import "blocks/field-new";
+@import "blocks/form-new";
+@import "blocks/checkbox-new"; 
+@import "blocks/alert"; 
+@import "blocks/link";
+@import "blocks/feature-icon";

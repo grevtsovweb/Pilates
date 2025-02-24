@@ -27,9 +27,14 @@ const pugToHtml = () => {
 
 const css = () => {
   return gulp.src('source/sass/style.scss')
-      .pipe(plumber())
+      .pipe(plumber({
+        errorHandler: function (err) {
+          console.error('Ошибка в SCSS:', err.message);
+          this.emit('end'); // Не даёт процессу завершиться
+        }
+      }))
       .pipe(sourcemap.init())
-      .pipe(sass())
+      .pipe(sass().on('error', sass.logError)) // Ловит ошибку SCSS и не падает
       .pipe(postcss([autoprefixer({
         grid: false,
         flexbox: false

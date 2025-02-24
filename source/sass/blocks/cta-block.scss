@@ -1,0 +1,58 @@
+.cta-block {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+
+    &__container {
+        max-width: 480px;
+    }
+
+    &__text-block {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #060048;
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: 16px;
+        line-height: 24px;
+        color: rgba(#060048, .8)
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+        max-width: 320px;
+        width: 100%;
+    }
+
+
+    &--curve-pink {
+        background-image: url('../img/content/cta-block/curve-pink.png');
+        background-color: #FFEFF9;
+        background-position: center bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,4 +1,5 @@
 include ../base/comment-block.pug
+include ../base/cta-block
 
 mixin activityItem(data, workouts, comments, formSettings, activityItemId)
   section.activity 
@@ -16,6 +17,13 @@ mixin activityItem(data, workouts, comments, formSettings, activityItemId)
             +img(data.video.path, data.video.name, data.video.format, data.video.width, data.video.height, data.video.name)
           a(href="#").activity__video-button
             +icon("icon-play-btn", 80, 80)
+      .activity__cta-block
+      - var space = '&nbsp;'
+        +cta-block('Скидка 35% на Клубную карту', 'Откройте доступ к' + space + 'Тематическим неделям и' + space + 'более чем к 200+ классам для уверенного прогресса на' + space + 'пути к' + space + 'созданию подтянутого тела', 'Подробнее')
+      .activity__cta-block
+        +cta-block('Клубная карта на 3 дня в' + space + 'подарок', 'Зарегистрируйтесь и' + space + 'получите Клубную карту на 3' + space + 'дня в' + space + 'подарок.', 'Зарегистрироваться')
+      .activity__cta-block
+        +cta-block('Клубная карта на 3' + space + 'дня в' + space + 'подарок', 'Завершите регистрацию, указав адрес электронной почты и' + space + 'получите Клубную карту в'+ space + 'подарок.', 'Зарегистрироваться')
       if (workouts != "without")
         .activity__workout
           if (data.workoutName)

@@ -1,0 +1,78 @@
+extends ../base/layout
+
+include ../base/activity-item.pug
+include ../base/button.pug
+include ../base/button-new.pug
+include ../base/form-reg
+include ../base/modal-block-reg
+
+block variables
+  - const title = "Activity - Pilates Flow"
+  - const subDate = "20.12.2022"
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ["header--bottom-menu", "header--is-authorised"]
+  - const hasFooter = false
+  - const footerMods = ""
+  - const haspromo = false
+  - const hasModal = true
+  - const avatar = ""
+  - const userName = "Светлана"
+  - const lastActiveDate = "20.12.2022"
+  -
+    const headerLinks =
+      [
+        {
+          href: "#",
+          text: "Активности",
+          icon: "icon-activity",
+          width: 22,
+          height: 30,
+          current: true
+        },
+        {
+          href: "#",
+          text: "Зарядки",
+          icon: "icon-charging",
+          width: 28,
+          height: 32,
+          current: false
+        },
+        {
+          href: "#",
+          text: "Мой поток",
+          icon: "icon-my-steams",
+          width: 32,
+          height: 32,
+          current: false
+        }
+      ]
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "name",
+          id: "name",
+          type: "text",
+          isRequired: false,
+          label: "Имя",
+        },
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: true,
+          label: "Электронная почта",
+        }
+      ]
+
+block main
+  main.main
+    .container.main__header.main__header--activity
+      h1.title.title--activity Активности
+    .container.container--activity
+      //+activityItem(activityList)
+      +activityItem(activityList3, "without", activityComments, formInputSettingsComment, "activityItem1")
+      +activityItem(activityList4, "without", activityComments, formInputSettingsComment, "activityItem2")
+
+  +modalBlockReg('3 дня пробного доступа по Клубной карте', 'Зарегистрируйтесь для получения бесплатного доступа', false, 'Получить Клубную карту')

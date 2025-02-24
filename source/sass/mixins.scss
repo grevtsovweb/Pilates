@@ -119,3 +119,13 @@
     font-size: 17px;
   }
 }
+
+
+@mixin section-white {
+  padding: $padding-32;
+  border-radius: $radius-32;
+  background-color: $background-surface;
+}
+
+
+

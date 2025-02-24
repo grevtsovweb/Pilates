@@ -1,6 +1,12 @@
-mixin formReg(inputSettings, title)
+mixin formReg(inputSettings, title, description, showLinks = true, buttonText)
+
+  - title = title || 'Регистрация'
+  - description || none
+  - buttonText || "Зарегистрироваться"
   .form.form--reg
     h2.form__title.form__title--large= title
+    if description
+      p.form__description= description
     form
       each item in inputSettings ? inputSettings : []
         .form__input
@@ -8,13 +14,15 @@ mixin formReg(inputSettings, title)
           input(name=item.name id=item.id type=item.type required)
       .form__footer
         .form__button
-            +button('button--full-width', 'Зарегистрироваться')
+            +button('button--full-width', buttonText)
             //- button(type="submit") Войти
-        .form__links-vertical
-          .form__links-item
-            span.form__link-text Не помните пароль?
-            a.form__link(href="#") Восстановите пароль
-          .form__links-item
-            span.form__link-text Есть учетная запись?
-            a.form__link(href="#")  Войдите
+
+        if showLinks 
+          .form__links-vertical
+            .form__links-item
+              span.form__link-text Не помните пароль?
+              a.form__link(href="#") Восстановите пароль
+            .form__links-item
+              span.form__link-text Есть учетная запись?
+              a.form__link(href="#")  Войдите
         

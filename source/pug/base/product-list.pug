@@ -1,0 +1,32 @@
+.product-list
+    .product-list__header-row 
+
+        .product-list__header-title 
+            h1.product-list__title  Курсы
+
+        .product-list__header-features-list
+            +pill('pill--m pill--pink', 'check-circle', 'Глубокая проработка')
+            +pill('pill--m pill--pink', 'check-circle', 'Структурированный подход')
+            +pill('pill--m pill--pink', 'check-circle', 'Теоретическая база')
+
+    .product-list__tabs.product-list__tabs--sticky
+        include tabs 
+
+    .product-list__block-container
+        .product-list__block
+            .product-list__block-header-with-sub
+                h3.title Фундаментальные
+                p.subtitle Курсы направлены на глубокую работу с телом через уникальную методологию и&nbsp;теоретическую базу необходимую для эффективного достижения поставленных целей.
+            .product-list__grid
+                include product-item
+                include product-item
+                include product-item
+
+        .product-list__block
+            .product-list__block-header-with-sub
+                h3.title Экспресс
+                p.subtitle Быстрый результат за короткий промежуток времени, который достигается за&nbsp;счет проработки узконаправленной зоны через сочетание нескольких методик в&nbsp;одном курсе.
+            .product-list__grid
+                include product-item
+                include product-item
+                include product-item

@@ -1,6 +1,10 @@
 extends ../base/layout
 
 include ../base/activity-item.pug
+include ../base/button.pug
+include ../base/button-new.pug
+include ../base/form-reg
+include ../base/modal-block-reg
 
 block variables
   - const title = "Activity - Pilates Flow"
@@ -11,6 +15,7 @@ block variables
   - const hasFooter = false
   - const footerMods = ""
   - const haspromo = false
+  - const hasModal = true
   - const avatar = ""
   - const userName = "Светлана"
   - const lastActiveDate = "20.12.2022"
@@ -42,6 +47,17 @@ block variables
           current: false
         }
       ]
+  -
+    const formInputSettingsPass =
+      [
+        {
+          name: "email",
+          id: "email",
+          type: "email",
+          isRequired: true,
+          label: "Электронная почта",
+        }
+      ]
 
 block main
   main.main
@@ -51,3 +67,5 @@ block main
       //+activityItem(activityList)
       +activityItem(activityList3, "without", activityComments, formInputSettingsComment, "activityItem1")
       +activityItem(activityList4, "without", activityComments, formInputSettingsComment, "activityItem2")
+
+  +modalBlockReg('3 дня пробного доступа по Клубной карте', 'Завершите регистрацию, указав адрес электронной почты, и получите Клубную карту в подарок.', false, 'Получить Клубную карту')

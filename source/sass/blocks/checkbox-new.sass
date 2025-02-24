@@ -1,0 +1,68 @@
+.checkbox-new
+    display: flex
+    column-gap: 10px
+    cursor: pointer
+
+    &__input
+        position: absolute
+        width: 1px
+        height: 1px
+        margin: -1px
+        padding: 0
+        overflow: hidden
+        border: 0
+        clip: rect(0, 0, 0, 0)
+        clip-path: inset(100%)
+
+    &__input:focus-visible + .checkbox-new__control
+            outline: 4px solid rgba($border-accent, .2)
+
+    &__input:checked + .checkbox-new__control
+            background-color: $background-accent
+            border-color: $border-accent
+
+    &__input:checked + .checkbox-new__control::before
+        display: block
+
+    &:hover .checkbox-new__input:not(:checked) + .checkbox-new__control        
+        border-color: $border-accent
+        background-color: $background-secondary
+
+
+    &__control
+        width: 20px
+        height: 20px
+        flex-shrink: 0
+        border: 1px solid $border-default
+        border-radius: 4px
+        transition: all .15s
+        position: relative
+
+        &::before
+            position: absolute
+            content: ''
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background: url('../img/svg/check.svg') no-repeat center
+            background-size: cover
+            display: none
+
+    
+    &__label-block
+        display: flex
+        flex-direction: column
+        row-gap: $space-4
+        cursor: pointer
+
+    &__label-title
+        @include text-s-semibold
+
+    &__label-description
+        @include text-s-regular
+        color: $text-secondary
+
+   
+        
+        

@@ -1,0 +1,7 @@
+mixin pill(className, icon, text)
+
+    .pill(class=className) 
+        if icon
+            .pill__icon
+                +icon(icon, "16", "16")
+        .pill__text= text

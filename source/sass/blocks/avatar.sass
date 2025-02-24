@@ -1,0 +1,35 @@
+.avatar
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    border: 1px solid $border-default
+    overflow: hidden
+    background-color: $background-surface
+    background-color: $background-surface-secondary
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    position: relative
+
+    &__letter
+        font-size: 16px
+        line-height: 24px
+        color: $text-primary
+        font-weight: 600
+
+
+    &__image
+        width: 100%
+        height: 100%
+        position: absolute
+        z-index: 10
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover

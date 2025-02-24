@@ -1,0 +1,30 @@
+.price-section
+    &__card-list
+        display: grid
+        grid-template-columns: repeat(3, calc(33.33% - 16px))
+        column-gap: 24px
+        row-gap: 24px
+
+    &__card-list
+        padding-top: $padding-32
+        padding-bottom: $padding-32
+            
+    &__features
+        padding-top: $padding-32
+        padding-bottom: $space-32
+
+    &__features-header
+        margin-bottom: $space-48
+
+    &__features-title
+        @include title-m
+        text-align: center
+
+    &__features-list
+        display: flex
+        max-width: 1000px
+        flex-wrap: wrap
+        column-gap: 80px
+        row-gap: $space-32
+        margin-left: auto
+        margin-right: auto

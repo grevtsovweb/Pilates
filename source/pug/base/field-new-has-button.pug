@@ -1,0 +1,12 @@
+mixin field-new-has-button(className, label, placeholder, supportText, id, type, buttoLabel)
+
+    .field-new(class=className) 
+        if label
+            label.field-new__label(for=id)= label
+        .field-new__input-container
+            if buttoLabel == 'Удалить'
+                input(type=type, placeholder=placeholder, id=id, value='PilatesPromo').field-new__input
+            else 
+                input(type=type, placeholder=placeholder, id=id, value='').field-new__input
+            button.field-new__apply-button= buttoLabel
+        span.field-new__supporting-text= supportText

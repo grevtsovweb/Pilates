@@ -1,0 +1,122 @@
+.product-item
+    background-color: $background-surface
+    border-radius: $radius-24
+    border: 1px solid $border-default
+    padding: $padding-8
+    box-sizing: border-box
+    position: relative
+
+    &:hover
+        cursor: pointer
+        
+        .product-item__title
+            color: $text-accent
+
+        .product-item__image img
+            transform: scale(1.05)
+
+
+    &__image
+        width: 100%
+        aspect-ratio: 1.46
+        overflow: hidden
+        border-radius: $radius-16
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: transform 0.3s
+
+    &__main-info
+        padding-left: $padding-12
+        padding-right: $padding-12
+        padding-top: $padding-16
+        padding-bottom: $padding-12
+
+    &__title
+        font-size: 18px
+        line-height: 26px
+        color: $text-primary
+        transition: color 0.3s
+        font-weight: 600
+        margin-bottom: $space-8
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 1
+        -webkit-box-orient: vertical
+
+    &__description
+        font-size: 16px
+        line-height: 24px
+        color: $text-secondary
+        height: 48px
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+
+
+    &__main-info-price
+        display: flex
+        align-items: baseline
+        column-gap: $space-8
+        margin-top: $space-24
+
+    &__price
+        font-size: 24px
+        line-height: 32px
+        font-family: $font-family--manrope
+        color: $text-primary
+        font-weight: 600
+
+    &__price-old
+        font-size: 16px
+        line-height: 24px
+        color: $text-tertiary
+        text-decoration: line-through
+        font-weight: 600
+
+    &__main-info-description
+        margin-bottom: $space-16
+
+    &__attribute-list
+        display: flex
+        flex-wrap: wrap
+        row-gap: $space-12
+        column-gap: $space-24
+
+    &__attribute-item
+        display: flex
+        align-items: center
+        flex-wrap: nowrap
+        column-gap: 6px
+        font-size: 14px
+        line-height: 20px
+        color: $text-tertiary
+        white-space: nowrap
+
+    &__attribute-item-icon
+        width: 20px
+        height: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        svg
+            width: 100%
+            height: 100%
+            fill: $icon-tertiary-outline
+
+    &__link
+        position: absolute
+        content: ''
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        
+
+    

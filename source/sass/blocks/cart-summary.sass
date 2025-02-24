@@ -1,0 +1,46 @@
+.cart-summary
+    border: 1px solid $border-default
+    border-radius: $radius-16
+    background-color: $background-surface
+
+    &__item
+        padding: $padding-16
+        display: flex
+        flex-direction: column
+        row-gap: $space-4
+
+    &__item-header
+        display: flex
+        align-items: center
+        height: $height-32
+        column-gap: $space-8
+
+    &__item-title
+        @include text-l-semibold
+    
+    &__item-desciption
+        @include text-m-regular
+
+    &__total
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        padding: $padding-16
+        border-top: 1px solid $border-default
+
+    &__total-title
+        @include text-m-semibold
+        color: $text-primary
+
+    &__total-value
+        display: flex
+        align-items: baseline
+        column-gap: $space-8
+
+    &__total-value-current
+        @include text-xl-semibold
+
+    &__total-value-old
+        @include text-s-regular
+        text-decoration: line-through
+        color: $text-tertiary

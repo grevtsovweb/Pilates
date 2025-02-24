@@ -1,0 +1,18 @@
+.link
+    color: $text-link
+    transition: color .15s ease
+    display: inline-block
+    border-radius: 4px
+    @include text-m-semibold
+
+    &:hover
+        color: $text-link-hover
+
+    &:active
+        color: $text-link-active
+
+    &:focus-visible
+        outline: 4px solid rgba($border-accent, .2)
+
+    &--s
+        @include text-s-semibold

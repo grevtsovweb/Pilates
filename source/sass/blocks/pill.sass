@@ -1,0 +1,76 @@
+.pill
+    border-radius: 100px
+    border: 1px solid $border-default
+    color: $text-primary
+    font-weight: 600
+    display: flex
+    padding-left :$padding-8
+    padding-right: $padding-8
+    align-items: center
+    justify-content: center
+    column-gap: $space-4
+    max-width: fit-content
+
+    &__icon
+        width: 16px
+        height: 16px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        svg
+            fill: $icon-primary-outline
+            width: 100%
+            height: 100%
+
+
+    &--s
+        @include text-xs-semibold
+        height: 24px
+        padding-left: $padding-8
+        padding-right: $padding-8
+
+        .pill__text
+            
+
+
+
+    &--m
+        font-size: 16px
+        line-height: 24px
+        padding-top: 2px
+        padding-bottom: 2px
+        padding-left: $padding-12
+        padding-right: $padding-12
+        height: 32px
+        column-gap: 6px
+
+        .pill__icon
+            width: 20px
+            height: 20px
+            
+
+    &-l
+        font-size: 16px
+        line-height: 24px
+        padding-top: 2px
+        padding-bottom: 2px
+        padding-left: $padding-16
+        padding-right: $padding-16
+        height: 40px
+        column-gap: $space-8
+
+
+    &--accent-blue
+
+
+    &--pink
+        background-color: rgba(#EE77BC, .12)
+        color: #EE77BC
+        border: none
+
+
+        &__icon svg
+            fill: #EE77BC
+
+

@@ -1,0 +1,7 @@
+mixin field-new(className, label, placeholder, supportText, id, type, message)
+
+    .field-new(class=className) 
+        label.field-new__label(for=id)= label
+        .field-new__input-container
+            input(type=type, placeholder=placeholder, id=id).field-new__input
+        span.field-new__supporting-text= supportText

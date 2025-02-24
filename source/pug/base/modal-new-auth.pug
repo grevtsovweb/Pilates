@@ -1,0 +1,30 @@
+include field-new
+include button-new
+include field-new-password
+include feature-icon
+
+
+.modal-new
+
+    .modal-new__header
+        .modal-new__header-with-icon
+            .modal__header-icon 
+                +feature-icon('feature-icon--blue', '..\\..\\img\svg\\user-exclamation.svg')
+            .modal-new__header-with-subtitle
+                h3.modal-new__title Пожалуйста, авторизируйтесь
+                p.modal-new__subtitle Вы уже были у нас на сайте или совершали покупки
+    .modal-new__body 
+        .modal-new__form-contacts
+            from.form-new 
+                .form-new__body
+                    .form-new__fieldset
+                        .form-new__field
+                            +field-new('', 'Email', 'Например, pilates@flow.ru', 'Что-то пошло не так', 'name', 'text')
+                        .form-new__field
+                            +field-new-password('field-new--password', 'Пароль', '', 'Что-то пошло не так', 'password', 'password')
+                
+                .form-new__footer
+                    .form-new__button-block
+                        +button-new('Авторизоваться', 'button-new--full-width button-new--l')
+                        a.link(href="#") Я забыл(а) пароль, хочу восстановить!
+
